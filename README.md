@@ -280,3 +280,5 @@ MediNexus_AI/
 
 ## 14. Regulatory Notice & Healthcare Disclaimer
 > **IMPORTANT NOTICE:** MediNexus AI is a demonstration decision-support intelligence platform utilizing synthetically generated healthcare data. It is developed strictly for research, educational, and workflow evaluation purposes. It does not provide medical diagnoses, treatment plans, or autonomous prescribing authority. All clinical decision-making must be performed by certified, licensed healthcare professionals.
+#   M e d i N e x u s - A I  
+ 
