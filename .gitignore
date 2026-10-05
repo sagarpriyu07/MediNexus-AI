@@ -1,0 +1,25 @@
+# Environment and secrets
+.env
+*.env
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+.coverage
+htmlcov/
+
+# DuckDB lock/wal files
+*.duckdb.wal
+*.duckdb.tmp
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS Files
+.DS_Store
+Thumbs.db

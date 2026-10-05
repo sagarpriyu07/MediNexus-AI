@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-10-05T19:18:31.767085",
+  "seed": 99,
+  "counts": {
+    "hospitals": 3,
+    "departments": 24,
+    "doctors": 10,
+    "patients": 101,
+    "admissions": 151,
+    "diagnoses": 241,
+    "laboratory_results": 303,
+    "medications": 12,
+    "prescriptions": 252,
+    "appointments": 151,
+    "billing": 151,
+    "pharmacy_inventory": 37
+  },
+  "quality_defects_injected": [
+    "Intentional duplicate rows (~1-1.5%)",
+    "Inconsistent date representations (MM/DD/YYYY, DD-MM-YYYY, ISO)",
+    "Irregular casing (UPPER, lower, leading/trailing whitespace)",
+    "Missing values in optional fields (contact, room_number, units)",
+    "Invalid categorical token anomalies ('UNKNOWN_VAL')",
+    "Occasional invalid numerical values for outlier detection"
+  ]
+}

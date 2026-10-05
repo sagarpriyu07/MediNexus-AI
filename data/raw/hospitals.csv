@@ -1,0 +1,6 @@
+hospital_id,hospital_name,location,total_beds,icu_beds,operational_status
+HOSP_001,Metropolitan General Hospital,"North Judithbury, IN",250,30,Active
+HOSP_002,Saint Jude Health Pavilion,"Lake Curtis, WA",600,50,Active
+HOSP_003,Apex Memorial Medical Center,"New Roberttown, CO",400,50,Active
+HOSP_004,Riverside University Hospital,"East William, AK",250,60,Active
+HOSP_005,Beacon Hill Community Hospital,"Lake Debra, ND",250,60,Active

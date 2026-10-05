@@ -1,0 +1,41 @@
+doctor_id,hospital_id,department_id,name,specialty,qualification,experience_years,contact
+DOC_001,HOSP_003,DEPT_023,"Dr. Robert Cole, MD",General Surgery,"MD, FACC",32,302-765-4235x116
+DOC_002,HOSP_005,DEPT_035,"Dr. Melanie Munoz, MD",Internal Medicine,"MBBS, MD",8,7785161849
+DOC_003,HOSP_005,DEPT_036,"Dr. Janet Williams, MD",General Surgery,"MD, FCCP",15,441.731.6475
+DOC_004,HOSP_001,DEPT_005,"Dr. Michael Santiago, MD",Cardiology,"MD, FACP",21,001-719-228-3276x483
+DOC_005,HOSP_001,DEPT_006,"Dr. Jeremy Johnson, MD",Emergency Medicine,"MD, FACC",27,564-613-9537x67242
+DOC_006,HOSP_003,DEPT_018,"Dr. Julie Patterson, MD",Nephrology,"MD, FCCP",13,001-365-432-8710
+DOC_007,HOSP_003,DEPT_024,"Dr. Courtney Conner, MD",Oncology,"MD, FACP",20,(791)366-9784x80184
+DOC_008,HOSP_001,DEPT_005,"Dr. Kelly Moore, MD",Pulmonology,"MD, FACP",13,5484281489
+DOC_009,HOSP_004,DEPT_030,"Dr. Nathaniel Martin, MD",Endocrinology,"MD, FCCP",17,001-380-395-7015x43039
+DOC_010,HOSP_003,DEPT_021,"Dr. Jessica Cabrera, MD",Cardiology,"MD, FACP",5,001-682-827-8248x96383
+DOC_011,HOSP_003,DEPT_021,"Dr. Wanda Santos, MD",Endocrinology,"MD, FCCP",7,587.213.3150x983
+DOC_012,HOSP_002,DEPT_014,"Dr. Chad Welch, MD",Oncology,"MD, FACP",34,510.451.8347
+DOC_013,HOSP_004,DEPT_026,"Dr. Jennifer Khan, MD",Nephrology,"MD, FACP",19,001-773-876-3116
+DOC_014,HOSP_002,DEPT_009,"Dr. Robert Shields, MD",Emergency Medicine,"MD, FCCP",30,9104651333
+DOC_015,HOSP_005,DEPT_038,"Dr. Robert Ramirez, MD",Endocrinology,"MD, FCCP",17,517.481.0801
+DOC_016,HOSP_002,DEPT_009,"Dr. Richard Olson, MD",Nephrology,"MD, FACC",6,(502)660-6474x6872
+DOC_017,HOSP_001,DEPT_008,"Dr. Jeff Brown, MD",Pulmonology,"MD, FACP",30,001-380-450-0978x8208
+DOC_018,HOSP_005,DEPT_039,"Dr. Casey Jones, MD",Internal Medicine,"MBBS, MD",27,361.893.9909
+DOC_019,HOSP_005,DEPT_039,"Dr. Diane Cunningham, MD",Nephrology,"MD, FCCP",3,343-353-4624x75107
+DOC_020,HOSP_001,DEPT_008,"Dr. Amanda Wagner, MD",General Surgery,"MD, FCCP",10,(651)235-4278
+DOC_021,HOSP_003,DEPT_019,"Dr. Elizabeth Spencer, MD",Endocrinology,"MD, FACP",32,+1-612-941-1824x49353
+DOC_022,HOSP_001,DEPT_001,"Dr. John Odonnell, MD",General Surgery,"MD, FACP",35,4169400524
+DOC_023,HOSP_001,DEPT_007,"Dr. Andrea Patterson, MD",General Surgery,"MD, FACP",12,4118280598
+DOC_024,HOSP_003,DEPT_024,"Dr. David Parker, MD",Pulmonology,"MD, FACC",23,4535315869
+DOC_025,HOSP_004,DEPT_032,"Dr. Michelle Cherry, MD",Cardiology,"MD, FACC",26,(360)825-6342
+DOC_026,HOSP_003,DEPT_020,"Dr. Monica Garrison, MD",Emergency Medicine,"MD, FACC",18,837.754.3303
+DOC_027,HOSP_005,DEPT_037,"Dr. Joshua Jones, MD",Internal Medicine,"MD, FACC",34,001-345-886-8501x42940
+DOC_028,HOSP_001,DEPT_005,"Dr. Michael Hartman, MD",Pulmonology,"MD, FACP",33,(798)816-9340x60883
+DOC_029,HOSP_005,DEPT_036,"Dr. Chad Beck, MD",Pulmonology,"MD, FCCP",30,895-814-8465x64823
+DOC_030,HOSP_002,DEPT_014,"Dr. Erica Orr, MD",Emergency Medicine,"MD, FCCP",28,+1-794-968-0443x699
+DOC_031,HOSP_003,DEPT_024,"Dr. Scott Lowe, MD",Nephrology,"MBBS, MD",10,272.214.8951x34332
+DOC_032,HOSP_002,DEPT_016,"Dr. John Alvarez, MD",Emergency Medicine,"MD, FACC",24,001-517-469-3676x32016
+DOC_033,HOSP_001,DEPT_002,"Dr. Linda Dominguez, MD",Emergency Medicine,"MD, FACP",3,908.831.7278x895
+DOC_034,HOSP_001,DEPT_005,"Dr. Maria Kelley, MD",Cardiology,"MD, FACP",7,(677)943-4873
+DOC_035,HOSP_001,DEPT_003,"Dr. Chris Mitchell, MD",Oncology,"MD, FACC",35,855-881-2236x231
+DOC_036,HOSP_002,DEPT_016,"Dr. Mark Owens, MD",General Surgery,"MBBS, MD",16,2367690967
+DOC_037,HOSP_005,DEPT_035,"Dr. Kenneth Price, MD",Pulmonology,"MBBS, MD",18,(488)993-7346x70656
+DOC_038,HOSP_004,DEPT_031,"Dr. Samantha Hooper, MD",Endocrinology,"MD, FACP",9,+1-906-499-0162
+DOC_039,HOSP_001,DEPT_007,"Dr. Brent Gray, MD",Endocrinology,"MD, FCCP",30,975.256.4641
+DOC_040,HOSP_004,DEPT_027,"Dr. Kaitlyn Williams, MD",Nephrology,"MD, FACC",9,(931)300-3309x232
