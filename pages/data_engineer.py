@@ -880,6 +880,7 @@ def render_data_engineer_page():
             from src.rag.document_loader import load_knowledge_documents
             from src.rag.retriever import get_vector_store
             from src.rag.evaluation import run_rag_benchmark
+            from config.settings import ACTIVE_LLM_PROVIDER
 
             docs = load_knowledge_documents()
             store = get_vector_store()
