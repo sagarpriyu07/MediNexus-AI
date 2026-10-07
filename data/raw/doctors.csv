@@ -1,41 +1,501 @@
 doctor_id,hospital_id,department_id,name,specialty,qualification,experience_years,contact
-DOC_001,HOSP_003,DEPT_023,"Dr. Robert Cole, MD",General Surgery,"MD, FACC",32,302-765-4235x116
-DOC_002,HOSP_005,DEPT_035,"Dr. Melanie Munoz, MD",Internal Medicine,"MBBS, MD",8,7785161849
-DOC_003,HOSP_005,DEPT_036,"Dr. Janet Williams, MD",General Surgery,"MD, FCCP",15,441.731.6475
-DOC_004,HOSP_001,DEPT_005,"Dr. Michael Santiago, MD",Cardiology,"MD, FACP",21,001-719-228-3276x483
-DOC_005,HOSP_001,DEPT_006,"Dr. Jeremy Johnson, MD",Emergency Medicine,"MD, FACC",27,564-613-9537x67242
-DOC_006,HOSP_003,DEPT_018,"Dr. Julie Patterson, MD",Nephrology,"MD, FCCP",13,001-365-432-8710
-DOC_007,HOSP_003,DEPT_024,"Dr. Courtney Conner, MD",Oncology,"MD, FACP",20,(791)366-9784x80184
-DOC_008,HOSP_001,DEPT_005,"Dr. Kelly Moore, MD",Pulmonology,"MD, FACP",13,5484281489
-DOC_009,HOSP_004,DEPT_030,"Dr. Nathaniel Martin, MD",Endocrinology,"MD, FCCP",17,001-380-395-7015x43039
-DOC_010,HOSP_003,DEPT_021,"Dr. Jessica Cabrera, MD",Cardiology,"MD, FACP",5,001-682-827-8248x96383
-DOC_011,HOSP_003,DEPT_021,"Dr. Wanda Santos, MD",Endocrinology,"MD, FCCP",7,587.213.3150x983
-DOC_012,HOSP_002,DEPT_014,"Dr. Chad Welch, MD",Oncology,"MD, FACP",34,510.451.8347
-DOC_013,HOSP_004,DEPT_026,"Dr. Jennifer Khan, MD",Nephrology,"MD, FACP",19,001-773-876-3116
-DOC_014,HOSP_002,DEPT_009,"Dr. Robert Shields, MD",Emergency Medicine,"MD, FCCP",30,9104651333
-DOC_015,HOSP_005,DEPT_038,"Dr. Robert Ramirez, MD",Endocrinology,"MD, FCCP",17,517.481.0801
-DOC_016,HOSP_002,DEPT_009,"Dr. Richard Olson, MD",Nephrology,"MD, FACC",6,(502)660-6474x6872
-DOC_017,HOSP_001,DEPT_008,"Dr. Jeff Brown, MD",Pulmonology,"MD, FACP",30,001-380-450-0978x8208
-DOC_018,HOSP_005,DEPT_039,"Dr. Casey Jones, MD",Internal Medicine,"MBBS, MD",27,361.893.9909
-DOC_019,HOSP_005,DEPT_039,"Dr. Diane Cunningham, MD",Nephrology,"MD, FCCP",3,343-353-4624x75107
-DOC_020,HOSP_001,DEPT_008,"Dr. Amanda Wagner, MD",General Surgery,"MD, FCCP",10,(651)235-4278
-DOC_021,HOSP_003,DEPT_019,"Dr. Elizabeth Spencer, MD",Endocrinology,"MD, FACP",32,+1-612-941-1824x49353
-DOC_022,HOSP_001,DEPT_001,"Dr. John Odonnell, MD",General Surgery,"MD, FACP",35,4169400524
-DOC_023,HOSP_001,DEPT_007,"Dr. Andrea Patterson, MD",General Surgery,"MD, FACP",12,4118280598
-DOC_024,HOSP_003,DEPT_024,"Dr. David Parker, MD",Pulmonology,"MD, FACC",23,4535315869
-DOC_025,HOSP_004,DEPT_032,"Dr. Michelle Cherry, MD",Cardiology,"MD, FACC",26,(360)825-6342
-DOC_026,HOSP_003,DEPT_020,"Dr. Monica Garrison, MD",Emergency Medicine,"MD, FACC",18,837.754.3303
-DOC_027,HOSP_005,DEPT_037,"Dr. Joshua Jones, MD",Internal Medicine,"MD, FACC",34,001-345-886-8501x42940
-DOC_028,HOSP_001,DEPT_005,"Dr. Michael Hartman, MD",Pulmonology,"MD, FACP",33,(798)816-9340x60883
-DOC_029,HOSP_005,DEPT_036,"Dr. Chad Beck, MD",Pulmonology,"MD, FCCP",30,895-814-8465x64823
-DOC_030,HOSP_002,DEPT_014,"Dr. Erica Orr, MD",Emergency Medicine,"MD, FCCP",28,+1-794-968-0443x699
-DOC_031,HOSP_003,DEPT_024,"Dr. Scott Lowe, MD",Nephrology,"MBBS, MD",10,272.214.8951x34332
-DOC_032,HOSP_002,DEPT_016,"Dr. John Alvarez, MD",Emergency Medicine,"MD, FACC",24,001-517-469-3676x32016
-DOC_033,HOSP_001,DEPT_002,"Dr. Linda Dominguez, MD",Emergency Medicine,"MD, FACP",3,908.831.7278x895
-DOC_034,HOSP_001,DEPT_005,"Dr. Maria Kelley, MD",Cardiology,"MD, FACP",7,(677)943-4873
-DOC_035,HOSP_001,DEPT_003,"Dr. Chris Mitchell, MD",Oncology,"MD, FACC",35,855-881-2236x231
-DOC_036,HOSP_002,DEPT_016,"Dr. Mark Owens, MD",General Surgery,"MBBS, MD",16,2367690967
-DOC_037,HOSP_005,DEPT_035,"Dr. Kenneth Price, MD",Pulmonology,"MBBS, MD",18,(488)993-7346x70656
-DOC_038,HOSP_004,DEPT_031,"Dr. Samantha Hooper, MD",Endocrinology,"MD, FACP",9,+1-906-499-0162
-DOC_039,HOSP_001,DEPT_007,"Dr. Brent Gray, MD",Endocrinology,"MD, FCCP",30,975.256.4641
-DOC_040,HOSP_004,DEPT_027,"Dr. Kaitlyn Williams, MD",Nephrology,"MD, FACC",9,(931)300-3309x232
+DOC_0001,HOSP_003,DEPT_007,"Dr. Daniel Hamilton, MD",General Surgery,"MD, FCCP",13,+1-555-DOC-0001
+DOC_0002,HOSP_003,DEPT_008,"Dr. Elizabeth Rivera, MD",General Surgery,"MD, FCCP",28,+1-555-DOC-0002
+DOC_0003,HOSP_007,DEPT_019,"Dr. James Collins, MD",Pulmonology,"MBBS, MD",23,+1-555-DOC-0003
+DOC_0004,HOSP_002,DEPT_004,"Dr. Richard Brown, MD",Nephrology,"MD, FCCP",24,+1-555-DOC-0004
+DOC_0005,HOSP_007,DEPT_021,"Dr. Joshua Walker, MD",Nephrology,"MBBS, MD",32,+1-555-DOC-0005
+DOC_0006,HOSP_002,DEPT_006,"Dr. Joseph Mahoney, MD",Nephrology,"MBBS, MD",23,+1-555-DOC-0006
+DOC_0007,HOSP_001,DEPT_001,"Dr. Rita Harrell, MD",Oncology,"MD, FACC",14,+1-555-DOC-0007
+DOC_0008,HOSP_009,DEPT_025,"Dr. Wendy Rice, MD",Pulmonology,"MD, FCCP",33,+1-555-DOC-0008
+DOC_0009,HOSP_004,DEPT_010,"Dr. Michael Jones, MD",Nephrology,"MD, FCCP",32,+1-555-DOC-0009
+DOC_0010,HOSP_010,DEPT_030,"Dr. Darlene Ross, MD",Oncology,"MD, FCCP",14,+1-555-DOC-0010
+DOC_0011,HOSP_008,DEPT_023,"Dr. Andrew Hickman, MD",Cardiology,"MD, FCCP",7,+1-555-DOC-0011
+DOC_0012,HOSP_007,DEPT_019,"Dr. Destiny Smith, MD",General Surgery,"MD, FACC",9,+1-555-DOC-0012
+DOC_0013,HOSP_006,DEPT_018,"Dr. Mike Moore, MD",Cardiology,"MBBS, MD",16,+1-555-DOC-0013
+DOC_0014,HOSP_006,DEPT_018,"Dr. Jeffrey Lawrence, MD",Internal Medicine,"MD, FACC",4,+1-555-DOC-0014
+DOC_0015,HOSP_007,DEPT_020,"Dr. Tracey Garcia, MD",Endocrinology,"MBBS, MD",9,+1-555-DOC-0015
+DOC_0016,HOSP_004,DEPT_012,"Dr. Debra Gardner, MD",Endocrinology,"MD, FCCP",16,+1-555-DOC-0016
+DOC_0017,HOSP_006,DEPT_017,"Dr. Martin Galvan, MD",Internal Medicine,"MBBS, MD",6,+1-555-DOC-0017
+DOC_0018,HOSP_001,DEPT_002,"Dr. Cheryl Archer, MD",Oncology,"MD, FACP",6,+1-555-DOC-0018
+DOC_0019,HOSP_008,DEPT_022,"Dr. Jennifer Evans, MD",Internal Medicine,"MD, FACP",14,+1-555-DOC-0019
+DOC_0020,HOSP_001,DEPT_002,"Dr. Lee Charles, MD",Emergency Medicine,"MD, FACP",33,+1-555-DOC-0020
+DOC_0021,HOSP_006,DEPT_016,"Dr. Melanie Munoz, MD",Nephrology,"MD, FACP",25,+1-555-DOC-0021
+DOC_0022,HOSP_010,DEPT_028,"Dr. Lee Charles, MD",Nephrology,"MD, FACC",18,+1-555-DOC-0022
+DOC_0023,HOSP_005,DEPT_013,"Dr. Jeremy Whitehead, MD",Endocrinology,"MD, FACC",26,+1-555-DOC-0023
+DOC_0024,HOSP_009,DEPT_026,"Dr. Michael Jones, MD",Emergency Medicine,"MD, FACC",11,+1-555-DOC-0024
+DOC_0025,HOSP_010,DEPT_029,"Dr. Melanie Munoz, MD",General Surgery,"MD, FACC",27,+1-555-DOC-0025
+DOC_0026,HOSP_003,DEPT_007,"Dr. Jeffrey Lawrence, MD",Nephrology,"MD, FACC",14,+1-555-DOC-0026
+DOC_0027,HOSP_003,DEPT_008,"Dr. Aaron Nguyen, MD",Pulmonology,"MD, FCCP",19,+1-555-DOC-0027
+DOC_0028,HOSP_003,DEPT_008,"Dr. Angel Doyle, MD",Pulmonology,"MD, FACC",29,+1-555-DOC-0028
+DOC_0029,HOSP_002,DEPT_005,"Dr. Anna Baker, MD",Emergency Medicine,"MD, FCCP",11,+1-555-DOC-0029
+DOC_0030,HOSP_003,DEPT_008,"Dr. Matthew Moore, MD",Internal Medicine,"MD, FACC",18,+1-555-DOC-0030
+DOC_0031,HOSP_008,DEPT_023,"Dr. Rebecca Gardner, MD",Oncology,"MBBS, MD",7,+1-555-DOC-0031
+DOC_0032,HOSP_001,DEPT_003,"Dr. Andrew Lee, MD",Nephrology,"MD, FACP",29,+1-555-DOC-0032
+DOC_0033,HOSP_001,DEPT_003,"Dr. Richard Phillips, MD",Pulmonology,"MD, FACC",17,+1-555-DOC-0033
+DOC_0034,HOSP_005,DEPT_014,"Dr. Nicole Suarez, MD",Cardiology,"MD, FACC",28,+1-555-DOC-0034
+DOC_0035,HOSP_008,DEPT_023,"Dr. Cynthia Baker, MD",Endocrinology,"MD, FCCP",11,+1-555-DOC-0035
+DOC_0036,HOSP_005,DEPT_015,"Dr. Melanie Munoz, MD",Internal Medicine,"MD, FACP",30,+1-555-DOC-0036
+DOC_0037,HOSP_005,DEPT_013,"Dr. Sydney Baker, MD",Endocrinology,"MBBS, MD",9,+1-555-DOC-0037
+DOC_0038,HOSP_006,DEPT_017,"Dr. Erin Herrera, MD",General Surgery,"MBBS, MD",6,+1-555-DOC-0038
+DOC_0039,HOSP_010,DEPT_030,"Dr. Rebecca Gardner, MD",Endocrinology,"MD, FACC",17,+1-555-DOC-0039
+DOC_0040,HOSP_004,DEPT_011,"Dr. George Daniel, MD",Emergency Medicine,"MD, FACC",34,+1-555-DOC-0040
+DOC_0041,HOSP_003,DEPT_007,"Dr. Judy Lambert, MD",Pulmonology,"MD, FACP",30,+1-555-DOC-0041
+DOC_0042,HOSP_001,DEPT_002,"Dr. Steven Torres, MD",General Surgery,"MD, FACP",27,+1-555-DOC-0042
+DOC_0043,HOSP_007,DEPT_021,"Dr. Cheryl Archer, MD",Emergency Medicine,"MBBS, MD",14,+1-555-DOC-0043
+DOC_0044,HOSP_004,DEPT_012,"Dr. John Caldwell, MD",Oncology,"MD, FACP",13,+1-555-DOC-0044
+DOC_0045,HOSP_009,DEPT_026,"Dr. Tracey Garcia, MD",Cardiology,"MD, FCCP",32,+1-555-DOC-0045
+DOC_0046,HOSP_001,DEPT_001,"Dr. Charles Lewis, MD",Cardiology,"MD, FCCP",32,+1-555-DOC-0046
+DOC_0047,HOSP_009,DEPT_025,"Dr. Christopher Lopez, MD",General Surgery,"MD, FACC",5,+1-555-DOC-0047
+DOC_0048,HOSP_003,DEPT_007,"Dr. Aaron Mitchell, MD",Nephrology,"MD, FCCP",11,+1-555-DOC-0048
+DOC_0049,HOSP_010,DEPT_030,"Dr. Leah Shields, MD",Cardiology,"MD, FCCP",12,+1-555-DOC-0049
+DOC_0050,HOSP_004,DEPT_012,"Dr. Mary Aguilar, MD",Endocrinology,"MD, FCCP",24,+1-555-DOC-0050
+DOC_0051,HOSP_008,DEPT_024,"Dr. Daniel Hamilton, MD",Cardiology,"MD, FACP",19,+1-555-DOC-0051
+DOC_0052,HOSP_009,DEPT_026,"Dr. Erin Herrera, MD",Emergency Medicine,"MD, FACP",9,+1-555-DOC-0052
+DOC_0053,HOSP_001,DEPT_002,"Dr. Nicole Suarez, MD",Cardiology,"MD, FACC",19,+1-555-DOC-0053
+DOC_0054,HOSP_008,DEPT_024,"Dr. Chad Welch, MD",Pulmonology,"MD, FACC",4,+1-555-DOC-0054
+DOC_0055,HOSP_001,DEPT_002,"Dr. Daniel Graham, MD",Endocrinology,"MD, FACC",34,+1-555-DOC-0055
+DOC_0056,HOSP_001,DEPT_001,"Dr. Charles Lewis, MD",Pulmonology,"MD, FACP",4,+1-555-DOC-0056
+DOC_0057,HOSP_007,DEPT_021,"Dr. Andrew Lee, MD",Internal Medicine,"MBBS, MD",8,+1-555-DOC-0057
+DOC_0058,HOSP_008,DEPT_023,"Dr. Christopher Tucker, MD",Endocrinology,"MD, FCCP",26,+1-555-DOC-0058
+DOC_0059,HOSP_009,DEPT_027,"Dr. Rodney Hill, MD",Endocrinology,"MD, FACP",26,+1-555-DOC-0059
+DOC_0060,HOSP_002,DEPT_005,"Dr. Christopher Lopez, MD",Internal Medicine,"MD, FACP",24,+1-555-DOC-0060
+DOC_0061,HOSP_004,DEPT_011,"Dr. Meghan Davis, MD",Cardiology,"MD, FACC",30,+1-555-DOC-0061
+DOC_0062,HOSP_009,DEPT_027,"Dr. Katie Anderson, MD",Nephrology,"MD, FACC",5,+1-555-DOC-0062
+DOC_0063,HOSP_007,DEPT_020,"Dr. Judy Lambert, MD",Emergency Medicine,"MD, FCCP",28,+1-555-DOC-0063
+DOC_0064,HOSP_001,DEPT_003,"Dr. Dana Green, MD",Emergency Medicine,"MBBS, MD",9,+1-555-DOC-0064
+DOC_0065,HOSP_007,DEPT_020,"Dr. Michelle Cherry, MD",Nephrology,"MBBS, MD",9,+1-555-DOC-0065
+DOC_0066,HOSP_006,DEPT_018,"Dr. Richard Brown, MD",Cardiology,"MD, FCCP",30,+1-555-DOC-0066
+DOC_0067,HOSP_009,DEPT_025,"Dr. Tara White, MD",Endocrinology,"MD, FCCP",32,+1-555-DOC-0067
+DOC_0068,HOSP_004,DEPT_010,"Dr. Andrea Williams, MD",Endocrinology,"MBBS, MD",18,+1-555-DOC-0068
+DOC_0069,HOSP_009,DEPT_026,"Dr. Amy Adkins, MD",Cardiology,"MBBS, MD",30,+1-555-DOC-0069
+DOC_0070,HOSP_006,DEPT_017,"Dr. Joshua Walker, MD",Cardiology,"MBBS, MD",32,+1-555-DOC-0070
+DOC_0071,HOSP_004,DEPT_012,"Dr. Kevin Kelley, MD",General Surgery,"MBBS, MD",29,+1-555-DOC-0071
+DOC_0072,HOSP_008,DEPT_023,"Dr. Jeffrey Lawrence, MD",Cardiology,"MD, FCCP",21,+1-555-DOC-0072
+DOC_0073,HOSP_006,DEPT_016,"Dr. Nicole Suarez, MD",Emergency Medicine,"MBBS, MD",24,+1-555-DOC-0073
+DOC_0074,HOSP_008,DEPT_024,"Dr. Michelle Cherry, MD",Nephrology,"MBBS, MD",13,+1-555-DOC-0074
+DOC_0075,HOSP_006,DEPT_017,"Dr. Diana Marshall, MD",Emergency Medicine,"MD, FACP",10,+1-555-DOC-0075
+DOC_0076,HOSP_007,DEPT_020,"Dr. Amy Adkins, MD",Oncology,"MD, FACC",5,+1-555-DOC-0076
+DOC_0077,HOSP_009,DEPT_025,"Dr. Richard Morgan, MD",Internal Medicine,"MBBS, MD",16,+1-555-DOC-0077
+DOC_0078,HOSP_006,DEPT_018,"Dr. David Fisher, MD",Oncology,"MD, FCCP",18,+1-555-DOC-0078
+DOC_0079,HOSP_010,DEPT_029,"Dr. Jeffrey Velasquez, MD",Emergency Medicine,"MD, FACC",6,+1-555-DOC-0079
+DOC_0080,HOSP_001,DEPT_001,"Dr. Cynthia Baker, MD",General Surgery,"MBBS, MD",22,+1-555-DOC-0080
+DOC_0081,HOSP_008,DEPT_024,"Dr. Yolanda Ferrell, MD",Nephrology,"MD, FCCP",5,+1-555-DOC-0081
+DOC_0082,HOSP_006,DEPT_017,"Dr. Yolanda Ferrell, MD",Cardiology,"MBBS, MD",14,+1-555-DOC-0082
+DOC_0083,HOSP_009,DEPT_027,"Dr. Eric Yu, MD",Oncology,"MD, FCCP",24,+1-555-DOC-0083
+DOC_0084,HOSP_005,DEPT_014,"Dr. Kimberly Henson, MD",Oncology,"MD, FACP",15,+1-555-DOC-0084
+DOC_0085,HOSP_007,DEPT_019,"Dr. Catherine Dixon, MD",Nephrology,"MD, FCCP",29,+1-555-DOC-0085
+DOC_0086,HOSP_001,DEPT_002,"Dr. Janet Williams, MD",Oncology,"MD, FACC",30,+1-555-DOC-0086
+DOC_0087,HOSP_005,DEPT_015,"Dr. Kyle Ortiz, MD",Cardiology,"MD, FACC",30,+1-555-DOC-0087
+DOC_0088,HOSP_010,DEPT_029,"Dr. Bryan James, MD",Pulmonology,"MBBS, MD",5,+1-555-DOC-0088
+DOC_0089,HOSP_006,DEPT_017,"Dr. Amanda Dudley, MD",Emergency Medicine,"MBBS, MD",32,+1-555-DOC-0089
+DOC_0090,HOSP_010,DEPT_029,"Dr. Daniel Burton, MD",General Surgery,"MD, FACP",5,+1-555-DOC-0090
+DOC_0091,HOSP_010,DEPT_028,"Dr. Nancy Edwards, MD",Nephrology,"MD, FACC",19,+1-555-DOC-0091
+DOC_0092,HOSP_005,DEPT_014,"Dr. Jessica Edwards, MD",Endocrinology,"MD, FCCP",30,+1-555-DOC-0092
+DOC_0093,HOSP_001,DEPT_001,"Dr. Christopher Lopez, MD",Endocrinology,"MD, FACC",23,+1-555-DOC-0093
+DOC_0094,HOSP_008,DEPT_023,"Dr. Michelle Cherry, MD",Nephrology,"MD, FCCP",34,+1-555-DOC-0094
+DOC_0095,HOSP_006,DEPT_018,"Dr. Cynthia Diaz, MD",Internal Medicine,"MD, FCCP",24,+1-555-DOC-0095
+DOC_0096,HOSP_009,DEPT_026,"Dr. Natalie Arroyo, MD",Nephrology,"MD, FACP",26,+1-555-DOC-0096
+DOC_0097,HOSP_006,DEPT_018,"Dr. Angela Cohen, MD",Endocrinology,"MD, FACP",25,+1-555-DOC-0097
+DOC_0098,HOSP_001,DEPT_002,"Dr. Charles Ellis, MD",Pulmonology,"MD, FACP",4,+1-555-DOC-0098
+DOC_0099,HOSP_009,DEPT_026,"Dr. Amanda Dudley, MD",Nephrology,"MD, FACC",11,+1-555-DOC-0099
+DOC_0100,HOSP_004,DEPT_011,"Dr. Tina Herrera, MD",Endocrinology,"MD, FACC",12,+1-555-DOC-0100
+DOC_0101,HOSP_008,DEPT_023,"Dr. Mitchell Clark, MD",Pulmonology,"MD, FACP",27,+1-555-DOC-0101
+DOC_0102,HOSP_008,DEPT_024,"Dr. Susan Rogers, MD",Emergency Medicine,"MD, FACP",9,+1-555-DOC-0102
+DOC_0103,HOSP_009,DEPT_025,"Dr. Jason Hahn, MD",General Surgery,"MBBS, MD",3,+1-555-DOC-0103
+DOC_0104,HOSP_003,DEPT_008,"Dr. Meghan Davis, MD",Oncology,"MBBS, MD",21,+1-555-DOC-0104
+DOC_0105,HOSP_008,DEPT_023,"Dr. Tracy Whitehead, MD",Emergency Medicine,"MD, FACP",4,+1-555-DOC-0105
+DOC_0106,HOSP_008,DEPT_023,"Dr. Jennifer Evans, MD",Oncology,"MD, FCCP",27,+1-555-DOC-0106
+DOC_0107,HOSP_009,DEPT_026,"Dr. Aaron Nguyen, MD",Oncology,"MD, FACC",24,+1-555-DOC-0107
+DOC_0108,HOSP_009,DEPT_026,"Dr. Rita Harrell, MD",Oncology,"MD, FACC",22,+1-555-DOC-0108
+DOC_0109,HOSP_004,DEPT_010,"Dr. Katie Anderson, MD",Endocrinology,"MD, FACP",13,+1-555-DOC-0109
+DOC_0110,HOSP_010,DEPT_028,"Dr. Tanya House, MD",Cardiology,"MBBS, MD",23,+1-555-DOC-0110
+DOC_0111,HOSP_010,DEPT_028,"Dr. Susan Cowan, MD",General Surgery,"MD, FCCP",6,+1-555-DOC-0111
+DOC_0112,HOSP_002,DEPT_006,"Dr. Angela Higgins, MD",Nephrology,"MBBS, MD",32,+1-555-DOC-0112
+DOC_0113,HOSP_005,DEPT_015,"Dr. Andrea Williams, MD",Endocrinology,"MBBS, MD",22,+1-555-DOC-0113
+DOC_0114,HOSP_006,DEPT_016,"Dr. Susan Rogers, MD",Internal Medicine,"MBBS, MD",12,+1-555-DOC-0114
+DOC_0115,HOSP_010,DEPT_030,"Dr. Dana Green, MD",Cardiology,"MBBS, MD",33,+1-555-DOC-0115
+DOC_0116,HOSP_007,DEPT_019,"Dr. Tracey Garcia, MD",Internal Medicine,"MD, FCCP",28,+1-555-DOC-0116
+DOC_0117,HOSP_002,DEPT_005,"Dr. Brooke Leonard, MD",Oncology,"MD, FCCP",33,+1-555-DOC-0117
+DOC_0118,HOSP_003,DEPT_009,"Dr. Joseph Jacobs, MD",General Surgery,"MD, FACC",28,+1-555-DOC-0118
+DOC_0119,HOSP_009,DEPT_026,"Dr. Danielle Johnson, MD",Endocrinology,"MD, FACP",34,+1-555-DOC-0119
+DOC_0120,HOSP_010,DEPT_030,"Dr. Joe Wilson, MD",Nephrology,"MD, FACC",10,+1-555-DOC-0120
+DOC_0121,HOSP_005,DEPT_013,"Dr. Brooke Leonard, MD",Cardiology,"MBBS, MD",31,+1-555-DOC-0121
+DOC_0122,HOSP_003,DEPT_007,"Dr. Kyle Ortiz, MD",Endocrinology,"MD, FACC",24,+1-555-DOC-0122
+DOC_0123,HOSP_010,DEPT_029,"Dr. Shelby Byrd, MD",Emergency Medicine,"MD, FACP",18,+1-555-DOC-0123
+DOC_0124,HOSP_007,DEPT_019,"Dr. Selena Duncan, MD",Cardiology,"MD, FACC",16,+1-555-DOC-0124
+DOC_0125,HOSP_010,DEPT_028,"Dr. Chad Hodges, MD",Endocrinology,"MD, FACC",32,+1-555-DOC-0125
+DOC_0126,HOSP_005,DEPT_014,"Dr. Lee Charles, MD",Emergency Medicine,"MD, FACC",14,+1-555-DOC-0126
+DOC_0127,HOSP_006,DEPT_016,"Dr. Tina Herrera, MD",General Surgery,"MD, FCCP",6,+1-555-DOC-0127
+DOC_0128,HOSP_001,DEPT_001,"Dr. Tanya House, MD",Endocrinology,"MD, FACP",12,+1-555-DOC-0128
+DOC_0129,HOSP_008,DEPT_022,"Dr. Chad Hodges, MD",Emergency Medicine,"MD, FACP",22,+1-555-DOC-0129
+DOC_0130,HOSP_004,DEPT_010,"Dr. Dana Green, MD",Internal Medicine,"MBBS, MD",3,+1-555-DOC-0130
+DOC_0131,HOSP_008,DEPT_024,"Dr. Chad Hodges, MD",General Surgery,"MBBS, MD",18,+1-555-DOC-0131
+DOC_0132,HOSP_008,DEPT_024,"Dr. Jerry Robinson, MD",Endocrinology,"MD, FACP",19,+1-555-DOC-0132
+DOC_0133,HOSP_010,DEPT_028,"Dr. Yolanda Ferrell, MD",Nephrology,"MD, FCCP",22,+1-555-DOC-0133
+DOC_0134,HOSP_008,DEPT_024,"Dr. Joseph Jacobs, MD",Internal Medicine,"MD, FCCP",30,+1-555-DOC-0134
+DOC_0135,HOSP_001,DEPT_001,"Dr. Michelle Cherry, MD",General Surgery,"MD, FCCP",13,+1-555-DOC-0135
+DOC_0136,HOSP_002,DEPT_005,"Dr. Matthew Moore, MD",Pulmonology,"MD, FACC",3,+1-555-DOC-0136
+DOC_0137,HOSP_003,DEPT_008,"Dr. Amber Blair, MD",Pulmonology,"MBBS, MD",31,+1-555-DOC-0137
+DOC_0138,HOSP_005,DEPT_013,"Dr. Matthew Moore, MD",Endocrinology,"MD, FACP",4,+1-555-DOC-0138
+DOC_0139,HOSP_010,DEPT_029,"Dr. Leslie Adams, MD",Endocrinology,"MD, FACC",28,+1-555-DOC-0139
+DOC_0140,HOSP_003,DEPT_008,"Dr. Richard Morgan, MD",Internal Medicine,"MD, FACP",28,+1-555-DOC-0140
+DOC_0141,HOSP_010,DEPT_030,"Dr. Lisa Keith, MD",Pulmonology,"MD, FACC",9,+1-555-DOC-0141
+DOC_0142,HOSP_002,DEPT_004,"Dr. Rita Harrell, MD",General Surgery,"MD, FACP",15,+1-555-DOC-0142
+DOC_0143,HOSP_004,DEPT_011,"Dr. John Garcia, MD",Nephrology,"MBBS, MD",27,+1-555-DOC-0143
+DOC_0144,HOSP_007,DEPT_021,"Dr. Martin Galvan, MD",Internal Medicine,"MD, FACC",11,+1-555-DOC-0144
+DOC_0145,HOSP_008,DEPT_024,"Dr. Kyle Ortiz, MD",Pulmonology,"MD, FACC",5,+1-555-DOC-0145
+DOC_0146,HOSP_006,DEPT_016,"Dr. Jason Hahn, MD",Internal Medicine,"MD, FACC",9,+1-555-DOC-0146
+DOC_0147,HOSP_008,DEPT_024,"Dr. Rebecca Gardner, MD",Oncology,"MBBS, MD",7,+1-555-DOC-0147
+DOC_0148,HOSP_004,DEPT_012,"Dr. Brian Silva, MD",Endocrinology,"MD, FACC",25,+1-555-DOC-0148
+DOC_0149,HOSP_009,DEPT_025,"Dr. Andrea Williams, MD",Cardiology,"MD, FACP",19,+1-555-DOC-0149
+DOC_0150,HOSP_006,DEPT_017,"Dr. Kimberly Moreno, MD",Emergency Medicine,"MBBS, MD",27,+1-555-DOC-0150
+DOC_0151,HOSP_008,DEPT_022,"Dr. Jennifer Harris, MD",Pulmonology,"MD, FCCP",19,+1-555-DOC-0151
+DOC_0152,HOSP_002,DEPT_004,"Dr. Joseph Jacobs, MD",General Surgery,"MD, FACC",21,+1-555-DOC-0152
+DOC_0153,HOSP_004,DEPT_012,"Dr. Jeffrey Lawrence, MD",Endocrinology,"MBBS, MD",16,+1-555-DOC-0153
+DOC_0154,HOSP_007,DEPT_020,"Dr. Michele Jones, MD",Internal Medicine,"MD, FCCP",18,+1-555-DOC-0154
+DOC_0155,HOSP_007,DEPT_021,"Dr. Chad Hodges, MD",Pulmonology,"MBBS, MD",27,+1-555-DOC-0155
+DOC_0156,HOSP_007,DEPT_020,"Dr. James Moran, MD",General Surgery,"MBBS, MD",23,+1-555-DOC-0156
+DOC_0157,HOSP_008,DEPT_023,"Dr. Meghan Davis, MD",Cardiology,"MD, FCCP",15,+1-555-DOC-0157
+DOC_0158,HOSP_007,DEPT_021,"Dr. Brenda Hurst, MD",Internal Medicine,"MD, FCCP",16,+1-555-DOC-0158
+DOC_0159,HOSP_009,DEPT_026,"Dr. Martha Warner, MD",Pulmonology,"MD, FCCP",31,+1-555-DOC-0159
+DOC_0160,HOSP_004,DEPT_011,"Dr. James Collins, MD",Internal Medicine,"MD, FCCP",14,+1-555-DOC-0160
+DOC_0161,HOSP_003,DEPT_009,"Dr. Amber Blair, MD",Internal Medicine,"MBBS, MD",19,+1-555-DOC-0161
+DOC_0162,HOSP_010,DEPT_029,"Dr. Anthony Gonzalez, MD",Oncology,"MD, FACC",10,+1-555-DOC-0162
+DOC_0163,HOSP_004,DEPT_010,"Dr. Elizabeth Mcmillan, MD",Internal Medicine,"MD, FCCP",28,+1-555-DOC-0163
+DOC_0164,HOSP_001,DEPT_002,"Dr. Robert Johnson, MD",General Surgery,"MD, FACC",8,+1-555-DOC-0164
+DOC_0165,HOSP_007,DEPT_019,"Dr. Lisa Evans, MD",Nephrology,"MD, FACC",3,+1-555-DOC-0165
+DOC_0166,HOSP_008,DEPT_022,"Dr. Rodney Hill, MD",Endocrinology,"MD, FCCP",27,+1-555-DOC-0166
+DOC_0167,HOSP_005,DEPT_013,"Dr. Mike Moore, MD",Emergency Medicine,"MD, FACP",30,+1-555-DOC-0167
+DOC_0168,HOSP_007,DEPT_019,"Dr. Elizabeth Rivera, MD",Emergency Medicine,"MD, FACP",9,+1-555-DOC-0168
+DOC_0169,HOSP_009,DEPT_027,"Dr. Rodney Owens, MD",Pulmonology,"MD, FCCP",32,+1-555-DOC-0169
+DOC_0170,HOSP_001,DEPT_003,"Dr. Mark Lin, MD",General Surgery,"MD, FACP",30,+1-555-DOC-0170
+DOC_0171,HOSP_010,DEPT_030,"Dr. Rita Harrell, MD",Emergency Medicine,"MBBS, MD",10,+1-555-DOC-0171
+DOC_0172,HOSP_010,DEPT_029,"Dr. Charles Ellis, MD",Cardiology,"MD, FCCP",3,+1-555-DOC-0172
+DOC_0173,HOSP_001,DEPT_003,"Dr. Tracey Garcia, MD",Oncology,"MD, FACC",33,+1-555-DOC-0173
+DOC_0174,HOSP_010,DEPT_028,"Dr. Brian Silva, MD",Cardiology,"MBBS, MD",3,+1-555-DOC-0174
+DOC_0175,HOSP_002,DEPT_006,"Dr. Brooke Leonard, MD",Oncology,"MD, FACP",14,+1-555-DOC-0175
+DOC_0176,HOSP_005,DEPT_013,"Dr. Eric Spears, MD",General Surgery,"MD, FACC",17,+1-555-DOC-0176
+DOC_0177,HOSP_007,DEPT_021,"Dr. Jerry Robinson, MD",Oncology,"MD, FACC",13,+1-555-DOC-0177
+DOC_0178,HOSP_010,DEPT_028,"Dr. Martin Galvan, MD",Pulmonology,"MD, FCCP",22,+1-555-DOC-0178
+DOC_0179,HOSP_009,DEPT_025,"Dr. Adam Wise, MD",Endocrinology,"MD, FACC",19,+1-555-DOC-0179
+DOC_0180,HOSP_005,DEPT_014,"Dr. Tracy Whitehead, MD",Endocrinology,"MD, FACC",23,+1-555-DOC-0180
+DOC_0181,HOSP_008,DEPT_022,"Dr. Joe Wilson, MD",Pulmonology,"MBBS, MD",25,+1-555-DOC-0181
+DOC_0182,HOSP_009,DEPT_025,"Dr. Matthew Moore, MD",Internal Medicine,"MBBS, MD",18,+1-555-DOC-0182
+DOC_0183,HOSP_003,DEPT_008,"Dr. Melinda Martin, MD",Emergency Medicine,"MBBS, MD",30,+1-555-DOC-0183
+DOC_0184,HOSP_007,DEPT_021,"Dr. Debra Gardner, MD",Internal Medicine,"MBBS, MD",6,+1-555-DOC-0184
+DOC_0185,HOSP_009,DEPT_026,"Dr. Lisa Evans, MD",Internal Medicine,"MBBS, MD",20,+1-555-DOC-0185
+DOC_0186,HOSP_010,DEPT_028,"Dr. Tanya House, MD",Cardiology,"MBBS, MD",34,+1-555-DOC-0186
+DOC_0187,HOSP_009,DEPT_027,"Dr. Jennifer Evans, MD",Cardiology,"MD, FACC",3,+1-555-DOC-0187
+DOC_0188,HOSP_007,DEPT_021,"Dr. John Garcia, MD",General Surgery,"MD, FACP",5,+1-555-DOC-0188
+DOC_0189,HOSP_010,DEPT_029,"Dr. Cheryl Archer, MD",Internal Medicine,"MD, FCCP",34,+1-555-DOC-0189
+DOC_0190,HOSP_002,DEPT_005,"Dr. Laura Henderson, MD",Cardiology,"MD, FACP",12,+1-555-DOC-0190
+DOC_0191,HOSP_008,DEPT_024,"Dr. Frank Gray, MD",Internal Medicine,"MD, FCCP",15,+1-555-DOC-0191
+DOC_0192,HOSP_002,DEPT_005,"Dr. Pamela Sanchez, MD",Nephrology,"MD, FACC",24,+1-555-DOC-0192
+DOC_0193,HOSP_001,DEPT_001,"Dr. Adam Wise, MD",Nephrology,"MD, FCCP",19,+1-555-DOC-0193
+DOC_0194,HOSP_004,DEPT_011,"Dr. Jason Anderson, MD",Internal Medicine,"MD, FCCP",27,+1-555-DOC-0194
+DOC_0195,HOSP_008,DEPT_022,"Dr. Kenneth Fowler, MD",Pulmonology,"MD, FACC",15,+1-555-DOC-0195
+DOC_0196,HOSP_001,DEPT_001,"Dr. Scott Callahan, MD",Cardiology,"MD, FCCP",33,+1-555-DOC-0196
+DOC_0197,HOSP_001,DEPT_001,"Dr. Ronald Smith, MD",Nephrology,"MD, FCCP",8,+1-555-DOC-0197
+DOC_0198,HOSP_010,DEPT_028,"Dr. Kevin Kelley, MD",Endocrinology,"MD, FACC",8,+1-555-DOC-0198
+DOC_0199,HOSP_001,DEPT_003,"Dr. Jessica Edwards, MD",Endocrinology,"MD, FACC",23,+1-555-DOC-0199
+DOC_0200,HOSP_002,DEPT_005,"Dr. Michele Jones, MD",Cardiology,"MD, FACC",16,+1-555-DOC-0200
+DOC_0201,HOSP_003,DEPT_009,"Dr. Eric Phillips, MD",Cardiology,"MD, FCCP",15,+1-555-DOC-0201
+DOC_0202,HOSP_005,DEPT_013,"Dr. Patricia Miller, MD",Oncology,"MD, FACC",19,+1-555-DOC-0202
+DOC_0203,HOSP_003,DEPT_008,"Dr. Angela Cohen, MD",Internal Medicine,"MBBS, MD",33,+1-555-DOC-0203
+DOC_0204,HOSP_003,DEPT_008,"Dr. Robin Ellis, MD",Internal Medicine,"MD, FACP",4,+1-555-DOC-0204
+DOC_0205,HOSP_008,DEPT_022,"Dr. Joe Wilson, MD",Pulmonology,"MD, FCCP",20,+1-555-DOC-0205
+DOC_0206,HOSP_004,DEPT_012,"Dr. Richard Phillips, MD",Oncology,"MBBS, MD",7,+1-555-DOC-0206
+DOC_0207,HOSP_010,DEPT_030,"Dr. Vincent White, MD",Cardiology,"MBBS, MD",33,+1-555-DOC-0207
+DOC_0208,HOSP_005,DEPT_015,"Dr. Rebecca Gardner, MD",Endocrinology,"MD, FACC",23,+1-555-DOC-0208
+DOC_0209,HOSP_005,DEPT_014,"Dr. Kyle Brown, MD",Pulmonology,"MD, FCCP",9,+1-555-DOC-0209
+DOC_0210,HOSP_002,DEPT_006,"Dr. Kyle Ortiz, MD",Emergency Medicine,"MD, FACP",8,+1-555-DOC-0210
+DOC_0211,HOSP_006,DEPT_018,"Dr. Scott Callahan, MD",Internal Medicine,"MD, FACP",17,+1-555-DOC-0211
+DOC_0212,HOSP_009,DEPT_027,"Dr. Sydney Baker, MD",Endocrinology,"MD, FACP",22,+1-555-DOC-0212
+DOC_0213,HOSP_009,DEPT_025,"Dr. Lisa Adams, MD",Cardiology,"MBBS, MD",17,+1-555-DOC-0213
+DOC_0214,HOSP_010,DEPT_028,"Dr. Frank Gray, MD",Endocrinology,"MD, FACP",21,+1-555-DOC-0214
+DOC_0215,HOSP_006,DEPT_017,"Dr. Martha Warner, MD",General Surgery,"MBBS, MD",12,+1-555-DOC-0215
+DOC_0216,HOSP_008,DEPT_024,"Dr. Rodney Hill, MD",Internal Medicine,"MD, FACC",30,+1-555-DOC-0216
+DOC_0217,HOSP_007,DEPT_020,"Dr. Chad Hodges, MD",Internal Medicine,"MD, FACP",23,+1-555-DOC-0217
+DOC_0218,HOSP_001,DEPT_002,"Dr. Leslie Walton, MD",Pulmonology,"MD, FCCP",18,+1-555-DOC-0218
+DOC_0219,HOSP_004,DEPT_011,"Dr. Eric Yu, MD",Endocrinology,"MD, FACC",25,+1-555-DOC-0219
+DOC_0220,HOSP_008,DEPT_023,"Dr. Jerry Robinson, MD",Endocrinology,"MD, FCCP",24,+1-555-DOC-0220
+DOC_0221,HOSP_006,DEPT_016,"Dr. Debra Gardner, MD",Emergency Medicine,"MBBS, MD",6,+1-555-DOC-0221
+DOC_0222,HOSP_008,DEPT_024,"Dr. Cynthia Diaz, MD",Pulmonology,"MBBS, MD",5,+1-555-DOC-0222
+DOC_0223,HOSP_009,DEPT_027,"Dr. Richard Morgan, MD",Nephrology,"MD, FACP",31,+1-555-DOC-0223
+DOC_0224,HOSP_009,DEPT_026,"Dr. Alexander Le, MD",Pulmonology,"MD, FACC",7,+1-555-DOC-0224
+DOC_0225,HOSP_006,DEPT_018,"Dr. Tracey Garcia, MD",Internal Medicine,"MD, FACC",24,+1-555-DOC-0225
+DOC_0226,HOSP_007,DEPT_021,"Dr. Katie Anderson, MD",Cardiology,"MD, FACC",11,+1-555-DOC-0226
+DOC_0227,HOSP_004,DEPT_012,"Dr. Rodney Owens, MD",Oncology,"MD, FACP",19,+1-555-DOC-0227
+DOC_0228,HOSP_005,DEPT_014,"Dr. Christopher Williams, MD",Pulmonology,"MD, FACC",28,+1-555-DOC-0228
+DOC_0229,HOSP_009,DEPT_025,"Dr. Laura Henderson, MD",Cardiology,"MD, FACP",17,+1-555-DOC-0229
+DOC_0230,HOSP_008,DEPT_024,"Dr. Michelle Wright, MD",Pulmonology,"MD, FCCP",18,+1-555-DOC-0230
+DOC_0231,HOSP_010,DEPT_029,"Dr. Chad Welch, MD",Internal Medicine,"MBBS, MD",3,+1-555-DOC-0231
+DOC_0232,HOSP_003,DEPT_008,"Dr. Brian Silva, MD",Pulmonology,"MD, FACC",22,+1-555-DOC-0232
+DOC_0233,HOSP_005,DEPT_015,"Dr. Laura Henderson, MD",Endocrinology,"MBBS, MD",24,+1-555-DOC-0233
+DOC_0234,HOSP_005,DEPT_014,"Dr. Deborah Lynch, MD",Endocrinology,"MD, FACP",26,+1-555-DOC-0234
+DOC_0235,HOSP_001,DEPT_002,"Dr. Angela Higgins, MD",Internal Medicine,"MD, FACP",29,+1-555-DOC-0235
+DOC_0236,HOSP_008,DEPT_024,"Dr. Eric Yu, MD",Endocrinology,"MD, FCCP",17,+1-555-DOC-0236
+DOC_0237,HOSP_008,DEPT_023,"Dr. Spencer Henderson, MD",Endocrinology,"MBBS, MD",15,+1-555-DOC-0237
+DOC_0238,HOSP_006,DEPT_018,"Dr. Diana Foster, MD",Pulmonology,"MD, FCCP",17,+1-555-DOC-0238
+DOC_0239,HOSP_009,DEPT_025,"Dr. Pamela Sanchez, MD",General Surgery,"MBBS, MD",12,+1-555-DOC-0239
+DOC_0240,HOSP_003,DEPT_007,"Dr. Aaron Frost, MD",Cardiology,"MD, FCCP",24,+1-555-DOC-0240
+DOC_0241,HOSP_009,DEPT_026,"Dr. Leslie Walton, MD",Emergency Medicine,"MD, FACC",19,+1-555-DOC-0241
+DOC_0242,HOSP_005,DEPT_013,"Dr. Cynthia Diaz, MD",Emergency Medicine,"MD, FACP",5,+1-555-DOC-0242
+DOC_0243,HOSP_003,DEPT_009,"Dr. Angela Higgins, MD",Internal Medicine,"MD, FCCP",6,+1-555-DOC-0243
+DOC_0244,HOSP_005,DEPT_015,"Dr. Jeremy Johnson, MD",Endocrinology,"MBBS, MD",10,+1-555-DOC-0244
+DOC_0245,HOSP_006,DEPT_017,"Dr. Michele Jones, MD",Internal Medicine,"MD, FACC",7,+1-555-DOC-0245
+DOC_0246,HOSP_002,DEPT_006,"Dr. Daniel Hamilton, MD",Internal Medicine,"MBBS, MD",4,+1-555-DOC-0246
+DOC_0247,HOSP_009,DEPT_027,"Dr. Jonathan Fletcher, MD",Pulmonology,"MD, FACC",8,+1-555-DOC-0247
+DOC_0248,HOSP_002,DEPT_005,"Dr. Robert Silva, MD",Cardiology,"MD, FACC",24,+1-555-DOC-0248
+DOC_0249,HOSP_007,DEPT_021,"Dr. Aaron Mitchell, MD",Oncology,"MD, FCCP",18,+1-555-DOC-0249
+DOC_0250,HOSP_002,DEPT_004,"Dr. Michelle Wright, MD",Pulmonology,"MD, FACP",32,+1-555-DOC-0250
+DOC_0251,HOSP_010,DEPT_030,"Dr. James West, MD",Nephrology,"MD, FCCP",11,+1-555-DOC-0251
+DOC_0252,HOSP_008,DEPT_023,"Dr. Nicole Suarez, MD",Pulmonology,"MD, FCCP",10,+1-555-DOC-0252
+DOC_0253,HOSP_002,DEPT_005,"Dr. Jason Hahn, MD",Nephrology,"MD, FCCP",8,+1-555-DOC-0253
+DOC_0254,HOSP_001,DEPT_002,"Dr. James Collins, MD",Emergency Medicine,"MD, FCCP",8,+1-555-DOC-0254
+DOC_0255,HOSP_008,DEPT_022,"Dr. Brian Silva, MD",Oncology,"MBBS, MD",8,+1-555-DOC-0255
+DOC_0256,HOSP_007,DEPT_019,"Dr. Kimberly Moreno, MD",Cardiology,"MD, FACP",17,+1-555-DOC-0256
+DOC_0257,HOSP_004,DEPT_011,"Dr. Lisa Evans, MD",Internal Medicine,"MD, FCCP",15,+1-555-DOC-0257
+DOC_0258,HOSP_004,DEPT_012,"Dr. Martha Warner, MD",Oncology,"MD, FACP",24,+1-555-DOC-0258
+DOC_0259,HOSP_002,DEPT_004,"Dr. Maria Montgomery, MD",Emergency Medicine,"MD, FACC",22,+1-555-DOC-0259
+DOC_0260,HOSP_006,DEPT_017,"Dr. Joseph Jacobs, MD",Endocrinology,"MD, FACC",28,+1-555-DOC-0260
+DOC_0261,HOSP_005,DEPT_014,"Dr. Andrew Hickman, MD",Oncology,"MD, FACC",32,+1-555-DOC-0261
+DOC_0262,HOSP_004,DEPT_011,"Dr. Yvette Huff, MD",General Surgery,"MD, FCCP",5,+1-555-DOC-0262
+DOC_0263,HOSP_001,DEPT_001,"Dr. Cheryl Archer, MD",Internal Medicine,"MBBS, MD",12,+1-555-DOC-0263
+DOC_0264,HOSP_002,DEPT_005,"Dr. Rebecca Gardner, MD",Internal Medicine,"MBBS, MD",4,+1-555-DOC-0264
+DOC_0265,HOSP_005,DEPT_013,"Dr. Monica Garrison, MD",Internal Medicine,"MBBS, MD",3,+1-555-DOC-0265
+DOC_0266,HOSP_002,DEPT_005,"Dr. Rodney Lewis, MD",Cardiology,"MD, FACC",13,+1-555-DOC-0266
+DOC_0267,HOSP_005,DEPT_015,"Dr. Mary Aguilar, MD",Oncology,"MD, FCCP",5,+1-555-DOC-0267
+DOC_0268,HOSP_010,DEPT_030,"Dr. James West, MD",Cardiology,"MD, FACC",32,+1-555-DOC-0268
+DOC_0269,HOSP_010,DEPT_028,"Dr. Tara White, MD",Oncology,"MD, FACC",26,+1-555-DOC-0269
+DOC_0270,HOSP_004,DEPT_011,"Dr. Elizabeth Mcmillan, MD",Internal Medicine,"MBBS, MD",5,+1-555-DOC-0270
+DOC_0271,HOSP_001,DEPT_003,"Dr. Danielle Johnson, MD",Nephrology,"MBBS, MD",24,+1-555-DOC-0271
+DOC_0272,HOSP_010,DEPT_028,"Dr. Andrew Hickman, MD",General Surgery,"MBBS, MD",13,+1-555-DOC-0272
+DOC_0273,HOSP_003,DEPT_009,"Dr. Christopher Davis, MD",Emergency Medicine,"MD, FACP",5,+1-555-DOC-0273
+DOC_0274,HOSP_007,DEPT_021,"Dr. Leah Shields, MD",General Surgery,"MD, FCCP",29,+1-555-DOC-0274
+DOC_0275,HOSP_005,DEPT_014,"Dr. Kyle Nolan, MD",Oncology,"MBBS, MD",27,+1-555-DOC-0275
+DOC_0276,HOSP_005,DEPT_013,"Dr. Brenda Hurst, MD",Cardiology,"MD, FACP",10,+1-555-DOC-0276
+DOC_0277,HOSP_003,DEPT_008,"Dr. Robin Ellis, MD",Nephrology,"MD, FACP",34,+1-555-DOC-0277
+DOC_0278,HOSP_007,DEPT_019,"Dr. Emily Evans, MD",Oncology,"MD, FACC",25,+1-555-DOC-0278
+DOC_0279,HOSP_005,DEPT_015,"Dr. Earl Anderson, MD",Cardiology,"MD, FACC",17,+1-555-DOC-0279
+DOC_0280,HOSP_008,DEPT_023,"Dr. David Fisher, MD",Oncology,"MD, FACC",10,+1-555-DOC-0280
+DOC_0281,HOSP_003,DEPT_008,"Dr. Sydney Baker, MD",Endocrinology,"MD, FCCP",8,+1-555-DOC-0281
+DOC_0282,HOSP_002,DEPT_006,"Dr. Natalie Arroyo, MD",Endocrinology,"MD, FCCP",10,+1-555-DOC-0282
+DOC_0283,HOSP_004,DEPT_010,"Dr. Kyle Ortiz, MD",Emergency Medicine,"MD, FCCP",17,+1-555-DOC-0283
+DOC_0284,HOSP_010,DEPT_029,"Dr. Megan Parsons, MD",Emergency Medicine,"MD, FACP",9,+1-555-DOC-0284
+DOC_0285,HOSP_009,DEPT_027,"Dr. Martin Galvan, MD",General Surgery,"MD, FACP",27,+1-555-DOC-0285
+DOC_0286,HOSP_001,DEPT_001,"Dr. Laura Valencia, MD",Endocrinology,"MD, FACC",32,+1-555-DOC-0286
+DOC_0287,HOSP_002,DEPT_004,"Dr. Selena Duncan, MD",Internal Medicine,"MD, FACP",7,+1-555-DOC-0287
+DOC_0288,HOSP_009,DEPT_027,"Dr. Amber Blair, MD",Cardiology,"MD, FACP",8,+1-555-DOC-0288
+DOC_0289,HOSP_005,DEPT_013,"Dr. Richard Oliver, MD",Endocrinology,"MBBS, MD",15,+1-555-DOC-0289
+DOC_0290,HOSP_008,DEPT_024,"Dr. Daniel Hamilton, MD",Nephrology,"MD, FCCP",31,+1-555-DOC-0290
+DOC_0291,HOSP_003,DEPT_008,"Dr. Robert Johnson, MD",General Surgery,"MD, FCCP",6,+1-555-DOC-0291
+DOC_0292,HOSP_004,DEPT_012,"Dr. Mark Lin, MD",Internal Medicine,"MD, FCCP",33,+1-555-DOC-0292
+DOC_0293,HOSP_007,DEPT_019,"Dr. Martin Galvan, MD",Emergency Medicine,"MD, FACP",13,+1-555-DOC-0293
+DOC_0294,HOSP_009,DEPT_027,"Dr. Chad Hodges, MD",Emergency Medicine,"MD, FCCP",32,+1-555-DOC-0294
+DOC_0295,HOSP_004,DEPT_010,"Dr. Richard Brown, MD",Oncology,"MD, FACP",10,+1-555-DOC-0295
+DOC_0296,HOSP_008,DEPT_023,"Dr. Laura Henderson, MD",Internal Medicine,"MD, FACP",13,+1-555-DOC-0296
+DOC_0297,HOSP_004,DEPT_012,"Dr. Jennifer Harris, MD",Nephrology,"MD, FACP",20,+1-555-DOC-0297
+DOC_0298,HOSP_009,DEPT_025,"Dr. Tanya Riley, MD",Nephrology,"MBBS, MD",13,+1-555-DOC-0298
+DOC_0299,HOSP_004,DEPT_012,"Dr. Yvette Huff, MD",Nephrology,"MBBS, MD",7,+1-555-DOC-0299
+DOC_0300,HOSP_008,DEPT_024,"Dr. Nancy Edwards, MD",Nephrology,"MD, FCCP",12,+1-555-DOC-0300
+DOC_0301,HOSP_006,DEPT_017,"Dr. Tracey Garcia, MD",Endocrinology,"MD, FACP",11,+1-555-DOC-0301
+DOC_0302,HOSP_008,DEPT_022,"Dr. Alexander Le, MD",General Surgery,"MD, FACP",10,+1-555-DOC-0302
+DOC_0303,HOSP_003,DEPT_009,"Dr. Linda Wolfe, MD",Endocrinology,"MD, FACC",16,+1-555-DOC-0303
+DOC_0304,HOSP_002,DEPT_005,"Dr. Ronald Smith, MD",Internal Medicine,"MD, FACP",6,+1-555-DOC-0304
+DOC_0305,HOSP_008,DEPT_022,"Dr. Vincent White, MD",Cardiology,"MD, FCCP",24,+1-555-DOC-0305
+DOC_0306,HOSP_008,DEPT_023,"Dr. Eric Yu, MD",Nephrology,"MD, FCCP",23,+1-555-DOC-0306
+DOC_0307,HOSP_005,DEPT_015,"Dr. Joseph Davidson, MD",Cardiology,"MD, FACP",22,+1-555-DOC-0307
+DOC_0308,HOSP_009,DEPT_025,"Dr. Brooke Leonard, MD",Internal Medicine,"MD, FACC",5,+1-555-DOC-0308
+DOC_0309,HOSP_007,DEPT_020,"Dr. Cynthia Diaz, MD",Internal Medicine,"MD, FCCP",8,+1-555-DOC-0309
+DOC_0310,HOSP_001,DEPT_002,"Dr. Destiny Smith, MD",Internal Medicine,"MD, FCCP",4,+1-555-DOC-0310
+DOC_0311,HOSP_009,DEPT_027,"Dr. Amanda Dudley, MD",Nephrology,"MD, FCCP",29,+1-555-DOC-0311
+DOC_0312,HOSP_004,DEPT_012,"Dr. Sydney Baker, MD",Oncology,"MBBS, MD",27,+1-555-DOC-0312
+DOC_0313,HOSP_003,DEPT_007,"Dr. Daniel Hamilton, MD",Oncology,"MD, FACC",26,+1-555-DOC-0313
+DOC_0314,HOSP_001,DEPT_001,"Dr. Sheila Wilson, MD",General Surgery,"MD, FCCP",13,+1-555-DOC-0314
+DOC_0315,HOSP_008,DEPT_022,"Dr. Kyle Nolan, MD",Emergency Medicine,"MD, FACP",23,+1-555-DOC-0315
+DOC_0316,HOSP_006,DEPT_017,"Dr. Russell Carpenter, MD",Cardiology,"MBBS, MD",11,+1-555-DOC-0316
+DOC_0317,HOSP_006,DEPT_017,"Dr. Joyce Arnold, MD",Oncology,"MD, FACP",30,+1-555-DOC-0317
+DOC_0318,HOSP_010,DEPT_029,"Dr. Richard Brown, MD",Cardiology,"MD, FCCP",3,+1-555-DOC-0318
+DOC_0319,HOSP_005,DEPT_013,"Dr. Sydney Baker, MD",Pulmonology,"MBBS, MD",21,+1-555-DOC-0319
+DOC_0320,HOSP_010,DEPT_030,"Dr. Angela Cohen, MD",Oncology,"MD, FACC",19,+1-555-DOC-0320
+DOC_0321,HOSP_005,DEPT_013,"Dr. Frank Gray, MD",Nephrology,"MBBS, MD",21,+1-555-DOC-0321
+DOC_0322,HOSP_006,DEPT_018,"Dr. Danielle Johnson, MD",Oncology,"MD, FCCP",17,+1-555-DOC-0322
+DOC_0323,HOSP_006,DEPT_018,"Dr. David Fisher, MD",Oncology,"MBBS, MD",19,+1-555-DOC-0323
+DOC_0324,HOSP_006,DEPT_018,"Dr. Lisa Adams, MD",Pulmonology,"MD, FCCP",6,+1-555-DOC-0324
+DOC_0325,HOSP_001,DEPT_001,"Dr. Debra Gardner, MD",General Surgery,"MD, FCCP",9,+1-555-DOC-0325
+DOC_0326,HOSP_001,DEPT_003,"Dr. Angela Cohen, MD",Internal Medicine,"MD, FACP",21,+1-555-DOC-0326
+DOC_0327,HOSP_005,DEPT_014,"Dr. Lisa Keith, MD",Emergency Medicine,"MD, FACC",25,+1-555-DOC-0327
+DOC_0328,HOSP_008,DEPT_023,"Dr. Angela Cohen, MD",Internal Medicine,"MD, FCCP",31,+1-555-DOC-0328
+DOC_0329,HOSP_003,DEPT_008,"Dr. Natasha Decker, MD",Cardiology,"MD, FCCP",5,+1-555-DOC-0329
+DOC_0330,HOSP_008,DEPT_024,"Dr. Judy Lambert, MD",Endocrinology,"MD, FACC",10,+1-555-DOC-0330
+DOC_0331,HOSP_008,DEPT_022,"Dr. Natalie Arroyo, MD",Pulmonology,"MD, FACC",30,+1-555-DOC-0331
+DOC_0332,HOSP_005,DEPT_015,"Dr. Debra Gardner, MD",Internal Medicine,"MD, FCCP",34,+1-555-DOC-0332
+DOC_0333,HOSP_008,DEPT_024,"Dr. David Walker, MD",Nephrology,"MBBS, MD",16,+1-555-DOC-0333
+DOC_0334,HOSP_004,DEPT_011,"Dr. Meghan Davis, MD",Emergency Medicine,"MBBS, MD",7,+1-555-DOC-0334
+DOC_0335,HOSP_008,DEPT_022,"Dr. Cynthia Baker, MD",Endocrinology,"MD, FCCP",18,+1-555-DOC-0335
+DOC_0336,HOSP_006,DEPT_018,"Dr. Anthony Gonzalez, MD",Internal Medicine,"MD, FCCP",3,+1-555-DOC-0336
+DOC_0337,HOSP_008,DEPT_023,"Dr. Jason Anderson, MD",Pulmonology,"MBBS, MD",31,+1-555-DOC-0337
+DOC_0338,HOSP_007,DEPT_019,"Dr. Jason Hahn, MD",General Surgery,"MBBS, MD",20,+1-555-DOC-0338
+DOC_0339,HOSP_001,DEPT_002,"Dr. Charles Lewis, MD",Endocrinology,"MD, FACC",22,+1-555-DOC-0339
+DOC_0340,HOSP_004,DEPT_011,"Dr. Joseph Mahoney, MD",Pulmonology,"MD, FCCP",25,+1-555-DOC-0340
+DOC_0341,HOSP_004,DEPT_012,"Dr. Michelle Ray, MD",General Surgery,"MD, FACC",8,+1-555-DOC-0341
+DOC_0342,HOSP_010,DEPT_030,"Dr. Elizabeth Mcmillan, MD",Internal Medicine,"MD, FACC",14,+1-555-DOC-0342
+DOC_0343,HOSP_001,DEPT_003,"Dr. Selena Duncan, MD",Emergency Medicine,"MBBS, MD",19,+1-555-DOC-0343
+DOC_0344,HOSP_004,DEPT_010,"Dr. Kimberly Henson, MD",Nephrology,"MD, FCCP",16,+1-555-DOC-0344
+DOC_0345,HOSP_008,DEPT_023,"Dr. Yolanda Ferrell, MD",Nephrology,"MD, FACC",20,+1-555-DOC-0345
+DOC_0346,HOSP_007,DEPT_019,"Dr. Christopher Davis, MD",Cardiology,"MBBS, MD",4,+1-555-DOC-0346
+DOC_0347,HOSP_005,DEPT_013,"Dr. Cynthia Diaz, MD",Endocrinology,"MD, FACC",24,+1-555-DOC-0347
+DOC_0348,HOSP_008,DEPT_022,"Dr. Patricia Miller, MD",Internal Medicine,"MD, FACP",31,+1-555-DOC-0348
+DOC_0349,HOSP_005,DEPT_013,"Dr. Scott Callahan, MD",Endocrinology,"MD, FACC",13,+1-555-DOC-0349
+DOC_0350,HOSP_002,DEPT_006,"Dr. Adam Wise, MD",Nephrology,"MD, FACC",12,+1-555-DOC-0350
+DOC_0351,HOSP_002,DEPT_004,"Dr. Anna Baker, MD",Oncology,"MD, FACP",19,+1-555-DOC-0351
+DOC_0352,HOSP_002,DEPT_005,"Dr. Earl Anderson, MD",Oncology,"MD, FACP",14,+1-555-DOC-0352
+DOC_0353,HOSP_008,DEPT_023,"Dr. Brooke Leonard, MD",Internal Medicine,"MD, FACP",23,+1-555-DOC-0353
+DOC_0354,HOSP_009,DEPT_027,"Dr. Vincent White, MD",Endocrinology,"MD, FACP",29,+1-555-DOC-0354
+DOC_0355,HOSP_003,DEPT_008,"Dr. Scott Callahan, MD",Emergency Medicine,"MD, FACC",27,+1-555-DOC-0355
+DOC_0356,HOSP_007,DEPT_021,"Dr. Russell Carpenter, MD",Internal Medicine,"MD, FACC",19,+1-555-DOC-0356
+DOC_0357,HOSP_009,DEPT_026,"Dr. Lee Charles, MD",Internal Medicine,"MD, FACP",34,+1-555-DOC-0357
+DOC_0358,HOSP_001,DEPT_002,"Dr. Daniel Graham, MD",Pulmonology,"MD, FACC",21,+1-555-DOC-0358
+DOC_0359,HOSP_007,DEPT_021,"Dr. Jason Hahn, MD",Pulmonology,"MD, FACP",31,+1-555-DOC-0359
+DOC_0360,HOSP_007,DEPT_021,"Dr. Linda Wolfe, MD",Nephrology,"MD, FCCP",34,+1-555-DOC-0360
+DOC_0361,HOSP_002,DEPT_004,"Dr. Brian Silva, MD",Pulmonology,"MD, FCCP",10,+1-555-DOC-0361
+DOC_0362,HOSP_001,DEPT_003,"Dr. Daniel Graham, MD",Internal Medicine,"MD, FCCP",17,+1-555-DOC-0362
+DOC_0363,HOSP_008,DEPT_024,"Dr. Charles Ware, MD",General Surgery,"MBBS, MD",3,+1-555-DOC-0363
+DOC_0364,HOSP_009,DEPT_026,"Dr. Jason Hahn, MD",Endocrinology,"MBBS, MD",21,+1-555-DOC-0364
+DOC_0365,HOSP_001,DEPT_003,"Dr. Chad Welch, MD",Oncology,"MD, FCCP",15,+1-555-DOC-0365
+DOC_0366,HOSP_004,DEPT_011,"Dr. Kyle Nolan, MD",Internal Medicine,"MD, FACC",11,+1-555-DOC-0366
+DOC_0367,HOSP_003,DEPT_009,"Dr. Joseph Wright, MD",Cardiology,"MD, FACC",27,+1-555-DOC-0367
+DOC_0368,HOSP_010,DEPT_029,"Dr. Laura Perez, MD",Nephrology,"MD, FACP",27,+1-555-DOC-0368
+DOC_0369,HOSP_003,DEPT_007,"Dr. Leslie Adams, MD",Pulmonology,"MD, FACP",7,+1-555-DOC-0369
+DOC_0370,HOSP_004,DEPT_012,"Dr. Andrew Lee, MD",Pulmonology,"MD, FACP",8,+1-555-DOC-0370
+DOC_0371,HOSP_001,DEPT_002,"Dr. Matthew Moore, MD",Pulmonology,"MD, FACC",14,+1-555-DOC-0371
+DOC_0372,HOSP_009,DEPT_027,"Dr. Wendy Rice, MD",General Surgery,"MD, FACC",12,+1-555-DOC-0372
+DOC_0373,HOSP_009,DEPT_025,"Dr. Shawn Mckay, MD",Cardiology,"MD, FCCP",14,+1-555-DOC-0373
+DOC_0374,HOSP_010,DEPT_030,"Dr. Jerry Robinson, MD",Nephrology,"MD, FCCP",10,+1-555-DOC-0374
+DOC_0375,HOSP_007,DEPT_021,"Dr. Chad Welch, MD",Endocrinology,"MD, FACC",24,+1-555-DOC-0375
+DOC_0376,HOSP_006,DEPT_016,"Dr. Aaron Mitchell, MD",Nephrology,"MD, FACC",20,+1-555-DOC-0376
+DOC_0377,HOSP_009,DEPT_025,"Dr. Matthew Moore, MD",Endocrinology,"MD, FCCP",28,+1-555-DOC-0377
+DOC_0378,HOSP_003,DEPT_009,"Dr. Angela Higgins, MD",Internal Medicine,"MD, FCCP",34,+1-555-DOC-0378
+DOC_0379,HOSP_004,DEPT_010,"Dr. Lindsay Blair, MD",Endocrinology,"MD, FACC",25,+1-555-DOC-0379
+DOC_0380,HOSP_009,DEPT_026,"Dr. Selena Duncan, MD",Internal Medicine,"MD, FCCP",16,+1-555-DOC-0380
+DOC_0381,HOSP_005,DEPT_015,"Dr. Brooke Leonard, MD",Endocrinology,"MD, FACC",21,+1-555-DOC-0381
+DOC_0382,HOSP_006,DEPT_016,"Dr. Joseph Brennan, MD",Internal Medicine,"MD, FCCP",25,+1-555-DOC-0382
+DOC_0383,HOSP_010,DEPT_029,"Dr. Jeremy Whitehead, MD",Endocrinology,"MD, FACP",22,+1-555-DOC-0383
+DOC_0384,HOSP_003,DEPT_007,"Dr. Adam Wise, MD",Pulmonology,"MD, FACP",9,+1-555-DOC-0384
+DOC_0385,HOSP_006,DEPT_017,"Dr. Christopher Davis, MD",Endocrinology,"MBBS, MD",5,+1-555-DOC-0385
+DOC_0386,HOSP_004,DEPT_012,"Dr. Michael Jones, MD",General Surgery,"MD, FACP",5,+1-555-DOC-0386
+DOC_0387,HOSP_002,DEPT_005,"Dr. Laura Perez, MD",Nephrology,"MD, FACP",25,+1-555-DOC-0387
+DOC_0388,HOSP_008,DEPT_023,"Dr. Susan Cowan, MD",Endocrinology,"MD, FCCP",26,+1-555-DOC-0388
+DOC_0389,HOSP_006,DEPT_017,"Dr. Patricia Miller, MD",General Surgery,"MD, FACP",27,+1-555-DOC-0389
+DOC_0390,HOSP_005,DEPT_013,"Dr. Michelle Cherry, MD",Nephrology,"MD, FACC",12,+1-555-DOC-0390
+DOC_0391,HOSP_004,DEPT_012,"Dr. Leslie Walton, MD",Internal Medicine,"MD, FCCP",5,+1-555-DOC-0391
+DOC_0392,HOSP_004,DEPT_010,"Dr. Jeremy Johnson, MD",Oncology,"MD, FCCP",25,+1-555-DOC-0392
+DOC_0393,HOSP_005,DEPT_013,"Dr. Jennifer Harris, MD",Internal Medicine,"MBBS, MD",34,+1-555-DOC-0393
+DOC_0394,HOSP_001,DEPT_003,"Dr. James Moran, MD",Endocrinology,"MD, FACP",22,+1-555-DOC-0394
+DOC_0395,HOSP_010,DEPT_029,"Dr. Lee Charles, MD",Cardiology,"MD, FACC",32,+1-555-DOC-0395
+DOC_0396,HOSP_007,DEPT_021,"Dr. Aaron Frost, MD",Nephrology,"MBBS, MD",14,+1-555-DOC-0396
+DOC_0397,HOSP_005,DEPT_015,"Dr. Robert Silva, MD",Internal Medicine,"MD, FACP",27,+1-555-DOC-0397
+DOC_0398,HOSP_003,DEPT_007,"Dr. John Caldwell, MD",General Surgery,"MD, FACC",32,+1-555-DOC-0398
+DOC_0399,HOSP_006,DEPT_017,"Dr. Jill Rhodes, MD",General Surgery,"MD, FACP",26,+1-555-DOC-0399
+DOC_0400,HOSP_010,DEPT_030,"Dr. Christopher Tucker, MD",Internal Medicine,"MD, FACP",7,+1-555-DOC-0400
+DOC_0401,HOSP_009,DEPT_025,"Dr. Tina Herrera, MD",Cardiology,"MD, FACC",16,+1-555-DOC-0401
+DOC_0402,HOSP_005,DEPT_015,"Dr. Rodney Lewis, MD",Endocrinology,"MD, FACC",27,+1-555-DOC-0402
+DOC_0403,HOSP_008,DEPT_024,"Dr. Raven Gilbert, MD",Emergency Medicine,"MD, FCCP",28,+1-555-DOC-0403
+DOC_0404,HOSP_002,DEPT_005,"Dr. Kathryn Ryan, MD",General Surgery,"MD, FCCP",30,+1-555-DOC-0404
+DOC_0405,HOSP_002,DEPT_006,"Dr. Robin Ellis, MD",Nephrology,"MD, FCCP",16,+1-555-DOC-0405
+DOC_0406,HOSP_008,DEPT_024,"Dr. Linda Wolfe, MD",Oncology,"MD, FACC",4,+1-555-DOC-0406
+DOC_0407,HOSP_009,DEPT_025,"Dr. Russell Carpenter, MD",Emergency Medicine,"MBBS, MD",29,+1-555-DOC-0407
+DOC_0408,HOSP_003,DEPT_008,"Dr. Joyce Arnold, MD",General Surgery,"MD, FCCP",24,+1-555-DOC-0408
+DOC_0409,HOSP_007,DEPT_021,"Dr. Eric Phillips, MD",Internal Medicine,"MD, FCCP",4,+1-555-DOC-0409
+DOC_0410,HOSP_009,DEPT_025,"Dr. Jeffrey Velasquez, MD",Cardiology,"MD, FACP",5,+1-555-DOC-0410
+DOC_0411,HOSP_008,DEPT_024,"Dr. Jeffery Wagner, MD",General Surgery,"MD, FACC",24,+1-555-DOC-0411
+DOC_0412,HOSP_005,DEPT_015,"Dr. Sheila Wilson, MD",Cardiology,"MD, FCCP",22,+1-555-DOC-0412
+DOC_0413,HOSP_009,DEPT_026,"Dr. Kathryn Ryan, MD",Pulmonology,"MD, FACP",5,+1-555-DOC-0413
+DOC_0414,HOSP_006,DEPT_018,"Dr. Jeremy Whitehead, MD",Oncology,"MD, FACC",26,+1-555-DOC-0414
+DOC_0415,HOSP_001,DEPT_003,"Dr. Eric Spears, MD",Pulmonology,"MD, FACP",15,+1-555-DOC-0415
+DOC_0416,HOSP_008,DEPT_024,"Dr. Emily Evans, MD",Endocrinology,"MD, FACC",11,+1-555-DOC-0416
+DOC_0417,HOSP_002,DEPT_004,"Dr. Cynthia Baker, MD",General Surgery,"MD, FACP",13,+1-555-DOC-0417
+DOC_0418,HOSP_003,DEPT_009,"Dr. Jonathan Fletcher, MD",Pulmonology,"MD, FCCP",30,+1-555-DOC-0418
+DOC_0419,HOSP_010,DEPT_029,"Dr. Elizabeth Mcmillan, MD",Pulmonology,"MD, FACC",4,+1-555-DOC-0419
+DOC_0420,HOSP_004,DEPT_012,"Dr. Steven Torres, MD",Cardiology,"MD, FCCP",10,+1-555-DOC-0420
+DOC_0421,HOSP_009,DEPT_025,"Dr. Robert Johnson, MD",Pulmonology,"MD, FCCP",4,+1-555-DOC-0421
+DOC_0422,HOSP_008,DEPT_024,"Dr. John Foster, MD",Endocrinology,"MD, FACP",10,+1-555-DOC-0422
+DOC_0423,HOSP_009,DEPT_027,"Dr. Martha Warner, MD",Nephrology,"MD, FACP",20,+1-555-DOC-0423
+DOC_0424,HOSP_002,DEPT_006,"Dr. Nancy Edwards, MD",Emergency Medicine,"MBBS, MD",15,+1-555-DOC-0424
+DOC_0425,HOSP_010,DEPT_028,"Dr. Kevin Kelley, MD",General Surgery,"MD, FACC",20,+1-555-DOC-0425
+DOC_0426,HOSP_003,DEPT_008,"Dr. Christopher Williams, MD",Nephrology,"MD, FACP",31,+1-555-DOC-0426
+DOC_0427,HOSP_007,DEPT_019,"Dr. Amanda Ball, MD",Pulmonology,"MBBS, MD",10,+1-555-DOC-0427
+DOC_0428,HOSP_001,DEPT_002,"Dr. Joseph Wright, MD",Pulmonology,"MD, FACC",15,+1-555-DOC-0428
+DOC_0429,HOSP_001,DEPT_001,"Dr. Jeffery Wagner, MD",Nephrology,"MD, FCCP",18,+1-555-DOC-0429
+DOC_0430,HOSP_003,DEPT_008,"Dr. Tracey Garcia, MD",Cardiology,"MD, FCCP",29,+1-555-DOC-0430
+DOC_0431,HOSP_006,DEPT_016,"Dr. Jeffrey Velasquez, MD",General Surgery,"MD, FCCP",15,+1-555-DOC-0431
+DOC_0432,HOSP_009,DEPT_025,"Dr. Jessica Edwards, MD",Internal Medicine,"MBBS, MD",33,+1-555-DOC-0432
+DOC_0433,HOSP_009,DEPT_027,"Dr. Lisa Adams, MD",Emergency Medicine,"MD, FCCP",7,+1-555-DOC-0433
+DOC_0434,HOSP_004,DEPT_011,"Dr. Christopher Williams, MD",Internal Medicine,"MD, FACC",21,+1-555-DOC-0434
+DOC_0435,HOSP_008,DEPT_023,"Dr. Steven Torres, MD",Internal Medicine,"MBBS, MD",13,+1-555-DOC-0435
+DOC_0436,HOSP_007,DEPT_021,"Dr. Kimberly Henson, MD",Endocrinology,"MD, FCCP",20,+1-555-DOC-0436
+DOC_0437,HOSP_002,DEPT_004,"Dr. Joshua Walker, MD",Oncology,"MD, FACC",31,+1-555-DOC-0437
+DOC_0438,HOSP_004,DEPT_012,"Dr. Robin Ellis, MD",Internal Medicine,"MBBS, MD",15,+1-555-DOC-0438
+DOC_0439,HOSP_005,DEPT_014,"Dr. Laura Valencia, MD",Cardiology,"MD, FACC",19,+1-555-DOC-0439
+DOC_0440,HOSP_003,DEPT_008,"Dr. Scott Callahan, MD",Emergency Medicine,"MBBS, MD",26,+1-555-DOC-0440
+DOC_0441,HOSP_005,DEPT_013,"Dr. Angel Doyle, MD",Nephrology,"MD, FACP",21,+1-555-DOC-0441
+DOC_0442,HOSP_010,DEPT_030,"Dr. Russell Carpenter, MD",Internal Medicine,"MD, FACC",34,+1-555-DOC-0442
+DOC_0443,HOSP_001,DEPT_002,"Dr. Aaron Nguyen, MD",Emergency Medicine,"MBBS, MD",17,+1-555-DOC-0443
+DOC_0444,HOSP_010,DEPT_030,"Dr. Nancy Edwards, MD",General Surgery,"MD, FACP",6,+1-555-DOC-0444
+DOC_0445,HOSP_007,DEPT_020,"Dr. Robert Ramirez, MD",Emergency Medicine,"MD, FACP",6,+1-555-DOC-0445
+DOC_0446,HOSP_009,DEPT_027,"Dr. Kyle Ortiz, MD",Cardiology,"MBBS, MD",24,+1-555-DOC-0446
+DOC_0447,HOSP_006,DEPT_017,"Dr. Dennis Wilson, MD",Oncology,"MD, FACC",24,+1-555-DOC-0447
+DOC_0448,HOSP_009,DEPT_026,"Dr. Brooke Harvey, MD",Pulmonology,"MD, FACP",20,+1-555-DOC-0448
+DOC_0449,HOSP_005,DEPT_014,"Dr. Kyle Ortiz, MD",Endocrinology,"MD, FACC",14,+1-555-DOC-0449
+DOC_0450,HOSP_002,DEPT_004,"Dr. Daniel Hamilton, MD",General Surgery,"MBBS, MD",9,+1-555-DOC-0450
+DOC_0451,HOSP_010,DEPT_029,"Dr. Daniel Tran, MD",Cardiology,"MD, FACP",17,+1-555-DOC-0451
+DOC_0452,HOSP_005,DEPT_015,"Dr. Eric Spears, MD",Pulmonology,"MD, FCCP",28,+1-555-DOC-0452
+DOC_0453,HOSP_008,DEPT_023,"Dr. Mitchell Clark, MD",Internal Medicine,"MD, FACP",4,+1-555-DOC-0453
+DOC_0454,HOSP_010,DEPT_029,"Dr. Patricia Miller, MD",Cardiology,"MD, FCCP",15,+1-555-DOC-0454
+DOC_0455,HOSP_003,DEPT_009,"Dr. Robin Ellis, MD",Endocrinology,"MD, FCCP",31,+1-555-DOC-0455
+DOC_0456,HOSP_010,DEPT_029,"Dr. James Collins, MD",Emergency Medicine,"MBBS, MD",4,+1-555-DOC-0456
+DOC_0457,HOSP_005,DEPT_015,"Dr. John Caldwell, MD",Oncology,"MD, FCCP",29,+1-555-DOC-0457
+DOC_0458,HOSP_001,DEPT_003,"Dr. Chad Welch, MD",Oncology,"MBBS, MD",26,+1-555-DOC-0458
+DOC_0459,HOSP_010,DEPT_028,"Dr. Janet Williams, MD",Endocrinology,"MBBS, MD",7,+1-555-DOC-0459
+DOC_0460,HOSP_009,DEPT_027,"Dr. John Caldwell, MD",Oncology,"MD, FCCP",27,+1-555-DOC-0460
+DOC_0461,HOSP_002,DEPT_005,"Dr. Nicole Suarez, MD",Pulmonology,"MD, FACC",28,+1-555-DOC-0461
+DOC_0462,HOSP_010,DEPT_028,"Dr. Lisa Adams, MD",Endocrinology,"MD, FACP",31,+1-555-DOC-0462
+DOC_0463,HOSP_001,DEPT_003,"Dr. Andrew Hickman, MD",Cardiology,"MD, FACC",26,+1-555-DOC-0463
+DOC_0464,HOSP_004,DEPT_012,"Dr. Nicholas Arnold, MD",Endocrinology,"MBBS, MD",18,+1-555-DOC-0464
+DOC_0465,HOSP_009,DEPT_027,"Dr. Joseph Brennan, MD",Emergency Medicine,"MD, FACP",27,+1-555-DOC-0465
+DOC_0466,HOSP_006,DEPT_017,"Dr. Richard Morgan, MD",General Surgery,"MBBS, MD",17,+1-555-DOC-0466
+DOC_0467,HOSP_009,DEPT_027,"Dr. Tammy Ramirez, MD",Internal Medicine,"MBBS, MD",9,+1-555-DOC-0467
+DOC_0468,HOSP_001,DEPT_003,"Dr. Richard Morgan, MD",Nephrology,"MBBS, MD",23,+1-555-DOC-0468
+DOC_0469,HOSP_008,DEPT_024,"Dr. Chelsea Hernandez, MD",Internal Medicine,"MD, FCCP",22,+1-555-DOC-0469
+DOC_0470,HOSP_005,DEPT_014,"Dr. Melanie Munoz, MD",Cardiology,"MD, FACP",16,+1-555-DOC-0470
+DOC_0471,HOSP_003,DEPT_007,"Dr. Amanda Dudley, MD",Oncology,"MBBS, MD",22,+1-555-DOC-0471
+DOC_0472,HOSP_002,DEPT_004,"Dr. Jeffrey Lawrence, MD",Oncology,"MBBS, MD",27,+1-555-DOC-0472
+DOC_0473,HOSP_010,DEPT_028,"Dr. Aaron Nguyen, MD",Oncology,"MD, FACP",23,+1-555-DOC-0473
+DOC_0474,HOSP_007,DEPT_021,"Dr. Joseph Mahoney, MD",Nephrology,"MBBS, MD",13,+1-555-DOC-0474
+DOC_0475,HOSP_005,DEPT_013,"Dr. Joseph Brennan, MD",General Surgery,"MD, FACP",32,+1-555-DOC-0475
+DOC_0476,HOSP_006,DEPT_018,"Dr. Eric Phillips, MD",Endocrinology,"MD, FCCP",8,+1-555-DOC-0476
+DOC_0477,HOSP_004,DEPT_011,"Dr. Christopher Williams, MD",Cardiology,"MD, FACC",30,+1-555-DOC-0477
+DOC_0478,HOSP_002,DEPT_006,"Dr. Jeffrey Velasquez, MD",Nephrology,"MD, FCCP",24,+1-555-DOC-0478
+DOC_0479,HOSP_007,DEPT_019,"Dr. Lindsey Lee, MD",Cardiology,"MD, FACC",14,+1-555-DOC-0479
+DOC_0480,HOSP_009,DEPT_025,"Dr. Daniel Burton, MD",Nephrology,"MD, FCCP",18,+1-555-DOC-0480
+DOC_0481,HOSP_008,DEPT_022,"Dr. Selena Duncan, MD",Emergency Medicine,"MBBS, MD",3,+1-555-DOC-0481
+DOC_0482,HOSP_004,DEPT_010,"Dr. Monica Garrison, MD",Nephrology,"MD, FACP",30,+1-555-DOC-0482
+DOC_0483,HOSP_001,DEPT_001,"Dr. Joshua Walker, MD",Cardiology,"MD, FACC",11,+1-555-DOC-0483
+DOC_0484,HOSP_005,DEPT_013,"Dr. Kimberly Henson, MD",Cardiology,"MD, FACC",22,+1-555-DOC-0484
+DOC_0485,HOSP_009,DEPT_026,"Dr. Charles Ware, MD",Endocrinology,"MD, FACP",8,+1-555-DOC-0485
+DOC_0486,HOSP_003,DEPT_007,"Dr. Rodney Owens, MD",Oncology,"MD, FACP",20,+1-555-DOC-0486
+DOC_0487,HOSP_005,DEPT_015,"Dr. Joseph Bowers, MD",Endocrinology,"MBBS, MD",19,+1-555-DOC-0487
+DOC_0488,HOSP_003,DEPT_008,"Dr. Kathryn Ryan, MD",Pulmonology,"MD, FCCP",8,+1-555-DOC-0488
+DOC_0489,HOSP_003,DEPT_009,"Dr. Jeffery Wagner, MD",Cardiology,"MD, FCCP",33,+1-555-DOC-0489
+DOC_0490,HOSP_003,DEPT_009,"Dr. Wesley Farrell, MD",Emergency Medicine,"MBBS, MD",10,+1-555-DOC-0490
+DOC_0491,HOSP_006,DEPT_018,"Dr. Tracey Garcia, MD",Oncology,"MBBS, MD",32,+1-555-DOC-0491
+DOC_0492,HOSP_005,DEPT_015,"Dr. Charles Ellis, MD",Endocrinology,"MD, FCCP",22,+1-555-DOC-0492
+DOC_0493,HOSP_006,DEPT_016,"Dr. Mike Moore, MD",Oncology,"MD, FACP",24,+1-555-DOC-0493
+DOC_0494,HOSP_009,DEPT_026,"Dr. Charles Ellis, MD",Pulmonology,"MD, FCCP",11,+1-555-DOC-0494
+DOC_0495,HOSP_010,DEPT_028,"Dr. Joseph Bowers, MD",Oncology,"MD, FCCP",20,+1-555-DOC-0495
+DOC_0496,HOSP_008,DEPT_022,"Dr. Matthew Moore, MD",Endocrinology,"MBBS, MD",15,+1-555-DOC-0496
+DOC_0497,HOSP_009,DEPT_025,"Dr. Christopher Williams, MD",Pulmonology,"MD, FACP",21,+1-555-DOC-0497
+DOC_0498,HOSP_008,DEPT_023,"Dr. Yvette Huff, MD",General Surgery,"MBBS, MD",31,+1-555-DOC-0498
+DOC_0499,HOSP_008,DEPT_023,"Dr. Joseph Davidson, MD",Endocrinology,"MBBS, MD",21,+1-555-DOC-0499
+DOC_0500,HOSP_004,DEPT_012,"Dr. Jeremy Whitehead, MD",Oncology,"MD, FACP",21,+1-555-DOC-0500

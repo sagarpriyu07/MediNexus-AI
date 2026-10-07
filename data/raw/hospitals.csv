@@ -1,6 +1,11 @@
 hospital_id,hospital_name,location,total_beds,icu_beds,operational_status
-HOSP_001,Metropolitan General Hospital,"North Judithbury, IN",250,30,Active
-HOSP_002,Saint Jude Health Pavilion,"Lake Curtis, WA",600,50,Active
-HOSP_003,Apex Memorial Medical Center,"New Roberttown, CO",400,50,Active
-HOSP_004,Riverside University Hospital,"East William, AK",250,60,Active
-HOSP_005,Beacon Hill Community Hospital,"Lake Debra, ND",250,60,Active
+HOSP_001,Metropolitan General Hospital,"Zone 1, Metropolitan Healthcare District",350,40,Active
+HOSP_002,Saint Jude Health Pavilion,"Zone 2, Metropolitan Healthcare District",650,60,Active
+HOSP_003,Apex Memorial Medical Center,"Zone 3, Metropolitan Healthcare District",500,60,Active
+HOSP_004,Riverside University Hospital,"Zone 4, Metropolitan Healthcare District",350,80,Active
+HOSP_005,Beacon Hill Community Hospital,"Zone 5, Metropolitan Healthcare District",350,80,Active
+HOSP_006,Central City Presbyterian,"Zone 6, Metropolitan Healthcare District",800,40,Active
+HOSP_007,Northwestern Memorial Clinic,"Zone 7, Metropolitan Healthcare District",350,40,Active
+HOSP_008,Mercy Hospital of Diagnostics,"Zone 8, Metropolitan Healthcare District",500,60,Active
+HOSP_009,Valley Crest Medical Center,"Zone 9, Metropolitan Healthcare District",1000,80,Active
+HOSP_010,Harborview Clinical Institute,"Zone 10, Metropolitan Healthcare District",350,80,Active

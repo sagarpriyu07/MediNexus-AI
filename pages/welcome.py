@@ -47,62 +47,40 @@ def render_welcome_page():
         </div>
     """, unsafe_allow_html=True)
 
-    # 1-Click Role Selector (Data Engineer FIRST, NO personal names)
-    st.markdown("<p style='font-size: 0.88rem; font-weight: 700; color: #0F172A; margin-bottom: 8px;'>Select a Role to Enter Console:</p>", unsafe_allow_html=True)
+    # Role Consoles Navigation (Requires Credential Authentication)
+    st.markdown("<p style='font-size: 0.88rem; font-weight: 700; color: #0F172A; margin-bottom: 8px;'>Access Role Consoles via Secure Credential Portal:</p>", unsafe_allow_html=True)
 
-    def launch_role(username_key):
-        user_profile = DEMO_USERS.get(username_key)
-        if user_profile:
-            st.session_state["authenticated"] = True
-            st.session_state["user"] = user_profile
-            st.session_state["username"] = user_profile["username"]
-            st.session_state["name"] = user_profile["name"]
-            st.session_state["role"] = user_profile["role"]
-            st.session_state["department"] = user_profile["department"]
-
-            log_audit_event(
-                username=user_profile["username"],
-                role=user_profile["role"],
-                action="LAUNCH_WELCOME",
-                resource="SYSTEM_AUTH",
-                status="SUCCESS",
-                details=f"1-Click Launch from Welcome as {user_profile['role']}",
-            )
-
-            role_meta = ROLE_PERMISSIONS.get(user_profile["role"], {})
-            st.session_state["current_page"] = role_meta.get("default_page", "welcome")
-            if username_key == "data_engineer" or user_profile.get("role") == "Data Engineer":
-                st.session_state["pipeline_completed"] = False
-            st.rerun()
+    def go_to_login():
+        st.session_state["current_page"] = "login"
+        st.rerun()
 
     r1, r2, r3, r4 = st.columns(4)
     with r1:
         if st.button("⚙️ Data Engineer", key="w_btn_de", use_container_width=True, type="primary"):
-            launch_role("data_engineer")
+            go_to_login()
     with r2:
         if st.button("🩺 Doctor", key="w_btn_doc", use_container_width=True):
-            launch_role("dr_chen")
+            go_to_login()
     with r3:
         if st.button("🏢 Administrator", key="w_btn_adm", use_container_width=True):
-            launch_role("admin_holloway")
+            go_to_login()
     with r4:
         if st.button("💊 Pharmacist", key="w_btn_phm", use_container_width=True):
-            launch_role("pharmacist_patel")
+            go_to_login()
 
     r5, r6, r7, r8 = st.columns(4)
     with r5:
         if st.button("🔬 Laboratory", key="w_btn_lab", use_container_width=True):
-            launch_role("lab_tech_kim")
+            go_to_login()
     with r6:
         if st.button("📋 Receptionist", key="w_btn_rec", use_container_width=True):
-            launch_role("receptionist_davis")
+            go_to_login()
     with r7:
         if st.button("🛡️ IT Security", key="w_btn_it", use_container_width=True):
-            launch_role("it_admin_torvalds")
+            go_to_login()
     with r8:
-        if st.button("🔑 Access Portal", key="w_btn_login", use_container_width=True):
-            st.session_state["current_page"] = "login"
-            st.rerun()
+        if st.button("🔑 Sign In with Credentials", key="w_btn_login", use_container_width=True):
+            go_to_login()
 
     st.markdown("---")
 

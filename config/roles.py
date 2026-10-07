@@ -164,3 +164,7 @@ ROLE_PERMISSIONS: Dict[str, Dict[str, Any]] = {
         "allowed_agents": ["HealthAnalyst Agent"],
     },
 }
+
+# Alias Laboratory Specialist to Laboratory Technician for UI consistency
+ROLE_PERMISSIONS["Laboratory Specialist"] = ROLE_PERMISSIONS[ROLE_LAB_TECH]
+

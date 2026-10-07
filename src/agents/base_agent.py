@@ -9,7 +9,14 @@ import os
 import requests
 import json
 
-from config.settings import GEMINI_API_KEY, ENABLE_GEMINI
+from config.settings import (
+    GEMINI_API_KEY,
+    ENABLE_GEMINI,
+    GROK_API_KEY,
+    ENABLE_GROK,
+    GROK_MODEL,
+    ACTIVE_LLM_PROVIDER,
+)
 from src.security.audit import log_audit_event
 
 
@@ -27,6 +34,31 @@ class BaseHealthcareAgent:
     def register_tool(self, name: str, func: Callable):
         """Register an analytical, ML, or database tool."""
         self.tools[name] = func
+
+    def call_grok(self, prompt: str) -> Optional[str]:
+        """Invoke xAI Grok REST API if configured."""
+        if not ENABLE_GROK:
+            return None
+        try:
+            headers = {
+                "Authorization": f"Bearer {GROK_API_KEY}",
+                "Content-Type": "application/json",
+            }
+            payload = {
+                "model": GROK_MODEL,
+                "messages": [
+                    {"role": "system", "content": self.system_prompt},
+                    {"role": "user", "content": prompt},
+                ],
+                "temperature": 0.2,
+            }
+            resp = requests.post("https://api.x.ai/v1/chat/completions", json=payload, headers=headers, timeout=12)
+            if resp.status_code == 200:
+                data = resp.json()
+                return data["choices"][0]["message"]["content"]
+        except Exception:
+            return None
+        return None
 
     def call_gemini(self, prompt: str) -> Optional[str]:
         """Invoke Gemini REST API if configured."""
@@ -49,6 +81,18 @@ class BaseHealthcareAgent:
                 return data["candidates"][0]["content"]["parts"][0]["text"]
         except Exception:
             return None
+        return None
+
+    def call_llm(self, prompt: str) -> Optional[str]:
+        """Invoke active LLM provider (Grok if configured, else Gemini, else None)."""
+        if ENABLE_GROK:
+            ans = self.call_grok(prompt)
+            if ans:
+                return ans
+        if ENABLE_GEMINI:
+            ans = self.call_gemini(prompt)
+            if ans:
+                return ans
         return None
 
     def format_structured_response(

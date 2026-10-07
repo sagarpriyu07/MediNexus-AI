@@ -1,6 +1,7 @@
 """
-Synthetic Healthcare Dataset Generator for MediNexus AI.
-Generates 12 interconnected datasets with realistic clinical patterns and intentional data quality defects.
+High-Performance Synthetic Healthcare Dataset Generator for MediNexus AI.
+Generates 12 interconnected datasets with 50,000+ rows per core dataset,
+maintaining realistic clinical correlations and intentional data quality defects.
 """
 
 import sys
@@ -26,8 +27,6 @@ from config.constants import (
     DISCHARGE_DISPOSITIONS,
     PAYMENT_STATUSES,
     APPOINTMENT_STATUSES,
-    DIAGNOSIS_TYPES,
-    DIAGNOSIS_SEVERITIES,
     ICD10_CATALOG,
     LAB_CATALOG,
     MEDICATION_CATALOG,
@@ -42,7 +41,8 @@ def generate_healthcare_ecosystem(
     output_dir: Path = RAW_DATA_DIR,
 ) -> dict:
     """
-    Generate 12 interconnected healthcare datasets with realistic data quality defects.
+    Generate 12 interconnected healthcare datasets with 50,000+ rows per core dataset.
+    Optimized for high-performance vectorized generation.
     """
     counts = counts or DEFAULT_COUNTS
     random.seed(seed)
@@ -53,103 +53,126 @@ def generate_healthcare_ecosystem(
     output_dir.mkdir(parents=True, exist_ok=True)
     METADATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    print(f"Generating synthetic healthcare ecosystem (Seed: {seed})...")
+    print(f"Generating synthetic healthcare ecosystem (Seed: {seed}, Enterprise Scale 50k+)...")
 
-    # 1. Hospitals (5 records)
-    num_hospitals = counts.get("hospitals", 5)
-    hospitals = []
+    # 1. Hospitals (10 records)
+    num_hospitals = counts.get("hospitals", 10)
     hospital_names = [
-        "Metropolitan General Hospital",
-        "Saint Jude Health Pavilion",
-        "Apex Memorial Medical Center",
-        "Riverside University Hospital",
-        "Beacon Hill Community Hospital",
+        "Metropolitan General Hospital", "Saint Jude Health Pavilion",
+        "Apex Memorial Medical Center", "Riverside University Hospital",
+        "Beacon Hill Community Hospital", "Central City Presbyterian",
+        "Northwestern Memorial Clinic", "Mercy Hospital of Diagnostics",
+        "Valley Crest Medical Center", "Harborview Clinical Institute"
     ]
+    hospitals = []
     for i in range(num_hospitals):
         h_id = f"HOSP_{i+1:03d}"
         hospitals.append({
             "hospital_id": h_id,
             "hospital_name": hospital_names[i % len(hospital_names)],
-            "location": fake.city() + ", " + fake.state_abbr(),
-            "total_beds": random.choice([250, 400, 600, 750, 500]),
-            "icu_beds": random.choice([30, 50, 80, 100, 60]),
+            "location": f"Zone {i+1}, Metropolitan Healthcare District",
+            "total_beds": random.choice([350, 500, 650, 800, 1000]),
+            "icu_beds": random.choice([40, 60, 90, 120, 80]),
             "operational_status": "Active",
         })
     df_hospitals = pd.DataFrame(hospitals)
 
-    # 2. Departments
+    # 2. Departments (25 records)
     departments = []
     dept_id_counter = 1
     for h in hospitals:
-        for d_name in HOSPITAL_DEPARTMENTS:
+        for d_name in HOSPITAL_DEPARTMENTS[:3]:  # Top 3 depts per hospital
             departments.append({
                 "department_id": f"DEPT_{dept_id_counter:03d}",
                 "hospital_id": h["hospital_id"],
                 "department_name": d_name,
-                "bed_capacity": random.randint(25, 80),
+                "bed_capacity": random.randint(35, 120),
             })
             dept_id_counter += 1
     df_departments = pd.DataFrame(departments)
 
-    # 3. Doctors (40 records)
-    num_doctors = counts.get("doctors", 40)
-    doctors = []
+    # 3. Doctors (500 records)
+    num_doctors = counts.get("doctors", 500)
     specialties = [
         "Cardiology", "Internal Medicine", "Pulmonology", "Emergency Medicine",
         "General Surgery", "Oncology", "Endocrinology", "Nephrology"
     ]
+    doctor_names_pool = [fake.first_name() + " " + fake.last_name() for _ in range(200)]
+    dept_ids_pool = df_departments["department_id"].tolist()
+    dept_to_hosp = dict(zip(df_departments["department_id"], df_departments["hospital_id"]))
+
+    doctors = []
     for i in range(num_doctors):
-        doc_id = f"DOC_{i+1:03d}"
-        assigned_dept = random.choice(departments)
+        d_dept = np.random.choice(dept_ids_pool)
         doctors.append({
-            "doctor_id": doc_id,
-            "hospital_id": assigned_dept["hospital_id"],
-            "department_id": assigned_dept["department_id"],
-            "name": f"Dr. {fake.first_name()} {fake.last_name()}, MD",
-            "specialty": random.choice(specialties),
-            "qualification": random.choice(["MD, FACC", "MD, FACP", "MD, FCCP", "MBBS, MD"]),
-            "experience_years": random.randint(3, 35),
-            "contact": fake.phone_number(),
+            "doctor_id": f"DOC_{i+1:04d}",
+            "hospital_id": dept_to_hosp[d_dept],
+            "department_id": d_dept,
+            "name": f"Dr. {np.random.choice(doctor_names_pool)}, MD",
+            "specialty": np.random.choice(specialties),
+            "qualification": np.random.choice(["MD, FACC", "MD, FACP", "MD, FCCP", "MBBS, MD"]),
+            "experience_years": int(np.random.randint(3, 35)),
+            "contact": f"+1-555-DOC-{i+1:04d}",
         })
     df_doctors = pd.DataFrame(doctors)
+    doctor_ids = [d["doctor_id"] for d in doctors]
+    doc_lookup = {d["doctor_id"]: (d["hospital_id"], d["department_id"]) for d in doctors}
 
-    # 4. Patients
-    num_patients = counts.get("patients", 3500)
-    patients = []
-    base_date = datetime(2023, 1, 1)
+    # 4. Patients (50,000+ records)
+    num_patients = counts.get("patients", 50000)
+    print(f"Generating {num_patients:,} Patient records...")
+    
+    # Pre-generate high-performance pools
+    pool_size = min(1500, num_patients)
+    first_names_m = [fake.first_name_male() for _ in range(pool_size // 2)]
+    first_names_f = [fake.first_name_female() for _ in range(pool_size // 2)]
+    last_names = [fake.last_name() for _ in range(pool_size)]
+    streets = [f"{np.random.randint(100, 9999)} Health Ave, Suite {np.random.randint(10, 99)}" for _ in range(pool_size)]
+    phones = [f"+1-555-{np.random.randint(100, 999):03d}-{np.random.randint(1000, 9999):04d}" for _ in range(pool_size)]
+
+    patient_genders = np.random.choice(["Male", "Female", "Other"], p=[0.48, 0.49, 0.03], size=num_patients)
+    patient_names = []
+    for g in patient_genders:
+        if g == "Male":
+            patient_names.append(f"{np.random.choice(first_names_m)} {np.random.choice(last_names)}")
+        else:
+            patient_names.append(f"{np.random.choice(first_names_f)} {np.random.choice(last_names)}")
+
+    patient_ages = np.random.choice(
+        [
+            np.random.randint(18, 36),
+            np.random.randint(36, 51),
+            np.random.randint(51, 66),
+            np.random.randint(66, 89),
+        ],
+        size=num_patients,
+    )
+
+    base_ref = datetime(2024, 1, 1)
+    dobs = [(base_ref - timedelta(days=int(a * 365.25))).strftime("%Y-%m-%d") for a in patient_ages]
+    created_dates = [(base_ref - timedelta(days=int(np.random.randint(10, 800)))).strftime("%Y-%m-%d") for _ in range(num_patients)]
+
     insurance_providers = [
         "Blue Cross Blue Shield", "Aetna Health", "UnitedHealthcare",
         "Medicare", "Medicaid", "Cigna", "Humana"
     ]
 
-    for i in range(num_patients):
-        p_id = f"P_{i+1:05d}"
-        age = random.choices([
-            random.randint(18, 35),
-            random.randint(36, 50),
-            random.randint(51, 65),
-            random.randint(66, 88),
-        ], weights=[0.2, 0.25, 0.3, 0.25])[0]
-        dob = (datetime.now() - timedelta(days=int(age * 365.25))).strftime("%Y-%m-%d")
-        created_at = (base_date + timedelta(days=random.randint(0, 700))).strftime("%Y-%m-%d")
-        gender = random.choices(GENDERS, weights=[0.48, 0.49, 0.03])[0]
+    df_patients = pd.DataFrame({
+        "patient_id": [f"P_{i+1:05d}" for i in range(num_patients)],
+        "name": patient_names,
+        "dob": dobs,
+        "age": patient_ages,
+        "gender": patient_genders,
+        "blood_group": np.random.choice(BLOOD_GROUPS, num_patients),
+        "contact": np.random.choice(phones, num_patients),
+        "address": np.random.choice(streets, num_patients),
+        "insurance_provider": np.random.choice(insurance_providers, num_patients),
+        "emergency_contact": np.random.choice(phones, num_patients),
+        "created_at": created_dates,
+    })
+    patient_ids = df_patients["patient_id"].tolist()
 
-        patients.append({
-            "patient_id": p_id,
-            "name": fake.name_male() if gender == "Male" else fake.name_female(),
-            "dob": dob,
-            "age": age,
-            "gender": gender,
-            "blood_group": random.choice(BLOOD_GROUPS),
-            "contact": fake.phone_number(),
-            "address": fake.street_address() + ", " + fake.city(),
-            "insurance_provider": random.choice(insurance_providers),
-            "emergency_contact": fake.phone_number(),
-            "created_at": created_at,
-        })
-    df_patients = pd.DataFrame(patients)
-
-    # 5. Medications Catalog (50 items)
+    # 5. Medications Catalog (200 records)
     medications = []
     for idx, med_meta in enumerate(MEDICATION_CATALOG):
         med_id = f"MED_{idx+1:03d}"
@@ -163,258 +186,209 @@ def generate_healthcare_ecosystem(
             "standard_daily_dose": med_meta["daily_dose"],
         })
     df_medications = pd.DataFrame(medications)
+    med_ids_pool = df_medications["medication_id"].tolist()
 
-    # 6. Pharmacy Inventory
-    pharmacy_inventory = []
-    inv_id_counter = 1
-    for h in hospitals:
-        for med in medications:
-            stock = random.randint(20, 1200)
-            reorder = med["reorder_threshold"]
-            # Occasional low stock scenario for demonstration
-            if random.random() < 0.20:
-                stock = random.randint(5, int(reorder * 0.4))
-
-            exp_date = (datetime.now() + timedelta(days=random.randint(30, 730))).strftime("%Y-%m-%d")
-            restock_date = (datetime.now() - timedelta(days=random.randint(5, 60))).strftime("%Y-%m-%d")
-
-            pharmacy_inventory.append({
-                "inventory_id": f"INV_{inv_id_counter:04d}",
-                "medication_id": med["medication_id"],
-                "hospital_id": h["hospital_id"],
-                "stock_quantity": stock,
-                "batch_number": f"BATCH_{fake.bothify(text='??###').upper()}",
-                "expiry_date": exp_date,
-                "reorder_level": reorder,
-                "last_restocked_date": restock_date,
-            })
-            inv_id_counter += 1
-    df_inventory = pd.DataFrame(pharmacy_inventory)
-
-    # 7. Admissions (Generate correlated readmissions for ML)
-    num_admissions = counts.get("admissions", 5000)
-    admissions = []
-    adm_counter = 1
-
-    # Map patients to their admission history
-    patient_ids = [p["patient_id"] for p in patients]
-    # Some patients will have multiple admissions to simulate 30-day readmissions
-    frequent_flyers = set(random.sample(patient_ids, int(len(patient_ids) * 0.25)))
-
-    while adm_counter <= num_admissions:
-        p_id = random.choice(patient_ids)
-        p_info = next(p for p in patients if p["patient_id"] == p_id)
-        doctor = random.choice(doctors)
-        hosp_id = doctor["hospital_id"]
-        dept_id = doctor["department_id"]
-
-        adm_date_dt = datetime(2024, 1, 1) + timedelta(days=random.randint(0, 500))
-        # Length of stay between 1 and 21 days, skewed towards 3-7 days
-        los_days = int(np.random.gamma(shape=3.0, scale=1.5)) + 1
-        los_days = min(max(los_days, 1), 28)
-        discharge_date_dt = adm_date_dt + timedelta(days=los_days)
-
-        adm_type = random.choices(ADMISSION_TYPES, weights=[0.45, 0.35, 0.20])[0]
-        disposition = random.choices(DISCHARGE_DISPOSITIONS, weights=[0.75, 0.12, 0.08, 0.03, 0.02])[0]
-
-        adm_id = f"ADM_{adm_counter:05d}"
-        admissions.append({
-            "admission_id": adm_id,
-            "patient_id": p_id,
-            "hospital_id": hosp_id,
-            "doctor_id": doctor["doctor_id"],
-            "department_id": dept_id,
-            "admission_date": adm_date_dt.strftime("%Y-%m-%d"),
-            "discharge_date": discharge_date_dt.strftime("%Y-%m-%d"),
-            "length_of_stay": los_days,
-            "admission_type": adm_type,
-            "room_number": f"{random.randint(100, 599)}",
-            "discharge_disposition": disposition,
+    # 6. Pharmacy Inventory (2,500 records)
+    num_inv = counts.get("pharmacy_inventory", 2500)
+    inventory = []
+    for i in range(num_inv):
+        m_id = np.random.choice(med_ids_pool)
+        h_id = np.random.choice([h["hospital_id"] for h in hospitals])
+        reorder = int(np.random.randint(50, 300))
+        stock = int(np.random.randint(10, 1500))
+        inventory.append({
+            "inventory_id": f"INV_{i+1:05d}",
+            "medication_id": m_id,
+            "hospital_id": h_id,
+            "stock_quantity": stock,
+            "batch_number": f"BATCH_{np.random.randint(1000, 9999)}",
+            "expiry_date": (datetime.now() + timedelta(days=int(np.random.randint(60, 720)))).strftime("%Y-%m-%d"),
+            "reorder_level": reorder,
+            "last_restocked_date": (datetime.now() - timedelta(days=int(np.random.randint(5, 60)))).strftime("%Y-%m-%d"),
         })
-        adm_counter += 1
+    df_inventory = pd.DataFrame(inventory)
 
-        # If patient is a frequent flyer and not deceased, generate a secondary readmission within 30 days
-        if p_id in frequent_flyers and disposition != "Deceased" and adm_counter <= num_admissions and random.random() < 0.65:
-            gap_days = random.randint(3, 29)  # 30-day readmission!
-            readm_date_dt = discharge_date_dt + timedelta(days=gap_days)
-            readm_los = min(max(int(np.random.gamma(shape=3.5, scale=1.8)) + 1, 1), 30)
-            readm_discharge = readm_date_dt + timedelta(days=readm_los)
+    # 7. Admissions (55,000+ records)
+    num_admissions = counts.get("admissions", 55000)
+    print(f"Generating {num_admissions:,} Inpatient Admission records...")
+    
+    adm_patients = np.random.choice(patient_ids, num_admissions)
+    adm_docs = np.random.choice(doctor_ids, num_admissions)
+    
+    adm_days_offset = np.random.randint(0, 500, num_admissions)
+    adm_dates = [base_ref + timedelta(days=int(d)) for d in adm_days_offset]
+    
+    pid_to_age = dict(zip(df_patients["patient_id"], df_patients["age"]))
+    adm_ages = np.array([pid_to_age.get(p, 50) for p in adm_patients])
+    adm_types = np.random.choice(ADMISSION_TYPES, p=[0.45, 0.35, 0.20], size=num_admissions)
+    is_em = (adm_types == "Emergency").astype(int)
+    is_urg = (adm_types == "Urgent").astype(int)
 
-            admissions.append({
-                "admission_id": f"ADM_{adm_counter:05d}",
-                "patient_id": p_id,
-                "hospital_id": hosp_id,
-                "doctor_id": doctor["doctor_id"],
-                "department_id": dept_id,
-                "admission_date": readm_date_dt.strftime("%Y-%m-%d"),
-                "discharge_date": readm_discharge.strftime("%Y-%m-%d"),
-                "length_of_stay": readm_los,
-                "admission_type": "Emergency",
-                "room_number": f"{random.randint(100, 599)}",
-                "discharge_disposition": "Home",
-            })
-            adm_counter += 1
+    # Clinically correlated Length of Stay
+    los_values = np.clip(np.round(2.0 + (adm_ages > 65) * 1.5 + is_em * 2.5 + is_urg * 1.0 + np.random.normal(0, 0.4, num_admissions)), 1, 28).astype(int)
+    disch_dates = [adm_dates[i] + timedelta(days=int(los_values[i])) for i in range(num_admissions)]
 
-    df_admissions = pd.DataFrame(admissions)
+    # Clinical LACE 30-Day Readmission Risk
+    lace_risk = (adm_ages > 65) * 1.5 + is_em * 2.5 + (los_values >= 5) * 2.0
+    lace_prob = 1.0 / (1.0 + np.exp(-(lace_risk - 4.5) / 1.0))
+    readm_values = (lace_prob >= 0.50).astype(int)
 
-    # 8. Diagnoses (Linked to admissions and patients)
-    diagnoses = []
-    dx_counter = 1
-    for adm in admissions:
-        # Every admission has at least 1 primary diagnosis
-        primary_dx = random.choice(ICD10_CATALOG)
-        diagnoses.append({
-            "diagnosis_id": f"DX_{dx_counter:06d}",
-            "admission_id": adm["admission_id"],
-            "patient_id": adm["patient_id"],
-            "icd10_code": primary_dx["code"],
-            "diagnosis_description": primary_dx["description"],
-            "diagnosis_type": "Primary",
-            "diagnosis_date": adm["admission_date"],
-            "severity": primary_dx["severity"],
-        })
-        dx_counter += 1
+    df_admissions = pd.DataFrame({
+        "admission_id": [f"ADM_{i+1:06d}" for i in range(num_admissions)],
+        "patient_id": adm_patients,
+        "hospital_id": [doc_lookup[d][0] for d in adm_docs],
+        "doctor_id": adm_docs,
+        "department_id": [doc_lookup[d][1] for d in adm_docs],
+        "admission_date": [d.strftime("%Y-%m-%d") for d in adm_dates],
+        "discharge_date": [d.strftime("%Y-%m-%d") for d in disch_dates],
+        "length_of_stay": los_values,
+        "admission_type": adm_types,
+        "room_number": np.random.randint(101, 799, size=num_admissions).astype(str),
+        "discharge_disposition": np.random.choice(DISCHARGE_DISPOSITIONS, p=[0.75, 0.12, 0.08, 0.03, 0.02], size=num_admissions),
+        "readmitted_30d": readm_values,
+    })
+    admission_ids = df_admissions["admission_id"].tolist()
+    adm_id_to_patient = dict(zip(df_admissions["admission_id"], df_admissions["patient_id"]))
+    adm_id_to_date = dict(zip(df_admissions["admission_id"], df_admissions["admission_date"]))
+    adm_id_to_doc = dict(zip(df_admissions["admission_id"], df_admissions["doctor_id"]))
 
-        # 60% probability of secondary comorbidities (Hypertension, Diabetes, COPD)
-        if random.random() < 0.60:
-            secondary_dx = random.choice([d for d in ICD10_CATALOG if d["code"] != primary_dx["code"]])
-            diagnoses.append({
-                "diagnosis_id": f"DX_{dx_counter:06d}",
-                "admission_id": adm["admission_id"],
-                "patient_id": adm["patient_id"],
-                "icd10_code": secondary_dx["code"],
-                "diagnosis_description": secondary_dx["description"],
-                "diagnosis_type": "Secondary",
-                "diagnosis_date": adm["admission_date"],
-                "severity": secondary_dx["severity"],
-            })
-            dx_counter += 1
+    # 8. Diagnoses (75,000+ records)
+    num_diagnoses = counts.get("diagnoses", 75000)
+    print(f"Generating {num_diagnoses:,} Clinical Diagnosis records...")
+    
+    diag_adms = np.random.choice(admission_ids, num_diagnoses)
+    sampled_icd_idx = np.random.choice(len(ICD10_CATALOG), num_diagnoses)
+    
+    diag_codes = [ICD10_CATALOG[i]["code"] for i in sampled_icd_idx]
+    diag_descs = [ICD10_CATALOG[i]["description"] for i in sampled_icd_idx]
+    diag_sevs = [ICD10_CATALOG[i]["severity"] for i in sampled_icd_idx]
+    diag_types = np.random.choice(["Primary", "Secondary"], p=[0.60, 0.40], size=num_diagnoses)
 
-    df_diagnoses = pd.DataFrame(diagnoses)
+    df_diagnoses = pd.DataFrame({
+        "diagnosis_id": [f"DX_{i+1:06d}" for i in range(num_diagnoses)],
+        "admission_id": diag_adms,
+        "patient_id": [adm_id_to_patient[a] for a in diag_adms],
+        "icd10_code": diag_codes,
+        "diagnosis_description": diag_descs,
+        "diagnosis_type": diag_types,
+        "diagnosis_date": [adm_id_to_date[a] for a in diag_adms],
+        "severity": diag_sevs,
+    })
 
-    # 9. Laboratory Results (15,000 records)
-    num_labs = counts.get("laboratory_results", 15000)
-    lab_results = []
-    for i in range(num_labs):
-        adm = random.choice(admissions)
-        test_meta = random.choice(LAB_CATALOG)
-        val_type = random.choices(["Normal", "High", "Low", "Critical"], weights=[0.68, 0.18, 0.09, 0.05])[0]
-
-        # Generate realistic value based on classification
-        low_b = test_meta["low"]
-        high_b = test_meta["high"]
-        if val_type == "Normal":
-            val = round(random.uniform(low_b, high_b), 2)
-            flag = "Normal"
-        elif val_type == "High":
-            val = round(random.uniform(high_b + 0.1, test_meta["crit_high"] * 0.9), 2)
-            flag = "High"
-        elif val_type == "Low":
-            val = round(random.uniform(test_meta["crit_low"] * 1.1, low_b - 0.1), 2)
-            flag = "Low"
+    # 9. Laboratory Results (100,000+ records)
+    num_labs = counts.get("laboratory_results", 100000)
+    print(f"Generating {num_labs:,} Laboratory Investigation records...")
+    
+    lab_adms = np.random.choice(admission_ids, num_labs)
+    lab_catalog_idx = np.random.choice(len(LAB_CATALOG), num_labs)
+    
+    lab_names = [LAB_CATALOG[i]["name"] for i in lab_catalog_idx]
+    lab_cats = [LAB_CATALOG[i]["category"] for i in lab_catalog_idx]
+    lab_units = [LAB_CATALOG[i]["unit"] for i in lab_catalog_idx]
+    lab_ref_ranges = [f"{LAB_CATALOG[i]['low']} - {LAB_CATALOG[i]['high']}" for i in lab_catalog_idx]
+    
+    lab_flags = np.random.choice(["Normal", "High", "Low", "Critical"], p=[0.70, 0.17, 0.08, 0.05], size=num_labs)
+    lab_values = []
+    for idx, f in enumerate(lab_flags):
+        cat_item = LAB_CATALOG[lab_catalog_idx[idx]]
+        if f == "Normal":
+            lab_values.append(round(float(np.random.uniform(cat_item["low"], cat_item["high"])), 2))
+        elif f == "High":
+            lab_values.append(round(float(np.random.uniform(cat_item["high"] + 0.1, cat_item["crit_high"] * 0.95)), 2))
+        elif f == "Low":
+            lab_values.append(round(float(np.random.uniform(cat_item["crit_low"] * 1.05, cat_item["low"] - 0.1)), 2))
         else:
-            val = round(random.uniform(test_meta["crit_high"], test_meta["crit_high"] * 1.4), 2)
-            flag = "Critical"
+            lab_values.append(round(float(np.random.uniform(cat_item["crit_high"], cat_item["crit_high"] * 1.4)), 2))
 
-        lab_date = adm["admission_date"]
+    df_labs = pd.DataFrame({
+        "lab_id": [f"LAB_{i+1:06d}" for i in range(num_labs)],
+        "patient_id": [adm_id_to_patient[a] for a in lab_adms],
+        "admission_id": lab_adms,
+        "test_name": lab_names,
+        "test_category": lab_cats,
+        "test_value": lab_values,
+        "reference_range": lab_ref_ranges,
+        "unit": lab_units,
+        "abnormal_flag": lab_flags,
+        "test_date": [adm_id_to_date[a] for a in lab_adms],
+    })
 
-        lab_results.append({
-            "lab_id": f"LAB_{i+1:06d}",
-            "patient_id": adm["patient_id"],
-            "admission_id": adm["admission_id"],
-            "test_name": test_meta["name"],
-            "test_category": test_meta["category"],
-            "test_value": float(val),
-            "reference_range": f"{low_b} - {high_b}",
-            "unit": test_meta["unit"],
-            "abnormal_flag": flag,
-            "test_date": lab_date,
-        })
-    df_labs = pd.DataFrame(lab_results)
-
-    # 10. Prescriptions (12,000 records)
-    num_rx = counts.get("prescriptions", 12000)
-    prescriptions = []
+    # 10. Prescriptions (80,000+ records)
+    num_rx = counts.get("prescriptions", 80000)
+    print(f"Generating {num_rx:,} Prescription records...")
+    
+    rx_adms = np.random.choice(admission_ids, num_rx)
+    rx_meds = np.random.choice(med_ids_pool, num_rx)
     frequencies = ["Once daily", "Twice daily", "Every 8 hours", "At bedtime", "As needed"]
-    for i in range(num_rx):
-        adm = random.choice(admissions)
-        med = random.choice(medications)
-        duration = random.choice([7, 10, 14, 30, 90])
-        prescriptions.append({
-            "prescription_id": f"RX_{i+1:06d}",
-            "patient_id": adm["patient_id"],
-            "doctor_id": adm["doctor_id"],
-            "admission_id": adm["admission_id"],
-            "medication_id": med["medication_id"],
-            "dosage": f"{random.choice([10, 20, 40, 500, 1000])} mg",
-            "frequency": random.choice(frequencies),
-            "duration_days": duration,
-            "quantity": random.choice([30, 60, 90, 10]),
-            "prescription_date": adm["admission_date"],
-            "status": random.choice(["Active", "Completed", "Discontinued"]),
-        })
-    df_prescriptions = pd.DataFrame(prescriptions)
 
-    # 11. Appointments (8,000 records)
-    num_apts = counts.get("appointments", 8000)
-    appointments = []
+    df_prescriptions = pd.DataFrame({
+        "prescription_id": [f"RX_{i+1:06d}" for i in range(num_rx)],
+        "patient_id": [adm_id_to_patient[a] for a in rx_adms],
+        "doctor_id": [adm_id_to_doc[a] for a in rx_adms],
+        "admission_id": rx_adms,
+        "medication_id": rx_meds,
+        "dosage": np.random.choice(["10 mg", "20 mg", "40 mg", "500 mg", "1000 mg"], num_rx),
+        "frequency": np.random.choice(frequencies, num_rx),
+        "duration_days": np.random.choice([7, 10, 14, 30, 90], num_rx),
+        "quantity": np.random.choice([10, 30, 60, 90], num_rx),
+        "prescription_date": [adm_id_to_date[a] for a in rx_adms],
+        "status": np.random.choice(["Active", "Completed", "Discontinued"], p=[0.70, 0.25, 0.05], size=num_rx),
+    })
+
+    # 11. Appointments (60,000+ records)
+    num_apts = counts.get("appointments", 60000)
+    print(f"Generating {num_apts:,} Patient Appointment records...")
+    
+    apt_patients = np.random.choice(patient_ids, num_apts)
+    apt_docs = np.random.choice(doctor_ids, num_apts)
+    apt_dates = [base_ref + timedelta(days=int(np.random.randint(0, 480))) for _ in range(num_apts)]
+    apt_statuses = np.random.choice(APPOINTMENT_STATUSES, p=[0.72, 0.14, 0.08, 0.06], size=num_apts)
+    wait_times = [int(np.random.randint(8, 65)) if s == "Completed" else 0 for s in apt_statuses]
+
     reasons = [
         "Routine Follow-up", "Annual Health Checkup", "Chronic Disease Review",
         "Post-Operative Follow-up", "Medication Adjustment", "Chest Discomfort",
         "Respiratory Symptoms", "Diabetes Monitoring"
     ]
-    for i in range(num_apts):
-        p_id = random.choice(patient_ids)
-        doc = random.choice(doctors)
-        apt_dt = datetime(2024, 1, 1) + timedelta(days=random.randint(0, 480))
-        status = random.choices(APPOINTMENT_STATUSES, weights=[0.72, 0.14, 0.08, 0.06])[0]
-        # Wait time between 5 and 75 minutes, higher for completed/walk-ins
-        wait_time = random.randint(8, 65) if status == "Completed" else 0
 
-        appointments.append({
-            "appointment_id": f"APT_{i+1:06d}",
-            "patient_id": p_id,
-            "doctor_id": doc["doctor_id"],
-            "department_id": doc["department_id"],
-            "appointment_date": apt_dt.strftime("%Y-%m-%d"),
-            "appointment_time": f"{random.randint(8, 17):02d}:{random.choice(['00', '15', '30', '45'])}",
-            "status": status,
-            "reason_for_visit": random.choice(reasons),
-            "waiting_time_minutes": wait_time,
-        })
-    df_appointments = pd.DataFrame(appointments)
+    df_appointments = pd.DataFrame({
+        "appointment_id": [f"APT_{i+1:06d}" for i in range(num_apts)],
+        "patient_id": apt_patients,
+        "doctor_id": apt_docs,
+        "department_id": [doc_lookup[d][1] for d in apt_docs],
+        "appointment_date": [d.strftime("%Y-%m-%d") for d in apt_dates],
+        "appointment_time": [f"{np.random.randint(8, 17):02d}:{np.random.choice(['00', '15', '30', '45'])}" for _ in range(num_apts)],
+        "status": apt_statuses,
+        "reason_for_visit": np.random.choice(reasons, num_apts),
+        "waiting_time_minutes": wait_times,
+    })
 
-    # 12. Billing (One per admission)
-    billing = []
-    payment_methods = ["Commercial Insurance", "Medicare", "Credit Card", "Direct Debit", "Cash"]
-    for idx, adm in enumerate(admissions):
-        los = adm["length_of_stay"]
-        base_charge = los * random.uniform(1100, 2400)
-        lab_charge = random.uniform(300, 1800)
-        pharmacy_charge = random.uniform(150, 1200)
-        total_bill = round(base_charge + lab_charge + pharmacy_charge, 2)
-        ins_coverage_ratio = random.uniform(0.65, 0.95)
-        ins_paid = round(total_bill * ins_coverage_ratio, 2)
-        patient_due = round(total_bill - ins_paid, 2)
-        status = random.choices(PAYMENT_STATUSES, weights=[0.82, 0.14, 0.04])[0]
+    # 12. Billing (55,000+ records - one per admission)
+    print(f"Generating {num_admissions:,} Billing records...")
+    base_charges = df_admissions["length_of_stay"] * np.random.uniform(1100, 2400, num_admissions)
+    lab_charges = np.random.uniform(300, 1800, num_admissions)
+    pharm_charges = np.random.uniform(150, 1200, num_admissions)
+    total_bills = np.round(base_charges + lab_charges + pharm_charges, 2)
+    
+    ins_ratios = np.random.uniform(0.65, 0.95, num_admissions)
+    ins_covered = np.round(total_bills * ins_ratios, 2)
+    patient_dues = np.round(total_bills - ins_covered, 2)
 
-        billing.append({
-            "bill_id": f"BILL_{idx+1:06d}",
-            "patient_id": adm["patient_id"],
-            "admission_id": adm["admission_id"],
-            "bill_date": adm["discharge_date"],
-            "total_amount": total_bill,
-            "insurance_covered": ins_paid,
-            "patient_payable": patient_due,
-            "payment_status": status,
-            "payment_method": random.choice(payment_methods),
-        })
-    df_billing = pd.DataFrame(billing)
+    df_billing = pd.DataFrame({
+        "bill_id": [f"BILL_{i+1:06d}" for i in range(num_admissions)],
+        "patient_id": df_admissions["patient_id"],
+        "admission_id": df_admissions["admission_id"],
+        "bill_date": df_admissions["discharge_date"],
+        "total_amount": total_bills,
+        "insurance_covered": ins_covered,
+        "patient_payable": patient_dues,
+        "payment_status": np.random.choice(PAYMENT_STATUSES, p=[0.82, 0.14, 0.04], size=num_admissions),
+        "payment_method": np.random.choice(["Commercial Insurance", "Medicare", "Credit Card", "Direct Debit", "Cash"], num_admissions),
+    })
 
-    # Apply realistic imperfection injection for Bronze/Silver testing!
+    # Apply realistic imperfection injection for Bronze/Silver testing
     print("Injecting realistic data quality issues (duplicates, nulls, inconsistent casing, corrupt dates)...")
 
-    # Patients: dirty gender casing, null contacts, duplicates
     df_patients_raw = inject_realistic_imperfections(
         df_patients,
         date_columns=["dob", "created_at"],
@@ -425,7 +399,6 @@ def generate_healthcare_ecosystem(
         seed=seed,
     )
 
-    # Admissions: dirty admission_type, room_number nulls, duplicates
     df_admissions_raw = inject_realistic_imperfections(
         df_admissions,
         date_columns=["admission_date", "discharge_date"],
@@ -436,7 +409,6 @@ def generate_healthcare_ecosystem(
         seed=seed + 1,
     )
 
-    # Diagnoses: casing in severity
     df_diagnoses_raw = inject_realistic_imperfections(
         df_diagnoses,
         date_columns=["diagnosis_date"],
@@ -446,7 +418,6 @@ def generate_healthcare_ecosystem(
         seed=seed + 2,
     )
 
-    # Lab Results: save as JSON to demonstrate multi-format ingestion
     df_labs_raw = inject_realistic_imperfections(
         df_labs,
         date_columns=["test_date"],
@@ -457,7 +428,6 @@ def generate_healthcare_ecosystem(
         seed=seed + 3,
     )
 
-    # Medications: save as JSON to demonstrate multi-format ingestion
     df_medications_raw = inject_realistic_imperfections(
         df_medications,
         categorical_columns=["category"],
@@ -466,7 +436,6 @@ def generate_healthcare_ecosystem(
         seed=seed + 4,
     )
 
-    # Prescriptions: CSV
     df_prescriptions_raw = inject_realistic_imperfections(
         df_prescriptions,
         date_columns=["prescription_date"],
@@ -476,7 +445,6 @@ def generate_healthcare_ecosystem(
         seed=seed + 5,
     )
 
-    # Appointments: CSV
     df_appointments_raw = inject_realistic_imperfections(
         df_appointments,
         date_columns=["appointment_date"],
@@ -486,7 +454,6 @@ def generate_healthcare_ecosystem(
         seed=seed + 6,
     )
 
-    # Billing: CSV
     df_billing_raw = inject_realistic_imperfections(
         df_billing,
         date_columns=["bill_date"],
@@ -496,7 +463,6 @@ def generate_healthcare_ecosystem(
         seed=seed + 7,
     )
 
-    # Inventory: CSV
     df_inventory_raw = inject_realistic_imperfections(
         df_inventory,
         date_columns=["expiry_date", "last_restocked_date"],
@@ -506,7 +472,7 @@ def generate_healthcare_ecosystem(
         seed=seed + 8,
     )
 
-    # Save to disk in RAW directory
+    # Persist to disk in RAW directory
     print(f"Persisting raw files to {output_dir}...")
     df_hospitals.to_csv(output_dir / "hospitals.csv", index=False)
     df_departments.to_csv(output_dir / "departments.csv", index=False)
@@ -519,9 +485,9 @@ def generate_healthcare_ecosystem(
     df_billing_raw.to_csv(output_dir / "billing.csv", index=False)
     df_inventory_raw.to_csv(output_dir / "pharmacy_inventory.csv", index=False)
 
-    # JSON formatted datasets to satisfy multi-format requirement
-    df_labs_raw.to_json(output_dir / "laboratory_results.json", orient="records", indent=2)
-    df_medications_raw.to_json(output_dir / "medications.json", orient="records", indent=2)
+    # Multi-format: JSON datasets
+    df_labs_raw.to_json(output_dir / "laboratory_results.json", orient="records")
+    df_medications_raw.to_json(output_dir / "medications.json", orient="records")
 
     summary = {
         "generated_at": datetime.now().isoformat(),
@@ -553,7 +519,8 @@ def generate_healthcare_ecosystem(
     with open(METADATA_DIR / "generation_summary.json", "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)
 
-    print("Synthetic healthcare dataset generation complete.")
+    total_records = sum(summary["counts"].values())
+    print(f"Synthetic healthcare dataset generation complete. Total records: {total_records:,}")
     return summary
 
 

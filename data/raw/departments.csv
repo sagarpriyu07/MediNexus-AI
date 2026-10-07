@@ -1,41 +1,31 @@
 department_id,hospital_id,department_name,bed_capacity
-DEPT_001,HOSP_001,Cardiology,52
-DEPT_002,HOSP_001,Emergency Medicine,27
-DEPT_003,HOSP_001,Internal Medicine,26
-DEPT_004,HOSP_001,Oncology,30
-DEPT_005,HOSP_001,Orthopedics,38
-DEPT_006,HOSP_001,Pediatrics,39
-DEPT_007,HOSP_001,Pulmonology,57
-DEPT_008,HOSP_001,Neurology,63
-DEPT_009,HOSP_002,Cardiology,26
-DEPT_010,HOSP_002,Emergency Medicine,60
-DEPT_011,HOSP_002,Internal Medicine,37
-DEPT_012,HOSP_002,Oncology,70
-DEPT_013,HOSP_002,Orthopedics,66
-DEPT_014,HOSP_002,Pediatrics,69
-DEPT_015,HOSP_002,Pulmonology,59
-DEPT_016,HOSP_002,Neurology,51
-DEPT_017,HOSP_003,Cardiology,39
-DEPT_018,HOSP_003,Emergency Medicine,53
-DEPT_019,HOSP_003,Internal Medicine,62
-DEPT_020,HOSP_003,Oncology,42
-DEPT_021,HOSP_003,Orthopedics,76
-DEPT_022,HOSP_003,Pediatrics,80
-DEPT_023,HOSP_003,Pulmonology,25
-DEPT_024,HOSP_003,Neurology,73
-DEPT_025,HOSP_004,Cardiology,76
-DEPT_026,HOSP_004,Emergency Medicine,35
-DEPT_027,HOSP_004,Internal Medicine,69
-DEPT_028,HOSP_004,Oncology,52
-DEPT_029,HOSP_004,Orthopedics,46
-DEPT_030,HOSP_004,Pediatrics,42
-DEPT_031,HOSP_004,Pulmonology,34
-DEPT_032,HOSP_004,Neurology,38
-DEPT_033,HOSP_005,Cardiology,73
-DEPT_034,HOSP_005,Emergency Medicine,46
-DEPT_035,HOSP_005,Internal Medicine,31
-DEPT_036,HOSP_005,Oncology,30
-DEPT_037,HOSP_005,Orthopedics,49
-DEPT_038,HOSP_005,Pediatrics,31
-DEPT_039,HOSP_005,Pulmonology,47
-DEPT_040,HOSP_005,Neurology,79
+DEPT_001,HOSP_001,Cardiology,60
+DEPT_002,HOSP_001,Emergency Medicine,118
+DEPT_003,HOSP_001,Internal Medicine,104
+DEPT_004,HOSP_002,Cardiology,88
+DEPT_005,HOSP_002,Emergency Medicine,63
+DEPT_006,HOSP_002,Internal Medicine,92
+DEPT_007,HOSP_003,Cardiology,110
+DEPT_008,HOSP_003,Emergency Medicine,70
+DEPT_009,HOSP_003,Internal Medicine,35
+DEPT_010,HOSP_004,Cardiology,55
+DEPT_011,HOSP_004,Emergency Medicine,89
+DEPT_012,HOSP_004,Internal Medicine,78
+DEPT_013,HOSP_005,Cardiology,70
+DEPT_014,HOSP_005,Emergency Medicine,54
+DEPT_015,HOSP_005,Internal Medicine,62
+DEPT_016,HOSP_006,Cardiology,78
+DEPT_017,HOSP_006,Emergency Medicine,48
+DEPT_018,HOSP_006,Internal Medicine,46
+DEPT_019,HOSP_007,Cardiology,83
+DEPT_020,HOSP_007,Emergency Medicine,47
+DEPT_021,HOSP_007,Internal Medicine,80
+DEPT_022,HOSP_008,Cardiology,79
+DEPT_023,HOSP_008,Emergency Medicine,112
+DEPT_024,HOSP_008,Internal Medicine,68
+DEPT_025,HOSP_009,Cardiology,40
+DEPT_026,HOSP_009,Emergency Medicine,93
+DEPT_027,HOSP_009,Internal Medicine,103
+DEPT_028,HOSP_010,Cardiology,50
+DEPT_029,HOSP_010,Emergency Medicine,83
+DEPT_030,HOSP_010,Internal Medicine,45

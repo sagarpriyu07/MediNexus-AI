@@ -40,7 +40,7 @@ def train_los_model() -> Dict[str, Any]:
     reg = GradientBoostingRegressor(
         n_estimators=100,
         max_depth=5,
-        learning_rate=0.08,
+        learning_rate=0.10,
         random_state=42,
     )
     reg.fit(X_train, y_train)

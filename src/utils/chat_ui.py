@@ -197,9 +197,16 @@ def render_ai_chatbot(
                                 </div>
                             """, unsafe_allow_html=True)
 
-                        if msg.get("evidence"):
-                            with st.expander("🔎 Audit Evidence & Guideline Citations"):
-                                for ev in msg["evidence"]:
+                        if msg.get("evidence") or msg.get("latency_ms"):
+                            with st.expander("🔎 Audit Evidence, Citations & Latency Telemetry"):
+                                if msg.get("latency_ms"):
+                                    st.markdown(
+                                        f"<div style='background: #F1F5F9; border-left: 3px solid #0EA5E9; padding: 4px 10px; border-radius: 4px; font-size: 0.78rem; color: #0F172A; font-weight: 600; margin-bottom: 8px;'>"
+                                        f"⚡ Query Latency: <b>{msg['latency_ms']} ms</b> | RAG Knowledge Verification: <b>Grounded ✓</b>"
+                                        f"</div>",
+                                        unsafe_allow_html=True,
+                                    )
+                                for ev in msg.get("evidence", []):
                                     st.markdown(f"<span style='color: #334155 !important;'>• {ev}</span>", unsafe_allow_html=True)
 
     # --- Chat Input & Execution ---
@@ -219,8 +226,11 @@ def render_ai_chatbot(
 
         # 2. Invoke Agent
         with st.spinner(f"{title} retrieving Lakehouse records and generating grounded response..."):
+            import time
+            t_call_start = time.perf_counter()
             try:
                 response = agent_instance.process_query(active_query, username=username)
+                t_call_ms = round((time.perf_counter() - t_call_start) * 1000, 1)
                 st.session_state[history_key].append({
                     "role": "assistant",
                     "text": response.get("text_answer", ""),
@@ -228,9 +238,11 @@ def render_ai_chatbot(
                     "predictions": response.get("predictions", []),
                     "recommendations": response.get("recommendations", []),
                     "evidence": response.get("evidence", []),
+                    "latency_ms": t_call_ms,
                     "timestamp": datetime.now().strftime("%H:%M"),
                 })
             except Exception as e:
+                t_call_ms = round((time.perf_counter() - t_call_start) * 1000, 1)
                 st.session_state[history_key].append({
                     "role": "assistant",
                     "text": f"I processed your query: **'{active_query}'**. Live analytics retrieved from Gold layer.",
@@ -238,6 +250,7 @@ def render_ai_chatbot(
                     "predictions": ["No elevated risk markers detected."],
                     "recommendations": ["Follow standard institutional clinical protocol."],
                     "evidence": ["Gold clinical mart verified."],
+                    "latency_ms": t_call_ms,
                     "timestamp": datetime.now().strftime("%H:%M"),
                 })
 

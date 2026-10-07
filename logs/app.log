@@ -449,3 +449,1110 @@
 [2026-10-05 19:18:35] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (15180 rows)
 [2026-10-05 19:18:35] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
 [2026-10-05 19:18:36] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-06 03:16:47] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_b015c83f) from D:\Virtusa Project\data\raw
+[2026-10-06 03:16:48] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (5060 rows)
+[2026-10-06 03:16:48] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (8080 rows)
+[2026-10-06 03:16:49] [INFO] [bronze_ingestion]: Bronze Ingested: billing (5050 rows)
+[2026-10-06 03:16:49] [INFO] [bronze_ingestion]: Bronze Ingested: departments (40 rows)
+[2026-10-06 03:16:49] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (8038 rows)
+[2026-10-06 03:16:49] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (40 rows)
+[2026-10-06 03:16:50] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (5 rows)
+[2026-10-06 03:16:50] [INFO] [bronze_ingestion]: Bronze Ingested: patients (3552 rows)
+[2026-10-06 03:16:50] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (61 rows)
+[2026-10-06 03:16:50] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (12120 rows)
+[2026-10-06 03:16:51] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (15180 rows)
+[2026-10-06 03:16:51] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-06 03:16:52] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-07 21:53:39] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_e257fae1) from D:\Virtusa Project\data\raw
+[2026-10-07 21:53:41] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 21:53:42] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 21:53:43] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 21:53:44] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 21:53:45] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 21:53:45] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 21:53:45] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 21:53:46] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 21:53:47] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 21:53:48] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 21:53:51] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 21:53:51] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 21:53:52] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-07 21:56:48] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_6b2f7928)
+[2026-10-07 21:56:48] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_6b2f7928) from D:\Virtusa Project\data\raw
+[2026-10-07 21:56:49] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 21:56:50] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 21:56:51] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 21:56:52] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 21:56:53] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 21:56:53] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 21:56:53] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 21:56:55] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 21:56:55] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 21:56:56] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 21:56:59] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 21:56:59] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 21:56:59] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_6b2f7928) from D:\Virtusa Project\data\bronze
+[2026-10-07 21:57:02] [INFO] [silver_transformation]: Silver Cleansed: admissions (Score: 99.57%)
+[2026-10-07 21:57:04] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 21:57:05] [INFO] [silver_transformation]: Silver Cleansed: billing (Score: 99.64%)
+[2026-10-07 21:57:06] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 21:57:07] [INFO] [silver_transformation]: Silver Cleansed: diagnoses (Score: 99.65%)
+[2026-10-07 21:57:08] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 21:57:08] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 21:57:11] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 21:57:11] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 21:57:13] [INFO] [silver_transformation]: Silver Cleansed: patients (Score: 99.44%)
+[2026-10-07 21:57:13] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 21:57:16] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 21:57:16] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_6b2f7928)
+[2026-10-07 21:57:46] [INFO] [gold_transformation]: Gold Layer Generation Complete. Models created: ['gold_admissions', 'gold_clinical', 'gold_laboratory', 'gold_prescriptions', 'gold_pharmacy', 'gold_appointments', 'gold_billing', 'gold_patient_360', 'gold_hospital_operations', 'gold_patient_risk_features']
+[2026-10-07 21:57:46] [INFO] [medallion_pipeline]: Medallion Pipeline pipe_6b2f7928 completed successfully in 57.85s.
+[2026-10-07 21:57:46] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 21:57:47] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 21:57:47] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 21:57:47] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 21:57:53] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 21:57:53] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 21:57:53] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 21:57:54] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 21:57:54] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 21:57:54] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 21:57:54] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 21:57:54] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 21:57:54] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 21:57:55] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 21:57:55] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 22:02:27] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_e3575411) from D:\Virtusa Project\data\raw
+[2026-10-07 22:02:29] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 22:02:30] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:02:31] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 22:02:31] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:02:32] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 22:02:33] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:02:33] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 22:02:34] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 22:02:34] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:02:36] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:02:39] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:02:39] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:02:40] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-07 22:05:37] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_f38190ca)
+[2026-10-07 22:05:37] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_f38190ca) from D:\Virtusa Project\data\raw
+[2026-10-07 22:05:38] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 22:05:39] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:05:40] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_5fb0dc59)
+[2026-10-07 22:05:40] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_5fb0dc59) from D:\Virtusa Project\data\raw
+[2026-10-07 22:05:41] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 22:05:42] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 22:05:42] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:05:44] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_a4bd1e8e)
+[2026-10-07 22:05:44] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_a4bd1e8e) from D:\Virtusa Project\data\raw
+[2026-10-07 22:05:45] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:05:46] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 22:05:46] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 22:05:47] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 22:05:47] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:05:48] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:05:48] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 22:05:48] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:05:51] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 22:05:51] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 22:05:51] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 22:05:52] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:05:52] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:05:52] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:05:52] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 22:05:55] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:05:56] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 22:05:56] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 22:05:57] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:05:58] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:05:59] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 22:06:00] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:06:01] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:06:02] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 22:06:02] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:06:03] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:06:05] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:06:05] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:06:06] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:06:08] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:06:08] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:06:08] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_a4bd1e8e) from D:\Virtusa Project\data\bronze
+[2026-10-07 22:06:10] [INFO] [silver_transformation]: Silver Cleansed: admissions (Score: 99.57%)
+[2026-10-07 22:06:12] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 22:06:14] [INFO] [silver_transformation]: Silver Cleansed: billing (Score: 99.64%)
+[2026-10-07 22:06:14] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 22:06:17] [INFO] [silver_transformation]: Silver Cleansed: diagnoses (Score: 99.65%)
+[2026-10-07 22:06:17] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 22:06:17] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 22:06:20] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 22:06:20] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 22:06:22] [INFO] [silver_transformation]: Silver Cleansed: patients (Score: 99.44%)
+[2026-10-07 22:06:22] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 22:06:25] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 22:06:26] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_a4bd1e8e)
+[2026-10-07 22:07:09] [INFO] [gold_transformation]: Gold Layer Generation Complete. Models created: ['gold_admissions', 'gold_clinical', 'gold_laboratory', 'gold_prescriptions', 'gold_pharmacy', 'gold_appointments', 'gold_billing', 'gold_patient_360', 'gold_hospital_operations', 'gold_patient_risk_features']
+[2026-10-07 22:07:09] [INFO] [medallion_pipeline]: Medallion Pipeline pipe_a4bd1e8e completed successfully in 84.88s.
+[2026-10-07 22:07:09] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 22:07:11] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 22:07:11] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 22:07:11] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 22:07:17] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 22:07:17] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 22:07:17] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 22:07:18] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 22:07:18] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 22:07:18] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 22:07:19] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 22:07:19] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 22:07:19] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 22:07:19] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 22:07:19] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 22:14:15] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_2d28e19a) from D:\Virtusa Project\data\raw
+[2026-10-07 22:14:16] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 22:14:17] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:14:18] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 22:14:18] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:14:20] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 22:14:20] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:14:20] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 22:14:21] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 22:14:22] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:14:23] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:14:26] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:14:26] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:14:27] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-07 22:19:25] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_904a9be0)
+[2026-10-07 22:19:25] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_904a9be0) from D:\Virtusa Project\data\raw
+[2026-10-07 22:19:26] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 22:19:27] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:19:29] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 22:19:29] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:19:29] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_64317652)
+[2026-10-07 22:19:29] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_64317652) from D:\Virtusa Project\data\raw
+[2026-10-07 22:19:31] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 22:19:31] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 22:19:31] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:19:32] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 22:19:33] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:19:33] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 22:19:35] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:19:35] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 22:19:35] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:19:37] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:19:38] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 22:19:39] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:19:39] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 22:19:41] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:19:41] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 22:19:42] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:19:42] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:19:43] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:19:46] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:19:46] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:19:47] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_64317652) from D:\Virtusa Project\data\bronze
+[2026-10-07 22:19:49] [INFO] [silver_transformation]: Silver Cleansed: admissions (Score: 99.57%)
+[2026-10-07 22:19:50] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 22:19:52] [INFO] [silver_transformation]: Silver Cleansed: billing (Score: 99.64%)
+[2026-10-07 22:19:52] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 22:19:54] [INFO] [silver_transformation]: Silver Cleansed: diagnoses (Score: 99.65%)
+[2026-10-07 22:19:54] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 22:19:55] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 22:19:57] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 22:19:58] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 22:19:59] [INFO] [silver_transformation]: Silver Cleansed: patients (Score: 99.44%)
+[2026-10-07 22:20:00] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 22:20:02] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 22:20:03] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_64317652)
+[2026-10-07 22:20:34] [INFO] [gold_transformation]: Gold Layer Generation Complete. Models created: ['gold_admissions', 'gold_clinical', 'gold_laboratory', 'gold_prescriptions', 'gold_pharmacy', 'gold_appointments', 'gold_billing', 'gold_patient_360', 'gold_hospital_operations', 'gold_patient_risk_features']
+[2026-10-07 22:20:34] [INFO] [medallion_pipeline]: Medallion Pipeline pipe_64317652 completed successfully in 64.68s.
+[2026-10-07 22:20:34] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 22:20:36] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 22:20:36] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 22:20:36] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 22:20:42] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 22:20:42] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 22:20:42] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 22:20:42] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 22:20:42] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 22:20:42] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 22:20:43] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 22:20:43] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 22:20:43] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 22:20:44] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 22:20:44] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 22:25:25] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_042d1cb4)
+[2026-10-07 22:25:25] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_042d1cb4) from D:\Virtusa Project\data\raw
+[2026-10-07 22:25:26] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 22:25:27] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:25:28] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 22:25:29] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:25:30] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 22:25:30] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:25:30] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 22:25:32] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 22:25:32] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:25:34] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:25:36] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:25:37] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:25:37] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_042d1cb4) from D:\Virtusa Project\data\bronze
+[2026-10-07 22:25:39] [INFO] [silver_transformation]: Silver Cleansed: admissions (Score: 99.57%)
+[2026-10-07 22:25:41] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 22:25:42] [INFO] [silver_transformation]: Silver Cleansed: billing (Score: 99.64%)
+[2026-10-07 22:25:43] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 22:25:45] [INFO] [silver_transformation]: Silver Cleansed: diagnoses (Score: 99.65%)
+[2026-10-07 22:25:45] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 22:25:45] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 22:25:48] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 22:25:48] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 22:25:50] [INFO] [silver_transformation]: Silver Cleansed: patients (Score: 99.44%)
+[2026-10-07 22:25:50] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 22:25:53] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 22:25:54] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_042d1cb4)
+[2026-10-07 22:26:24] [INFO] [gold_transformation]: Gold Layer Generation Complete. Models created: ['gold_admissions', 'gold_clinical', 'gold_laboratory', 'gold_prescriptions', 'gold_pharmacy', 'gold_appointments', 'gold_billing', 'gold_patient_360', 'gold_hospital_operations', 'gold_patient_risk_features']
+[2026-10-07 22:26:25] [INFO] [medallion_pipeline]: Medallion Pipeline pipe_042d1cb4 completed successfully in 59.86s.
+[2026-10-07 22:26:25] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 22:26:26] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 22:26:26] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 22:26:26] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 22:26:33] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 22:26:33] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 22:26:33] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 22:26:33] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 22:26:33] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 22:26:33] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 22:26:34] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 22:26:34] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.38 tests/day
+[2026-10-07 22:26:34] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 22:26:35] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 22:26:35] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 22:31:39] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_e8cca73c)
+[2026-10-07 22:31:39] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_e8cca73c) from D:\Virtusa Project\data\raw
+[2026-10-07 22:31:42] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (120000 rows)
+[2026-10-07 22:31:43] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:31:45] [INFO] [bronze_ingestion]: Bronze Ingested: billing (120000 rows)
+[2026-10-07 22:31:45] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:31:49] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (271341 rows)
+[2026-10-07 22:31:49] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:31:49] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (33 rows)
+[2026-10-07 22:31:51] [INFO] [bronze_ingestion]: Bronze Ingested: patients (86400 rows)
+[2026-10-07 22:31:51] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:31:53] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:31:56] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:31:56] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:31:56] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_e8cca73c) from D:\Virtusa Project\data\bronze
+[2026-10-07 22:31:58] [ERROR] [silver_transformation]: Error during silver transformation of admissions: 'admission_date'
+[2026-10-07 22:32:00] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 22:32:00] [ERROR] [silver_transformation]: Error during silver transformation of billing: 'bill_date'
+[2026-10-07 22:32:01] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 22:32:02] [ERROR] [silver_transformation]: Error during silver transformation of diagnoses: 'diagnosis_type'
+[2026-10-07 22:32:02] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 22:32:03] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 22:32:06] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 22:32:06] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 22:32:06] [ERROR] [silver_transformation]: Error during silver transformation of patients: 'blood_group'
+[2026-10-07 22:32:07] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 22:32:09] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 22:32:10] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_e8cca73c)
+[2026-10-07 22:32:11] [ERROR] [medallion_pipeline]: Medallion Pipeline pipe_e8cca73c failed: "['hospital_name', 'location'] not in index"
+[2026-10-07 22:32:12] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 22:32:13] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 22:32:13] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 22:32:13] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 22:32:19] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 22:32:19] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 22:32:19] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 22:32:20] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 22:32:20] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 22:32:20] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 22:32:20] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 22:32:20] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 22:32:20] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 22:32:21] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 22:32:21] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 22:33:12] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_e281b47c)
+[2026-10-07 22:33:12] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_e281b47c) from D:\Virtusa Project\data\raw
+[2026-10-07 22:33:15] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (120000 rows)
+[2026-10-07 22:33:16] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:33:18] [INFO] [bronze_ingestion]: Bronze Ingested: billing (120000 rows)
+[2026-10-07 22:33:18] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:33:21] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (271341 rows)
+[2026-10-07 22:33:22] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:33:22] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (33 rows)
+[2026-10-07 22:33:23] [INFO] [bronze_ingestion]: Bronze Ingested: patients (86400 rows)
+[2026-10-07 22:33:24] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:33:25] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:33:28] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:33:28] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:33:29] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_e281b47c) from D:\Virtusa Project\data\bronze
+[2026-10-07 22:33:30] [ERROR] [silver_transformation]: Error during silver transformation of admissions: 'admission_date'
+[2026-10-07 22:33:32] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 22:33:33] [ERROR] [silver_transformation]: Error during silver transformation of billing: 'bill_date'
+[2026-10-07 22:33:33] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 22:33:34] [ERROR] [silver_transformation]: Error during silver transformation of diagnoses: 'diagnosis_type'
+[2026-10-07 22:33:35] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 22:33:35] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 22:33:38] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 22:33:38] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 22:33:39] [ERROR] [silver_transformation]: Error during silver transformation of patients: 'blood_group'
+[2026-10-07 22:33:39] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 22:33:41] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 22:33:42] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_e281b47c)
+[2026-10-07 22:33:44] [ERROR] [medallion_pipeline]: Medallion Pipeline pipe_e281b47c failed: "['hospital_name', 'location'] not in index"
+[2026-10-07 22:33:44] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 22:33:45] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 22:33:45] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 22:33:45] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 22:33:52] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 22:33:52] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 22:33:52] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 22:33:52] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 22:33:52] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 22:33:52] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 22:33:53] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 22:33:53] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 22:33:53] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 22:33:54] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 22:33:54] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 22:35:36] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_2ff11e40)
+[2026-10-07 22:35:36] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_2ff11e40) from D:\Virtusa Project\data\raw
+[2026-10-07 22:35:39] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (120000 rows)
+[2026-10-07 22:35:40] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:35:42] [INFO] [bronze_ingestion]: Bronze Ingested: billing (120000 rows)
+[2026-10-07 22:35:42] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:35:46] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (271341 rows)
+[2026-10-07 22:35:46] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:35:46] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (33 rows)
+[2026-10-07 22:35:47] [INFO] [bronze_ingestion]: Bronze Ingested: patients (86400 rows)
+[2026-10-07 22:35:48] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:35:49] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:35:52] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:35:52] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:35:52] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_2ff11e40) from D:\Virtusa Project\data\bronze
+[2026-10-07 22:35:54] [ERROR] [silver_transformation]: Error during silver transformation of admissions: 'admission_date'
+[2026-10-07 22:35:56] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 22:35:57] [ERROR] [silver_transformation]: Error during silver transformation of billing: 'bill_date'
+[2026-10-07 22:35:57] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 22:35:58] [ERROR] [silver_transformation]: Error during silver transformation of diagnoses: 'diagnosis_type'
+[2026-10-07 22:35:59] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 22:35:59] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 22:36:02] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 22:36:02] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 22:36:03] [ERROR] [silver_transformation]: Error during silver transformation of patients: 'blood_group'
+[2026-10-07 22:36:03] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 22:36:05] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 22:36:06] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_2ff11e40)
+[2026-10-07 22:36:08] [ERROR] [medallion_pipeline]: Medallion Pipeline pipe_2ff11e40 failed: "['hospital_name', 'location'] not in index"
+[2026-10-07 22:36:08] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 22:36:09] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 22:36:09] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 22:36:09] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 22:36:16] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 22:36:16] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 22:36:16] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 22:36:16] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 22:36:16] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 22:36:16] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 22:36:17] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 22:36:17] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.38 tests/day
+[2026-10-07 22:36:17] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 22:36:17] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 22:36:17] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 22:43:09] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_bec9a755)
+[2026-10-07 22:43:09] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_bec9a755) from D:\Virtusa Project\data\raw
+[2026-10-07 22:43:12] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (120000 rows)
+[2026-10-07 22:43:13] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:43:15] [INFO] [bronze_ingestion]: Bronze Ingested: billing (120000 rows)
+[2026-10-07 22:43:15] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:43:18] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (271341 rows)
+[2026-10-07 22:43:18] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:43:19] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (33 rows)
+[2026-10-07 22:43:20] [INFO] [bronze_ingestion]: Bronze Ingested: patients (86400 rows)
+[2026-10-07 22:43:20] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:43:22] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:43:24] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:43:25] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:43:25] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_bec9a755) from D:\Virtusa Project\data\bronze
+[2026-10-07 22:43:30] [INFO] [silver_transformation]: Silver Cleansed: admissions (Score: 99.8%)
+[2026-10-07 22:43:32] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 22:43:34] [INFO] [silver_transformation]: Silver Cleansed: billing (Score: 99.8%)
+[2026-10-07 22:43:34] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 22:43:39] [INFO] [silver_transformation]: Silver Cleansed: diagnoses (Score: 99.8%)
+[2026-10-07 22:43:40] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 22:43:40] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 22:43:43] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 22:43:43] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 22:43:46] [INFO] [silver_transformation]: Silver Cleansed: patients (Score: 99.24%)
+[2026-10-07 22:43:46] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 22:43:49] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 22:43:49] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_bec9a755)
+[2026-10-07 22:44:36] [INFO] [gold_transformation]: Gold Layer Generation Complete. Models created: ['gold_admissions', 'gold_clinical', 'gold_laboratory', 'gold_prescriptions', 'gold_pharmacy', 'gold_appointments', 'gold_billing', 'gold_patient_360', 'gold_hospital_operations', 'gold_patient_risk_features']
+[2026-10-07 22:44:36] [INFO] [medallion_pipeline]: Medallion Pipeline pipe_bec9a755 completed successfully in 87.3s.
+[2026-10-07 22:45:29] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 22:45:31] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 22:45:31] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.3144, ROC-AUC: 0.7115
+[2026-10-07 22:45:31] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 22:45:44] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 22:45:44] [INFO] [train_los]: LOS Model trained successfully. MAE: 3.672 days, RMSE: 5.221 days, R2: 0.137
+[2026-10-07 22:45:44] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 22:45:44] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 22:45:44] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 22:45:44] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 22:45:45] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 22:45:45] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 22:45:45] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 22:45:47] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 22:45:47] [INFO] [train_demand]: Resource Demand Model trained. MAE: 0.45 admissions/day
+[2026-10-07 22:46:27] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_63f2e928) from D:\Virtusa Project\data\raw
+[2026-10-07 22:46:29] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (120000 rows)
+[2026-10-07 22:46:31] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 22:46:32] [INFO] [bronze_ingestion]: Bronze Ingested: billing (120000 rows)
+[2026-10-07 22:46:33] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 22:46:36] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (271341 rows)
+[2026-10-07 22:46:36] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 22:46:36] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (33 rows)
+[2026-10-07 22:46:38] [INFO] [bronze_ingestion]: Bronze Ingested: patients (86400 rows)
+[2026-10-07 22:46:38] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 22:46:40] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 22:46:42] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 22:46:43] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 22:46:43] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-07 23:00:23] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_53fc0351)
+[2026-10-07 23:00:23] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_53fc0351) from D:\Virtusa Project\data\raw
+[2026-10-07 23:00:26] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (120000 rows)
+[2026-10-07 23:00:26] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_9f871151)
+[2026-10-07 23:00:26] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_9f871151) from D:\Virtusa Project\data\raw
+[2026-10-07 23:00:28] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:00:31] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (120000 rows)
+[2026-10-07 23:00:31] [INFO] [bronze_ingestion]: Bronze Ingested: billing (120000 rows)
+[2026-10-07 23:00:32] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:00:33] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:00:37] [INFO] [bronze_ingestion]: Bronze Ingested: billing (120000 rows)
+[2026-10-07 23:00:37] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (271341 rows)
+[2026-10-07 23:00:38] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:00:38] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:00:38] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (33 rows)
+[2026-10-07 23:00:42] [INFO] [bronze_ingestion]: Bronze Ingested: patients (86400 rows)
+[2026-10-07 23:00:42] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (271341 rows)
+[2026-10-07 23:00:43] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:00:43] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:00:44] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (33 rows)
+[2026-10-07 23:00:45] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:00:48] [INFO] [bronze_ingestion]: Bronze Ingested: patients (86400 rows)
+[2026-10-07 23:00:48] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:00:49] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:00:49] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:00:51] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:00:53] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:00:54] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:01:57] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_5603aea7)
+[2026-10-07 23:01:57] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_5603aea7) from D:\Virtusa Project\data\raw
+[2026-10-07 23:01:58] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 23:01:59] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:02:01] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 23:02:01] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:02:02] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 23:02:02] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:02:03] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 23:02:04] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 23:02:04] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:02:06] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:02:09] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:02:09] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:02:09] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_5603aea7) from D:\Virtusa Project\data\bronze
+[2026-10-07 23:02:11] [INFO] [silver_transformation]: Silver Cleansed: admissions (Score: 99.57%)
+[2026-10-07 23:02:13] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 23:02:15] [INFO] [silver_transformation]: Silver Cleansed: billing (Score: 99.64%)
+[2026-10-07 23:02:15] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 23:02:17] [INFO] [silver_transformation]: Silver Cleansed: diagnoses (Score: 99.65%)
+[2026-10-07 23:02:17] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 23:02:17] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 23:02:20] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 23:02:21] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 23:02:23] [INFO] [silver_transformation]: Silver Cleansed: patients (Score: 99.44%)
+[2026-10-07 23:02:23] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 23:02:25] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 23:02:26] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_5603aea7)
+[2026-10-07 23:02:56] [INFO] [gold_transformation]: Gold Layer Generation Complete. Models created: ['gold_admissions', 'gold_clinical', 'gold_laboratory', 'gold_prescriptions', 'gold_pharmacy', 'gold_appointments', 'gold_billing', 'gold_patient_360', 'gold_hospital_operations', 'gold_patient_risk_features']
+[2026-10-07 23:02:56] [INFO] [medallion_pipeline]: Medallion Pipeline pipe_5603aea7 completed successfully in 58.97s.
+[2026-10-07 23:02:57] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 23:02:58] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 23:02:58] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 23:02:58] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 23:03:04] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 23:03:04] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 23:03:04] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 23:03:05] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 23:03:05] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 23:03:05] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 23:03:05] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 23:03:05] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 23:03:05] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 23:03:06] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 23:03:06] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 23:04:01] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_732de2d0)
+[2026-10-07 23:04:01] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_732de2d0) from D:\Virtusa Project\data\raw
+[2026-10-07 23:04:04] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (120000 rows)
+[2026-10-07 23:04:05] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:04:07] [INFO] [bronze_ingestion]: Bronze Ingested: billing (120000 rows)
+[2026-10-07 23:04:08] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:04:11] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (271341 rows)
+[2026-10-07 23:04:11] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:04:11] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (33 rows)
+[2026-10-07 23:04:13] [INFO] [bronze_ingestion]: Bronze Ingested: patients (86400 rows)
+[2026-10-07 23:04:13] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:04:14] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:04:17] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:04:18] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:04:18] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_732de2d0) from D:\Virtusa Project\data\bronze
+[2026-10-07 23:04:19] [ERROR] [silver_transformation]: Error during silver transformation of admissions: 'admission_date'
+[2026-10-07 23:04:21] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 23:04:22] [ERROR] [silver_transformation]: Error during silver transformation of billing: 'bill_date'
+[2026-10-07 23:04:22] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 23:04:23] [ERROR] [silver_transformation]: Error during silver transformation of diagnoses: 'diagnosis_type'
+[2026-10-07 23:04:24] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 23:04:24] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 23:04:27] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 23:04:27] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 23:04:28] [ERROR] [silver_transformation]: Error during silver transformation of patients: 'blood_group'
+[2026-10-07 23:04:28] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 23:04:30] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 23:04:31] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_732de2d0)
+[2026-10-07 23:04:33] [ERROR] [medallion_pipeline]: Medallion Pipeline pipe_732de2d0 failed: "['hospital_name', 'location'] not in index"
+[2026-10-07 23:04:33] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 23:04:34] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 23:04:34] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 23:04:34] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 23:04:41] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 23:04:41] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 23:04:41] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 23:04:41] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 23:04:41] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 23:04:41] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 23:04:42] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 23:04:42] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.36 tests/day
+[2026-10-07 23:04:42] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 23:04:43] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 23:04:43] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 23:05:29] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_0f34bc05)
+[2026-10-07 23:05:29] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_0f34bc05) from D:\Virtusa Project\data\raw
+[2026-10-07 23:05:32] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (120000 rows)
+[2026-10-07 23:05:33] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:05:35] [INFO] [bronze_ingestion]: Bronze Ingested: billing (120000 rows)
+[2026-10-07 23:05:35] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:05:38] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (271341 rows)
+[2026-10-07 23:05:39] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:05:39] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (33 rows)
+[2026-10-07 23:05:40] [INFO] [bronze_ingestion]: Bronze Ingested: patients (86400 rows)
+[2026-10-07 23:05:41] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:05:42] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:05:45] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:05:45] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:05:45] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_0f34bc05) from D:\Virtusa Project\data\bronze
+[2026-10-07 23:05:47] [ERROR] [silver_transformation]: Error during silver transformation of admissions: 'admission_date'
+[2026-10-07 23:05:49] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 23:05:50] [ERROR] [silver_transformation]: Error during silver transformation of billing: 'bill_date'
+[2026-10-07 23:05:50] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 23:05:52] [ERROR] [silver_transformation]: Error during silver transformation of diagnoses: 'diagnosis_type'
+[2026-10-07 23:05:52] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 23:05:53] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 23:05:56] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 23:05:56] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 23:05:57] [ERROR] [silver_transformation]: Error during silver transformation of patients: 'blood_group'
+[2026-10-07 23:05:57] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 23:05:59] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 23:06:00] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_0f34bc05)
+[2026-10-07 23:06:02] [ERROR] [medallion_pipeline]: Medallion Pipeline pipe_0f34bc05 failed: "['hospital_name', 'location'] not in index"
+[2026-10-07 23:06:02] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 23:06:03] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 23:06:03] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 23:06:03] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 23:06:10] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 23:06:10] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 23:06:10] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 23:06:10] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 23:06:10] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 23:06:10] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 23:06:11] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 23:06:11] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 23:06:11] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 23:06:12] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 23:06:12] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 23:06:41] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_de45f79b)
+[2026-10-07 23:06:41] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_de45f79b) from D:\Virtusa Project\data\raw
+[2026-10-07 23:06:44] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (120000 rows)
+[2026-10-07 23:06:45] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:06:47] [INFO] [bronze_ingestion]: Bronze Ingested: billing (120000 rows)
+[2026-10-07 23:06:48] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:06:55] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (271341 rows)
+[2026-10-07 23:06:56] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:06:56] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (33 rows)
+[2026-10-07 23:07:00] [INFO] [bronze_ingestion]: Bronze Ingested: patients (86400 rows)
+[2026-10-07 23:07:01] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:07:06] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:07:11] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:07:12] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:08:31] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_b3b2213d)
+[2026-10-07 23:08:31] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_b3b2213d) from D:\Virtusa Project\data\raw
+[2026-10-07 23:08:32] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 23:08:33] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:08:35] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 23:08:35] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:08:36] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 23:08:37] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:08:37] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 23:08:38] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 23:08:39] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:08:41] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:08:44] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:08:44] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:09:21] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_472dc1ca)
+[2026-10-07 23:09:21] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_472dc1ca) from D:\Virtusa Project\data\raw
+[2026-10-07 23:09:22] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_f388706d)
+[2026-10-07 23:09:22] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_f388706d) from D:\Virtusa Project\data\raw
+[2026-10-07 23:09:22] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 23:09:24] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 23:09:25] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:09:25] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_56365072)
+[2026-10-07 23:09:25] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_56365072) from D:\Virtusa Project\data\raw
+[2026-10-07 23:09:27] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:09:27] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 23:09:27] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 23:09:28] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:09:30] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 23:09:30] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:09:30] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 23:09:31] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:09:31] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:09:33] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 23:09:33] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 23:09:33] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 23:09:33] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:09:33] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:09:35] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 23:09:35] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 23:09:35] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 23:09:36] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:09:37] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:09:38] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 23:09:38] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:09:39] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 23:09:39] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:09:43] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:09:43] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 23:09:43] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:09:44] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:09:45] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:09:47] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:09:47] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:09:48] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:09:50] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:09:51] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:09:51] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_56365072) from D:\Virtusa Project\data\bronze
+[2026-10-07 23:09:53] [INFO] [silver_transformation]: Silver Cleansed: admissions (Score: 99.57%)
+[2026-10-07 23:09:55] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 23:09:56] [INFO] [silver_transformation]: Silver Cleansed: billing (Score: 99.64%)
+[2026-10-07 23:09:57] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 23:09:59] [INFO] [silver_transformation]: Silver Cleansed: diagnoses (Score: 99.65%)
+[2026-10-07 23:09:59] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 23:09:59] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 23:10:03] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 23:10:03] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 23:10:05] [INFO] [silver_transformation]: Silver Cleansed: patients (Score: 99.44%)
+[2026-10-07 23:10:06] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 23:10:09] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 23:10:38] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_4abc4e31)
+[2026-10-07 23:10:38] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_4abc4e31) from D:\Virtusa Project\data\raw
+[2026-10-07 23:10:39] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 23:10:40] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:10:41] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 23:10:41] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:10:43] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 23:10:43] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:10:43] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 23:10:44] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 23:10:45] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:10:46] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:10:49] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:10:49] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:10:50] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_4abc4e31) from D:\Virtusa Project\data\bronze
+[2026-10-07 23:10:52] [INFO] [silver_transformation]: Silver Cleansed: admissions (Score: 99.57%)
+[2026-10-07 23:10:53] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 23:10:55] [INFO] [silver_transformation]: Silver Cleansed: billing (Score: 99.64%)
+[2026-10-07 23:10:55] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 23:10:57] [INFO] [silver_transformation]: Silver Cleansed: diagnoses (Score: 99.65%)
+[2026-10-07 23:10:58] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 23:10:58] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 23:11:01] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 23:11:01] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 23:11:03] [INFO] [silver_transformation]: Silver Cleansed: patients (Score: 99.44%)
+[2026-10-07 23:11:03] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 23:11:06] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 23:11:07] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_4abc4e31)
+[2026-10-07 23:11:37] [INFO] [gold_transformation]: Gold Layer Generation Complete. Models created: ['gold_admissions', 'gold_clinical', 'gold_laboratory', 'gold_prescriptions', 'gold_pharmacy', 'gold_appointments', 'gold_billing', 'gold_patient_360', 'gold_hospital_operations', 'gold_patient_risk_features']
+[2026-10-07 23:11:37] [INFO] [medallion_pipeline]: Medallion Pipeline pipe_4abc4e31 completed successfully in 59.07s.
+[2026-10-07 23:11:37] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 23:11:38] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 23:11:38] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 23:11:38] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 23:11:45] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 23:11:45] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 23:11:45] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 23:11:45] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 23:11:45] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 23:11:45] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 23:11:46] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 23:11:46] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 23:11:46] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 23:11:47] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 23:11:47] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 23:22:55] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 23:22:56] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 23:22:56] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 23:23:08] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 23:23:14] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 23:23:14] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 23:32:18] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: run_gld_1f42da1f)
+[2026-10-07 23:32:39] [INFO] [gold_transformation]: Gold Layer Generation Complete. Models created: ['gold_admissions', 'gold_clinical', 'gold_laboratory', 'gold_prescriptions', 'gold_pharmacy', 'gold_appointments', 'gold_billing', 'gold_patient_360', 'gold_hospital_operations', 'gold_patient_risk_features']
+[2026-10-07 23:32:39] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 23:32:40] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 23:32:40] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.9727, ROC-AUC: 0.9961
+[2026-10-07 23:32:40] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 23:32:46] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 23:32:46] [INFO] [train_los]: LOS Model trained successfully. MAE: 0.306 days, RMSE: 0.398 days, R2: 0.939
+[2026-10-07 23:32:59] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 23:33:00] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 23:33:00] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.9727, ROC-AUC: 0.9961
+[2026-10-07 23:33:00] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 23:33:05] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 23:33:05] [INFO] [train_los]: LOS Model trained successfully. MAE: 0.306 days, RMSE: 0.398 days, R2: 0.939
+[2026-10-07 23:33:05] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 23:33:06] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 23:33:06] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 23:33:06] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 23:33:06] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 23:33:06] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 23:33:06] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 23:33:07] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 23:33:07] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.05 admissions/day
+[2026-10-07 23:33:41] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_54dd99ef) from D:\Virtusa Project\data\raw
+[2026-10-07 23:33:41] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 23:33:42] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:33:42] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:33:43] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 23:33:44] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 23:33:45] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 23:33:46] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:33:47] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:33:48] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 23:33:49] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:33:51] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:33:51] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:33:52] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-07 23:35:59] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_31a3d51d)
+[2026-10-07 23:35:59] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_31a3d51d) from D:\Virtusa Project\data\raw
+[2026-10-07 23:36:00] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 23:36:01] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:36:02] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 23:36:02] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:36:03] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 23:36:03] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:36:04] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 23:36:05] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 23:36:05] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:36:06] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:36:09] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:36:09] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:36:10] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_31a3d51d) from D:\Virtusa Project\data\bronze
+[2026-10-07 23:36:11] [INFO] [silver_transformation]: Silver Cleansed: admissions (Score: 99.57%)
+[2026-10-07 23:36:13] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 23:36:15] [INFO] [silver_transformation]: Silver Cleansed: billing (Score: 99.64%)
+[2026-10-07 23:36:15] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 23:36:16] [INFO] [silver_transformation]: Silver Cleansed: diagnoses (Score: 99.65%)
+[2026-10-07 23:36:17] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 23:36:17] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 23:36:20] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 23:36:20] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 23:36:22] [INFO] [silver_transformation]: Silver Cleansed: patients (Score: 99.44%)
+[2026-10-07 23:36:22] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 23:36:24] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 23:36:25] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_31a3d51d)
+[2026-10-07 23:36:53] [INFO] [gold_transformation]: Gold Layer Generation Complete. Models created: ['gold_admissions', 'gold_clinical', 'gold_laboratory', 'gold_prescriptions', 'gold_pharmacy', 'gold_appointments', 'gold_billing', 'gold_patient_360', 'gold_hospital_operations', 'gold_patient_risk_features']
+[2026-10-07 23:36:54] [INFO] [medallion_pipeline]: Medallion Pipeline pipe_31a3d51d completed successfully in 55.02s.
+[2026-10-07 23:36:54] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 23:36:56] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 23:36:56] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 23:36:56] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 23:37:03] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 23:37:03] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 23:37:03] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 23:37:04] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 23:37:04] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 23:37:04] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 23:37:04] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 23:37:04] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 23:37:04] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 23:37:05] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 23:37:05] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 23:42:36] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_682df126)
+[2026-10-07 23:42:36] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_682df126) from D:\Virtusa Project\data\raw
+[2026-10-07 23:42:38] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 23:42:39] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:42:40] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 23:42:40] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:42:41] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 23:42:41] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:42:42] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 23:42:43] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 23:42:43] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:42:44] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:42:47] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:42:47] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:42:47] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_682df126) from D:\Virtusa Project\data\bronze
+[2026-10-07 23:42:49] [INFO] [silver_transformation]: Silver Cleansed: admissions (Score: 99.57%)
+[2026-10-07 23:42:50] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-07 23:42:52] [INFO] [silver_transformation]: Silver Cleansed: billing (Score: 99.64%)
+[2026-10-07 23:42:52] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-07 23:42:54] [INFO] [silver_transformation]: Silver Cleansed: diagnoses (Score: 99.65%)
+[2026-10-07 23:42:54] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-07 23:42:54] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-07 23:42:57] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-07 23:42:57] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-07 23:42:58] [INFO] [silver_transformation]: Silver Cleansed: patients (Score: 99.44%)
+[2026-10-07 23:42:59] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-07 23:43:01] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-07 23:43:02] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_682df126)
+[2026-10-07 23:43:27] [INFO] [gold_transformation]: Gold Layer Generation Complete. Models created: ['gold_admissions', 'gold_clinical', 'gold_laboratory', 'gold_prescriptions', 'gold_pharmacy', 'gold_appointments', 'gold_billing', 'gold_patient_360', 'gold_hospital_operations', 'gold_patient_risk_features']
+[2026-10-07 23:43:28] [INFO] [medallion_pipeline]: Medallion Pipeline pipe_682df126 completed successfully in 51.08s.
+[2026-10-07 23:43:28] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 23:43:29] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 23:43:29] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.2093, ROC-AUC: 0.763
+[2026-10-07 23:43:29] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 23:43:34] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 23:43:34] [INFO] [train_los]: LOS Model trained successfully. MAE: 2.033 days, RMSE: 2.65 days, R2: -0.004
+[2026-10-07 23:43:34] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 23:43:35] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 23:43:35] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 23:43:35] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 23:43:35] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 23:43:35] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 23:43:35] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 23:43:36] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 23:43:36] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.11 admissions/day
+[2026-10-07 23:50:29] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: run_gld_864141d4)
+[2026-10-07 23:50:50] [INFO] [gold_transformation]: Gold Layer Generation Complete. Models created: ['gold_admissions', 'gold_clinical', 'gold_laboratory', 'gold_prescriptions', 'gold_pharmacy', 'gold_appointments', 'gold_billing', 'gold_patient_360', 'gold_hospital_operations', 'gold_patient_risk_features']
+[2026-10-07 23:50:50] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-07 23:50:51] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-07 23:50:51] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.9727, ROC-AUC: 0.9961
+[2026-10-07 23:50:51] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-07 23:50:56] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-07 23:50:56] [INFO] [train_los]: LOS Model trained successfully. MAE: 0.306 days, RMSE: 0.398 days, R2: 0.939
+[2026-10-07 23:50:56] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-07 23:50:57] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-07 23:50:57] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-07 23:50:57] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-07 23:50:57] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-07 23:50:57] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-07 23:50:57] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-07 23:50:58] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-07 23:50:58] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.05 admissions/day
+[2026-10-07 23:58:07] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_fbcf944f) from D:\Virtusa Project\data\raw
+[2026-10-07 23:58:07] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-07 23:58:07] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-07 23:58:07] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-07 23:58:08] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-07 23:58:09] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-07 23:58:11] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-07 23:58:12] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-07 23:58:13] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-07 23:58:14] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-07 23:58:14] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-07 23:58:17] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-07 23:58:17] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-07 23:58:18] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-08 00:04:02] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_d052fdf3) from D:\Virtusa Project\data\raw
+[2026-10-08 00:04:03] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-08 00:04:03] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-08 00:04:03] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-08 00:04:04] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-08 00:04:05] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-08 00:04:06] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-08 00:04:07] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-08 00:04:08] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-08 00:04:10] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-08 00:04:10] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-08 00:04:12] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-08 00:04:13] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-08 00:04:13] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-08 00:07:19] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_9fbb480b) from D:\Virtusa Project\data\raw
+[2026-10-08 00:07:19] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-08 00:07:20] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-08 00:07:20] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-08 00:07:21] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-08 00:07:22] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-08 00:07:23] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-08 00:07:24] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-08 00:07:25] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-08 00:07:26] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-08 00:07:27] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-08 00:07:29] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-08 00:07:29] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-08 00:07:30] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-08 00:12:42] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_b7448141) from D:\Virtusa Project\data\raw
+[2026-10-08 00:12:42] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-08 00:12:42] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-08 00:12:43] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-08 00:12:44] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-08 00:12:45] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-08 00:12:46] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-08 00:12:47] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-08 00:12:48] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-08 00:12:49] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-08 00:12:49] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-08 00:12:52] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-08 00:12:52] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-08 00:12:53] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-08 00:15:49] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_a99db398)
+[2026-10-08 00:15:49] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_a99db398) from D:\Virtusa Project\data\raw
+[2026-10-08 00:15:49] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-08 00:15:49] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-08 00:15:49] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-08 00:15:50] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-08 00:15:51] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-08 00:15:53] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-08 00:15:54] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-08 00:15:55] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-08 00:15:56] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-08 00:15:57] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-08 00:15:59] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-08 00:15:59] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-08 00:16:00] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_a99db398) from D:\Virtusa Project\data\bronze
+[2026-10-08 00:16:02] [INFO] [silver_transformation]: Silver Cleansed: admissions (Score: 99.57%)
+[2026-10-08 00:16:03] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-08 00:16:04] [INFO] [medallion_pipeline]: Initiating Full Medallion Pipeline (ID: pipe_2c7d26cb)
+[2026-10-08 00:16:04] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: pipe_2c7d26cb) from D:\Virtusa Project\data\raw
+[2026-10-08 00:16:05] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-08 00:16:05] [INFO] [silver_transformation]: Silver Cleansed: billing (Score: 99.64%)
+[2026-10-08 00:16:05] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-08 00:16:05] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-08 00:16:06] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-08 00:16:08] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-08 00:16:08] [INFO] [silver_transformation]: Silver Cleansed: diagnoses (Score: 99.65%)
+[2026-10-08 00:16:09] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-08 00:16:09] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-08 00:16:10] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-08 00:16:11] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-08 00:16:13] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-08 00:16:13] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-08 00:16:14] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-08 00:16:15] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-08 00:16:16] [INFO] [silver_transformation]: Silver Cleansed: patients (Score: 99.44%)
+[2026-10-08 00:16:17] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-08 00:16:17] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-08 00:16:17] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-08 00:16:21] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-08 00:16:21] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-08 00:16:21] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-08 00:16:22] [INFO] [silver_transformation]: Starting Silver Transformation (Run ID: pipe_2c7d26cb) from D:\Virtusa Project\data\bronze
+[2026-10-08 00:16:23] [INFO] [silver_transformation]: Silver Cleansed: admissions (Score: 99.57%)
+[2026-10-08 00:16:25] [INFO] [silver_transformation]: Silver Cleansed: appointments (Score: 99.64%)
+[2026-10-08 00:16:27] [INFO] [silver_transformation]: Silver Cleansed: billing (Score: 99.64%)
+[2026-10-08 00:16:27] [INFO] [silver_transformation]: Silver Cleansed: departments (Score: 99.8%)
+[2026-10-08 00:16:29] [INFO] [silver_transformation]: Silver Cleansed: diagnoses (Score: 99.65%)
+[2026-10-08 00:16:29] [INFO] [silver_transformation]: Silver Cleansed: doctors (Score: 99.8%)
+[2026-10-08 00:16:29] [INFO] [silver_transformation]: Silver Cleansed: hospitals (Score: 99.8%)
+[2026-10-08 00:16:32] [INFO] [silver_transformation]: Silver Cleansed: laboratory_results (Score: 99.58%)
+[2026-10-08 00:16:32] [INFO] [silver_transformation]: Silver Cleansed: medications (Score: 99.8%)
+[2026-10-08 00:16:34] [INFO] [silver_transformation]: Silver Cleansed: patients (Score: 99.44%)
+[2026-10-08 00:16:34] [INFO] [silver_transformation]: Silver Cleansed: pharmacy_inventory (Score: 99.64%)
+[2026-10-08 00:16:36] [INFO] [silver_transformation]: Silver Cleansed: prescriptions (Score: 99.64%)
+[2026-10-08 00:16:37] [INFO] [gold_transformation]: Starting Gold Layer generation (Run ID: pipe_2c7d26cb)
+[2026-10-08 00:17:00] [INFO] [gold_transformation]: Gold Layer Generation Complete. Models created: ['gold_admissions', 'gold_clinical', 'gold_laboratory', 'gold_prescriptions', 'gold_pharmacy', 'gold_appointments', 'gold_billing', 'gold_patient_360', 'gold_hospital_operations', 'gold_patient_risk_features']
+[2026-10-08 00:17:00] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-08 00:17:01] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-08 00:17:01] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.9727, ROC-AUC: 0.9961
+[2026-10-08 00:17:01] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-08 00:17:07] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-08 00:17:07] [INFO] [train_los]: LOS Model trained successfully. MAE: 0.306 days, RMSE: 0.398 days, R2: 0.939
+[2026-10-08 00:17:07] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-08 00:17:07] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-08 00:17:07] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-08 00:17:07] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-08 00:17:08] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-08 00:17:08] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.37 tests/day
+[2026-10-08 00:17:08] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-08 00:17:09] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-08 00:17:09] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.05 admissions/day
+[2026-10-08 00:17:09] [INFO] [medallion_pipeline]: Medallion Pipeline pipe_2c7d26cb completed successfully in 64.47s.
+[2026-10-08 00:17:09] [INFO] [train_readmission]: Extracting readmission features from Gold layer...
+[2026-10-08 00:17:10] [INFO] [model_registry]: Registered model readmission_risk_model (v1.2.0) at D:\Virtusa Project\models\readmission_model.joblib
+[2026-10-08 00:17:10] [INFO] [train_readmission]: Readmission Model trained successfully. F1: 0.9727, ROC-AUC: 0.9961
+[2026-10-08 00:17:10] [INFO] [train_los]: Extracting Length of Stay features from Gold layer...
+[2026-10-08 00:17:16] [INFO] [model_registry]: Registered model length_of_stay_model (v1.2.0) at D:\Virtusa Project\models\los_model.joblib
+[2026-10-08 00:17:16] [INFO] [train_los]: LOS Model trained successfully. MAE: 0.306 days, RMSE: 0.398 days, R2: 0.939
+[2026-10-08 00:17:16] [INFO] [train_demand]: Training Pharmacy Demand Model from gold_pharmacy...
+[2026-10-08 00:17:16] [INFO] [model_registry]: Registered model pharmacy_demand_model (v1.0.0) at D:\Virtusa Project\models\pharmacy_demand_model.joblib
+[2026-10-08 00:17:16] [INFO] [train_demand]: Pharmacy Demand Model trained. MAE: 0.0 units, R2: 1.0
+[2026-10-08 00:17:16] [INFO] [train_demand]: Training Laboratory Workload Model from gold_laboratory...
+[2026-10-08 00:17:17] [INFO] [model_registry]: Registered model lab_workload_model (v1.0.0) at D:\Virtusa Project\models\lab_workload_model.joblib
+[2026-10-08 00:17:17] [INFO] [train_demand]: Lab Workload Model trained. MAE: 4.36 tests/day
+[2026-10-08 00:17:17] [INFO] [train_demand]: Training Resource Demand Model from gold_hospital_operations...
+[2026-10-08 00:17:18] [INFO] [model_registry]: Registered model resource_demand_model (v1.0.0) at D:\Virtusa Project\models\resource_demand_model.joblib
+[2026-10-08 00:17:18] [INFO] [train_demand]: Resource Demand Model trained. MAE: 1.05 admissions/day
+[2026-10-08 00:34:16] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_98391ba5) from D:\Virtusa Project\data\raw
+[2026-10-08 00:34:16] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-08 00:34:16] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-08 00:34:16] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-08 00:34:18] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-08 00:34:19] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-08 00:34:20] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-08 00:34:21] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-08 00:34:22] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-08 00:34:23] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-08 00:34:24] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-08 00:34:26] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-08 00:34:27] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-08 00:34:27] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-08 00:41:07] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_c1f6629b) from D:\Virtusa Project\data\raw
+[2026-10-08 00:41:07] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-08 00:41:07] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-08 00:41:07] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-08 00:41:08] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-08 00:41:09] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-08 00:41:10] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-08 00:41:12] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-08 00:41:13] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-08 00:41:14] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-08 00:41:14] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-08 00:41:17] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-08 00:41:17] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-08 00:41:18] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-08 00:46:30] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_4d784a56) from D:\Virtusa Project\data\raw
+[2026-10-08 00:46:30] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-08 00:46:30] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-08 00:46:30] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-08 00:46:31] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-08 00:46:32] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-08 00:46:33] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-08 00:46:35] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-08 00:46:36] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-08 00:46:37] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-08 00:46:37] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-08 00:46:40] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-08 00:46:40] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-08 00:46:40] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib
+[2026-10-08 00:58:18] [INFO] [bronze_ingestion]: Starting Bronze Ingestion (Run ID: run_brz_a41f5b34) from D:\Virtusa Project\data\raw
+[2026-10-08 00:58:18] [INFO] [bronze_ingestion]: Bronze Ingested: hospitals (10 rows)
+[2026-10-08 00:58:19] [INFO] [bronze_ingestion]: Bronze Ingested: departments (30 rows)
+[2026-10-08 00:58:19] [INFO] [bronze_ingestion]: Bronze Ingested: doctors (500 rows)
+[2026-10-08 00:58:20] [INFO] [bronze_ingestion]: Bronze Ingested: patients (50750 rows)
+[2026-10-08 00:58:21] [INFO] [bronze_ingestion]: Bronze Ingested: admissions (55660 rows)
+[2026-10-08 00:58:22] [INFO] [bronze_ingestion]: Bronze Ingested: diagnoses (75750 rows)
+[2026-10-08 00:58:23] [INFO] [bronze_ingestion]: Bronze Ingested: prescriptions (80800 rows)
+[2026-10-08 00:58:24] [INFO] [bronze_ingestion]: Bronze Ingested: appointments (60600 rows)
+[2026-10-08 00:58:25] [INFO] [bronze_ingestion]: Bronze Ingested: billing (55550 rows)
+[2026-10-08 00:58:26] [INFO] [bronze_ingestion]: Bronze Ingested: pharmacy_inventory (2525 rows)
+[2026-10-08 00:58:28] [INFO] [bronze_ingestion]: Bronze Ingested: laboratory_results (101200 rows)
+[2026-10-08 00:58:28] [INFO] [bronze_ingestion]: Bronze Ingested: medications (12 rows)
+[2026-10-08 00:58:29] [INFO] [model_registry]: Registered model test_dummy_model (v0.1.0) at D:\Virtusa Project\models\test_dummy.joblib

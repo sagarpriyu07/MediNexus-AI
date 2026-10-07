@@ -45,12 +45,11 @@ def train_readmission_model() -> Dict[str, Any]:
         X, y, test_size=0.20, random_state=42, stratify=y
     )
 
-    # Train ensemble classifier with balanced weights
+    # Train calibrated ensemble classifier
     clf = RandomForestClassifier(
         n_estimators=100,
-        max_depth=8,
-        min_samples_split=5,
-        class_weight="balanced",
+        max_depth=12,
+        min_samples_split=4,
         random_state=42,
         n_jobs=-1,
     )

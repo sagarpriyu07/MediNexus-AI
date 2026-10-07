@@ -19,8 +19,24 @@ MODELS_DIR = BASE_DIR / "models"
 DOCUMENTS_DIR = BASE_DIR / "documents"
 LOGS_DIR = BASE_DIR / "logs"
 
-# Default Generation Counts
+# Default Generation Counts (Enterprise Scale: 50,000+ records in each core dataset)
 DEFAULT_COUNTS = {
+    "patients": 50000,
+    "admissions": 55000,
+    "diagnoses": 75000,
+    "laboratory_results": 100000,
+    "medications": 200,
+    "prescriptions": 80000,
+    "appointments": 60000,
+    "billing": 55000,
+    "hospitals": 10,
+    "doctors": 500,
+    "pharmacy_inventory": 2500,
+    "departments": 25,
+}
+
+# Standard Demo Scale (Lightweight dev mode)
+LIGHT_COUNTS = {
     "patients": 3500,
     "admissions": 5000,
     "diagnoses": 7500,

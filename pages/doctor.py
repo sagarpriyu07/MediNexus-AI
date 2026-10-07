@@ -38,6 +38,17 @@ def render_doctor_page():
         </div>
     """, unsafe_allow_html=True)
 
+    # 4-Tier Clinical Analytics Framework Navigator
+    st.markdown("""
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 16px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+            <div style="font-weight: 700; color: #0F172A; font-size: 0.85rem;">CLINICAL ANALYTICS SUITE:</div>
+            <span style="background: #EFF6FF; color: #1D4ED8; padding: 2px 10px; border-radius: 12px; font-size: 0.76rem; font-weight: 600;">📊 1. Descriptive (Patient 360 EHR)</span>
+            <span style="background: #FEF3C7; color: #B45309; padding: 2px 10px; border-radius: 12px; font-size: 0.76rem; font-weight: 600;">🔍 2. Diagnostic (Root Cause Risk Factors)</span>
+            <span style="background: #F3E8FF; color: #7E22CE; padding: 2px 10px; border-radius: 12px; font-size: 0.76rem; font-weight: 600;">🔮 3. Predictive (Readmission & LOS AI)</span>
+            <span style="background: #ECFDF5; color: #047857; padding: 2px 10px; border-radius: 12px; font-size: 0.76rem; font-weight: 600;">🧭 4. Prescriptive (Care Protocol & Orders)</span>
+        </div>
+    """, unsafe_allow_html=True)
+
     # Check if Gold layer is available
     df_check = query_df("SELECT COUNT(*) as cnt FROM gold_patient_360")
     if df_check.empty or int(df_check.iloc[0]["cnt"]) == 0:
@@ -100,8 +111,12 @@ def render_doctor_page():
             LIMIT 100
         """)
 
-        current_pid = st.session_state.get("selected_patient_id", "P_00001")
-        
+        first_pid = str(df_selector.iloc[0]["patient_id"]) if not df_selector.empty else "P_00001"
+        current_pid = st.session_state.get("selected_patient_id", first_pid)
+        if not df_selector.empty and current_pid not in df_selector["patient_id"].values:
+            current_pid = first_pid
+            st.session_state["selected_patient_id"] = current_pid
+
         # Build options dictionary for quick lookup
         options_list = []
         selected_idx = 0
@@ -144,8 +159,13 @@ def render_doctor_page():
                         st.rerun()
 
         # Fetch active patient record
-        active_pid = st.session_state.get("selected_patient_id", "P_00001")
+        active_pid = st.session_state.get("selected_patient_id", first_pid)
         df_p = query_df("SELECT * FROM gold_patient_360 WHERE patient_id = ? LIMIT 1", [active_pid])
+
+        if df_p.empty and not df_selector.empty:
+            active_pid = str(df_selector.iloc[0]["patient_id"])
+            st.session_state["selected_patient_id"] = active_pid
+            df_p = query_df("SELECT * FROM gold_patient_360 WHERE patient_id = ? LIMIT 1", [active_pid])
 
         if df_p.empty:
             st.error(f"Patient {active_pid} record not found.")
@@ -207,6 +227,7 @@ def render_doctor_page():
 
         # --- TAB 1: Predictive Risk & Care Plan ---
         with tab_risk:
+            st.markdown("#### 🔮 Predictive Analytics: 30-Day Readmission Risk & Expected LOS")
             readm_eval = predict_patient_readmission(active_pid)
             los_eval = predict_patient_los(active_pid)
 
@@ -269,7 +290,7 @@ def render_doctor_page():
 
             # Key Contributing Risk Factors
             st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
-            st.markdown("##### Key Risk Drivers")
+            st.markdown("#### 🔍 Diagnostic Analytics: Key Risk Drivers & Clinical Attributions")
             factors = readm_eval.get("contributing_factors", [])
             if factors:
                 factor_cols = st.columns(min(len(factors), 3))
@@ -283,7 +304,7 @@ def render_doctor_page():
 
             # Prescriptive Transitional Care Protocol
             st.markdown("<div style='margin-top: 22px;'></div>", unsafe_allow_html=True)
-            st.markdown("##### Transitional Care Protocol")
+            st.markdown("#### 🧭 Prescriptive Analytics: Transitional Care Protocol & Discharge Checklist")
             care_plan = get_clinical_prescription_plan(readm_eval, p)
 
             st.markdown(f"""

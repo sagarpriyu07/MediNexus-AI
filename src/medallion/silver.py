@@ -1,12 +1,12 @@
 """
 Silver Medallion Layer for MediNexus AI.
 Cleans, standardizes, validates, deduplicates, repairs anomalies,
-and enforces data quality checks across all bronze tables.
+harmonizes heterogeneous external schemas, and enforces data quality checks across all bronze tables.
 """
 
 import sys
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Dict, Any, List
 import pandas as pd
 import numpy as np
@@ -42,6 +42,116 @@ PRIMARY_KEYS = {
     "billing": "bill_id",
 }
 
+# Cross-EMR and External Dataset Column Alias Normalization
+COLUMN_ALIASES = {
+    "hospitals": {
+        "name": "hospital_name",
+        "hospital": "hospital_name",
+        "hospital_title": "hospital_name",
+        "state": "location",
+        "city": "location",
+        "address": "location",
+        "beds": "total_beds",
+    },
+    "departments": {
+        "dept_id": "department_id",
+        "dept_name": "department_name",
+        "name": "department_name",
+    },
+    "doctors": {
+        "doc_id": "doctor_id",
+        "doctor_name": "name",
+    },
+    "patients": {
+        "patient_name": "name",
+        "full_name": "name",
+        "insurance_type": "insurance_provider",
+        "insurance": "insurance_provider",
+        "blood_type": "blood_group",
+        "phone": "contact",
+        "mobile": "contact",
+    },
+    "admissions": {
+        "admit_date": "admission_date",
+        "admission_dt": "admission_date",
+        "discharge_dt": "discharge_date",
+        "los_days": "length_of_stay",
+        "los": "length_of_stay",
+        "stay_days": "length_of_stay",
+        "admit_type": "admission_type",
+        "discharge_type": "discharge_disposition",
+        "disposition": "discharge_disposition",
+        "room": "room_number",
+        "ward": "room_number",
+        "ward_type": "room_number",
+    },
+    "diagnoses": {
+        "diag_id": "diagnosis_id",
+        "dx_id": "diagnosis_id",
+        "diag_desc": "diagnosis_description",
+        "description": "diagnosis_description",
+        "dx_desc": "diagnosis_description",
+        "diag_code": "icd10_code",
+        "dx_code": "icd10_code",
+        "icd_code": "icd10_code",
+        "diag_date": "diagnosis_date",
+    },
+    "laboratory_results": {
+        "lab_result_id": "lab_id",
+        "test_id": "lab_id",
+        "result_value": "test_value",
+        "value": "test_value",
+        "flag": "abnormal_flag",
+        "category": "test_category",
+    },
+    "medications": {
+        "drug_id": "medication_id",
+        "drug_name": "medication_name",
+        "name": "medication_name",
+        "cost": "unit_cost",
+        "price": "unit_cost",
+    },
+    "prescriptions": {
+        "rx_id": "prescription_id",
+        "script_id": "prescription_id",
+        "drug_id": "medication_id",
+        "presc_date": "prescription_date",
+    },
+    "pharmacy_inventory": {
+        "inv_id": "inventory_id",
+        "drug_id": "medication_id",
+        "stock": "stock_quantity",
+        "quantity": "stock_quantity",
+        "reorder": "reorder_level",
+    },
+    "appointments": {
+        "apt_id": "appointment_id",
+        "appt_id": "appointment_id",
+        "apt_date": "appointment_date",
+        "time": "appointment_time",
+        "wait_time": "waiting_time_minutes",
+    },
+    "billing": {
+        "total_cost_inr": "total_amount",
+        "total_cost": "total_amount",
+        "amount": "total_amount",
+        "billed_amount": "total_amount",
+        "cost": "total_amount",
+        "charges": "total_amount",
+        "govt_subsidy_inr": "insurance_covered",
+        "subsidy": "insurance_covered",
+        "insurance_amount": "insurance_covered",
+        "insurance": "insurance_covered",
+        "out_of_pocket_inr": "patient_payable",
+        "out_of_pocket": "patient_payable",
+        "patient_due": "patient_payable",
+        "payable": "patient_payable",
+        "status": "payment_status",
+        "method": "payment_method",
+        "date": "bill_date",
+    },
+}
+
 
 def clean_date_series(series: pd.Series) -> pd.Series:
     """Parse dates from mixed strings into standard ISO YYYY-MM-DD format."""
@@ -59,13 +169,23 @@ def transform_silver_table(
     run_id: str,
 ) -> (pd.DataFrame, Dict[str, Any]):
     """
-    Apply table-specific cleansing, standardization, and normalization rules.
+    Apply table-specific cleansing, standardization, schema harmonization, and normalization rules.
     """
     df = df_raw.copy()
     transformations = []
 
     # 1. Clean column names
     df.columns = [c.strip().lower() for c in df.columns]
+
+    # 1b. Harmonize known cross-EMR column aliases
+    aliases = COLUMN_ALIASES.get(table_name, {})
+    renamed = {}
+    for old_col, new_col in aliases.items():
+        if old_col in df.columns and new_col not in df.columns:
+            renamed[old_col] = new_col
+    if renamed:
+        df.rename(columns=renamed, inplace=True)
+        transformations.append(f"Harmonized column aliases: {list(renamed.keys())} -> {list(renamed.values())}")
 
     # 2. Deduplication based on primary key
     pk = PRIMARY_KEYS.get(table_name)
@@ -82,107 +202,341 @@ def transform_silver_table(
             df[col] = df[col].astype(str).str.strip()
             df[col] = df[col].replace(["UNKNOWN_VAL", "nan", "None", "<NA>", ""], np.nan)
 
-    # 4. Table-specific domain rules
-    if table_name == "patients":
+    # 4. Table-specific domain rules & Canonical Schema Enforcement
+    if table_name == "hospitals":
+        if "hospital_id" not in df.columns:
+            df["hospital_id"] = [f"HOSP_{i+1:03d}" for i in range(len(df))]
+        if "hospital_name" not in df.columns:
+            df["hospital_name"] = "Hospital " + df["hospital_id"].astype(str)
+        if "location" not in df.columns:
+            df["location"] = "Metropolitan Healthcare Zone"
+        if "total_beds" not in df.columns:
+            df["total_beds"] = 500
+        else:
+            df["total_beds"] = pd.to_numeric(df["total_beds"], errors="coerce").fillna(500).astype(int)
+        if "icu_beds" not in df.columns:
+            df["icu_beds"] = (df["total_beds"] * 0.12).astype(int).clip(lower=10)
+        else:
+            df["icu_beds"] = pd.to_numeric(df["icu_beds"], errors="coerce").fillna(60).astype(int)
+        if "operational_status" not in df.columns:
+            df["operational_status"] = "Active"
+        transformations.append("Harmonized hospital facilities schema and bed capacities")
+
+    elif table_name == "departments":
+        if "department_id" not in df.columns:
+            df["department_id"] = [f"DEPT_{i+1:03d}" for i in range(len(df))]
+        if "department_name" not in df.columns:
+            df["department_name"] = "General Medicine"
+        if "bed_capacity" not in df.columns:
+            df["bed_capacity"] = 50
+        else:
+            df["bed_capacity"] = pd.to_numeric(df["bed_capacity"], errors="coerce").fillna(50).astype(int)
+        transformations.append("Harmonized departmental bed capacities")
+
+    elif table_name == "doctors":
+        if "doctor_id" not in df.columns:
+            df["doctor_id"] = [f"DOC_{i+1:04d}" for i in range(len(df))]
+        if "name" not in df.columns:
+            df["name"] = "Dr. Physician " + df["doctor_id"].astype(str)
+        if "specialty" not in df.columns:
+            df["specialty"] = "General Medicine"
+        if "qualification" not in df.columns:
+            df["qualification"] = "MD, FACP"
+        if "experience_years" not in df.columns:
+            df["experience_years"] = 10
+        transformations.append("Harmonized physician credentialing metadata")
+
+    elif table_name == "patients":
+        if "patient_id" not in df.columns:
+            df["patient_id"] = [f"P_{i+1:05d}" for i in range(len(df))]
+        if "name" not in df.columns:
+            df["name"] = "Patient " + df["patient_id"].astype(str)
         # Standardize gender
-        gender_map = {
-            "m": "Male", "male": "Male", "m.": "Male",
-            "f": "Female", "female": "Female", "f.": "Female",
-            "other": "Other", "o": "Other"
-        }
-        df["gender"] = df["gender"].str.lower().map(gender_map).fillna("Other")
+        if "gender" in df.columns:
+            gender_map = {
+                "m": "Male", "male": "Male", "m.": "Male",
+                "f": "Female", "female": "Female", "f.": "Female",
+                "other": "Other", "o": "Other"
+            }
+            df["gender"] = df["gender"].str.lower().map(gender_map).fillna("Other")
+        else:
+            df["gender"] = "Other"
+
         # Standardize blood group
-        df["blood_group"] = df["blood_group"].str.upper()
-        # Dates
-        df["dob"] = clean_date_series(df["dob"])
-        df["created_at"] = clean_date_series(df["created_at"])
-        # Age
-        df["age"] = pd.to_numeric(df["age"], errors="coerce").fillna(45)
-        df["age"] = df["age"].abs().clip(lower=0, upper=110).astype(int)
-        if "contact" in df.columns:
+        if "blood_group" in df.columns:
+            df["blood_group"] = df["blood_group"].str.upper().fillna("O+")
+        else:
+            df["blood_group"] = "O+"
+
+        # Age and DOB
+        if "age" in df.columns:
+            df["age"] = pd.to_numeric(df["age"], errors="coerce").fillna(45)
+            df["age"] = df["age"].abs().clip(lower=0, upper=110).astype(int)
+        else:
+            df["age"] = 45
+
+        if "dob" in df.columns:
+            df["dob"] = clean_date_series(df["dob"])
+        else:
+            ref_date = datetime(2024, 1, 1)
+            df["dob"] = [(ref_date - timedelta(days=int(a * 365.25))).strftime("%Y-%m-%d") for a in df["age"]]
+
+        if "insurance_provider" not in df.columns:
+            df["insurance_provider"] = "Universal Health Coverage"
+
+        if "contact" not in df.columns:
+            df["contact"] = "Not Provided"
+        else:
             df["contact"] = df["contact"].fillna("Not Provided")
-        if "emergency_contact" in df.columns:
-            df["emergency_contact"] = df["emergency_contact"].fillna("Not Provided")
-        if "address" in df.columns:
+
+        if "emergency_contact" not in df.columns:
+            df["emergency_contact"] = "Not Disclosed"
+        else:
+            df["emergency_contact"] = df["emergency_contact"].fillna("Not Disclosed")
+
+        if "address" not in df.columns:
+            df["address"] = "Metro Region"
+        else:
             df["address"] = df["address"].fillna("Not Disclosed")
-        transformations.append("Standardized gender, blood group, cleaned dates & clamped age")
+
+        if "created_at" in df.columns:
+            df["created_at"] = clean_date_series(df["created_at"])
+        else:
+            df["created_at"] = "2024-01-01"
+
+        transformations.append("Standardized patient demographics, gender, blood group & clamped age")
 
     elif table_name == "admissions":
-        df["admission_date"] = clean_date_series(df["admission_date"])
-        df["discharge_date"] = clean_date_series(df["discharge_date"])
+        if "admission_id" not in df.columns:
+            df["admission_id"] = [f"ADM_{i+1:06d}" for i in range(len(df))]
+        if "admission_date" not in df.columns:
+            df["admission_date"] = "2024-01-01"
+        else:
+            df["admission_date"] = clean_date_series(df["admission_date"])
+
+        if "length_of_stay" in df.columns:
+            df["length_of_stay"] = pd.to_numeric(df["length_of_stay"], errors="coerce").fillna(3)
+            df["length_of_stay"] = df["length_of_stay"].abs().clip(lower=1, upper=60).astype(int)
+        else:
+            df["length_of_stay"] = 4
+
+        if "discharge_date" in df.columns:
+            df["discharge_date"] = clean_date_series(df["discharge_date"])
+        else:
+            adm_dt = pd.to_datetime(df["admission_date"], errors="coerce").fillna(datetime(2024, 1, 1))
+            los = df["length_of_stay"]
+            df["discharge_date"] = (adm_dt + pd.to_timedelta(los, unit="D")).dt.strftime("%Y-%m-%d")
+
         # Admission type & disposition
-        df["admission_type"] = df["admission_type"].astype(str).str.title().replace({
-            "Emergency": "Emergency", "Elective": "Elective", "Urgent": "Urgent"
-        }).fillna("Emergency")
-        df["discharge_disposition"] = df["discharge_disposition"].astype(str).str.title().fillna("Home")
-        # Length of stay
-        df["length_of_stay"] = pd.to_numeric(df["length_of_stay"], errors="coerce").fillna(3)
-        df["length_of_stay"] = df["length_of_stay"].abs().clip(lower=1, upper=60).astype(int)
-        if "room_number" in df.columns:
+        if "admission_type" in df.columns:
+            df["admission_type"] = df["admission_type"].astype(str).str.title().replace({
+                "Emergency": "Emergency", "Elective": "Elective", "Urgent": "Urgent"
+            }).fillna("Emergency")
+        else:
+            df["admission_type"] = "Emergency"
+
+        if "discharge_disposition" in df.columns:
+            df["discharge_disposition"] = df["discharge_disposition"].astype(str).str.title().fillna("Home")
+        else:
+            df["discharge_disposition"] = "Home"
+
+        if "room_number" not in df.columns:
+            df["room_number"] = "101"
+        else:
             df["room_number"] = df["room_number"].fillna("TBD")
+
+        if "hospital_id" not in df.columns:
+            df["hospital_id"] = "HOSP_001"
+        if "doctor_id" not in df.columns:
+            df["doctor_id"] = "DOC_0001"
+        if "department_id" not in df.columns:
+            df["department_id"] = "DEPT_001"
+
         transformations.append("Cleaned admission dates, standardized admission types, clamped LOS")
 
     elif table_name == "diagnoses":
-        df["diagnosis_type"] = df["diagnosis_type"].astype(str).str.title().fillna("Primary")
-        df["severity"] = df["severity"].astype(str).str.title().fillna("Moderate")
-        df["diagnosis_date"] = clean_date_series(df["diagnosis_date"])
+        if "diagnosis_id" not in df.columns:
+            df["diagnosis_id"] = [f"DX_{i+1:06d}" for i in range(len(df))]
+        if "diagnosis_type" in df.columns:
+            df["diagnosis_type"] = df["diagnosis_type"].astype(str).str.title().fillna("Primary")
+        else:
+            df["diagnosis_type"] = "Primary"
+
+        if "severity" in df.columns:
+            df["severity"] = df["severity"].astype(str).str.title().fillna("Moderate")
+        else:
+            df["severity"] = "Moderate"
+
+        if "diagnosis_date" in df.columns:
+            df["diagnosis_date"] = clean_date_series(df["diagnosis_date"])
+        else:
+            df["diagnosis_date"] = "2024-01-01"
+
+        if "icd10_code" not in df.columns:
+            df["icd10_code"] = "R69"
+
+        if "diagnosis_description" not in df.columns:
+            df["diagnosis_description"] = "Clinical Diagnosis ICD-10"
+
         transformations.append("Standardized diagnosis severity & type casing")
 
     elif table_name == "laboratory_results":
-        df["test_date"] = clean_date_series(df["test_date"])
-        df["abnormal_flag"] = df["abnormal_flag"].astype(str).str.title()
-        df["abnormal_flag"] = df["abnormal_flag"].replace({
-            "Normal": "Normal", "High": "High", "Low": "Low", "Critical": "Critical"
-        }).fillna("Normal")
-        df["test_value"] = pd.to_numeric(df["test_value"], errors="coerce").abs()
-        median_val = df["test_value"].median() if not df["test_value"].isna().all() else 5.0
-        df["test_value"] = df["test_value"].fillna(median_val)
-        if "unit" in df.columns:
+        if "lab_id" not in df.columns:
+            df["lab_id"] = [f"LAB_{i+1:06d}" for i in range(len(df))]
+        if "test_date" in df.columns:
+            df["test_date"] = clean_date_series(df["test_date"])
+        else:
+            df["test_date"] = "2024-01-01"
+
+        if "abnormal_flag" in df.columns:
+            df["abnormal_flag"] = df["abnormal_flag"].astype(str).str.title()
+            df["abnormal_flag"] = df["abnormal_flag"].replace({
+                "Normal": "Normal", "High": "High", "Low": "Low", "Critical": "Critical"
+            }).fillna("Normal")
+        else:
+            df["abnormal_flag"] = "Normal"
+
+        if "test_value" in df.columns:
+            df["test_value"] = pd.to_numeric(df["test_value"], errors="coerce").abs()
+            median_val = df["test_value"].median() if not df["test_value"].isna().all() else 5.0
+            df["test_value"] = df["test_value"].fillna(median_val)
+        else:
+            df["test_value"] = 5.0
+
+        if "unit" not in df.columns:
+            df["unit"] = "standard"
+        else:
             df["unit"] = df["unit"].fillna("standard")
+
+        if "test_name" not in df.columns:
+            df["test_name"] = "Laboratory Investigation"
+        if "test_category" not in df.columns:
+            df["test_category"] = "Chemistry"
+
         transformations.append("Normalized abnormal flag categories, imputed null test values")
 
     elif table_name == "medications":
-        df["unit_cost"] = pd.to_numeric(df["unit_cost"], errors="coerce").fillna(0.50).abs()
-        df["reorder_threshold"] = pd.to_numeric(df["reorder_threshold"], errors="coerce").fillna(100).astype(int)
-        df["standard_daily_dose"] = pd.to_numeric(df["standard_daily_dose"], errors="coerce").fillna(20.0)
-        df["category"] = df["category"].astype(str).str.title().fillna("General")
+        if "medication_id" not in df.columns:
+            df["medication_id"] = [f"MED_{i+1:03d}" for i in range(len(df))]
+        if "unit_cost" in df.columns:
+            df["unit_cost"] = pd.to_numeric(df["unit_cost"], errors="coerce").fillna(0.50).abs()
+        else:
+            df["unit_cost"] = 1.0
+        if "reorder_threshold" in df.columns:
+            df["reorder_threshold"] = pd.to_numeric(df["reorder_threshold"], errors="coerce").fillna(100).astype(int)
+        else:
+            df["reorder_threshold"] = 100
+        if "standard_daily_dose" in df.columns:
+            df["standard_daily_dose"] = pd.to_numeric(df["standard_daily_dose"], errors="coerce").fillna(20.0)
+        else:
+            df["standard_daily_dose"] = 20.0
+        if "category" in df.columns:
+            df["category"] = df["category"].astype(str).str.title().fillna("General")
+        else:
+            df["category"] = "General"
         transformations.append("Validated medication pricing and dosage thresholds")
 
     elif table_name == "prescriptions":
-        df["prescription_date"] = clean_date_series(df["prescription_date"])
-        df["status"] = df["status"].astype(str).str.title().fillna("Active")
-        df["duration_days"] = pd.to_numeric(df["duration_days"], errors="coerce").fillna(7).astype(int)
-        df["quantity"] = pd.to_numeric(df["quantity"], errors="coerce").fillna(30).astype(int)
-        if "frequency" in df.columns:
+        if "prescription_id" not in df.columns:
+            df["prescription_id"] = [f"RX_{i+1:06d}" for i in range(len(df))]
+        if "prescription_date" in df.columns:
+            df["prescription_date"] = clean_date_series(df["prescription_date"])
+        else:
+            df["prescription_date"] = "2024-01-01"
+        if "status" in df.columns:
+            df["status"] = df["status"].astype(str).str.title().fillna("Active")
+        else:
+            df["status"] = "Active"
+        if "duration_days" in df.columns:
+            df["duration_days"] = pd.to_numeric(df["duration_days"], errors="coerce").fillna(7).astype(int)
+        else:
+            df["duration_days"] = 7
+        if "quantity" in df.columns:
+            df["quantity"] = pd.to_numeric(df["quantity"], errors="coerce").fillna(30).astype(int)
+        else:
+            df["quantity"] = 30
+        if "frequency" not in df.columns:
+            df["frequency"] = "Once daily"
+        else:
             df["frequency"] = df["frequency"].fillna("Once daily")
+        if "medication_id" not in df.columns:
+            df["medication_id"] = "MED_001"
         transformations.append("Standardized prescription statuses and dosage duration")
 
     elif table_name == "pharmacy_inventory":
-        df["expiry_date"] = clean_date_series(df["expiry_date"])
-        df["last_restocked_date"] = clean_date_series(df["last_restocked_date"])
-        df["stock_quantity"] = pd.to_numeric(df["stock_quantity"], errors="coerce").fillna(50)
-        df["stock_quantity"] = df["stock_quantity"].abs().astype(int)
-        df["reorder_level"] = pd.to_numeric(df["reorder_level"], errors="coerce").fillna(100).astype(int)
-        if "batch_number" in df.columns:
+        if "inventory_id" not in df.columns:
+            df["inventory_id"] = [f"INV_{i+1:05d}" for i in range(len(df))]
+        if "expiry_date" in df.columns:
+            df["expiry_date"] = clean_date_series(df["expiry_date"])
+        else:
+            df["expiry_date"] = "2025-12-31"
+        if "last_restocked_date" in df.columns:
+            df["last_restocked_date"] = clean_date_series(df["last_restocked_date"])
+        else:
+            df["last_restocked_date"] = "2024-01-01"
+        if "stock_quantity" in df.columns:
+            df["stock_quantity"] = pd.to_numeric(df["stock_quantity"], errors="coerce").fillna(50)
+            df["stock_quantity"] = df["stock_quantity"].abs().astype(int)
+        else:
+            df["stock_quantity"] = 250
+        if "reorder_level" in df.columns:
+            df["reorder_level"] = pd.to_numeric(df["reorder_level"], errors="coerce").fillna(100).astype(int)
+        else:
+            df["reorder_level"] = 100
+        if "batch_number" not in df.columns:
+            df["batch_number"] = "BATCH_DEFAULT"
+        else:
             df["batch_number"] = df["batch_number"].fillna("BATCH_DEFAULT")
         transformations.append("Validated drug stock counts and expiry timelines")
 
     elif table_name == "appointments":
-        df["appointment_date"] = clean_date_series(df["appointment_date"])
-        df["status"] = df["status"].astype(str).str.title().fillna("Completed")
-        df["waiting_time_minutes"] = pd.to_numeric(df["waiting_time_minutes"], errors="coerce").fillna(15)
-        df["waiting_time_minutes"] = df["waiting_time_minutes"].abs().clip(lower=0, upper=180).astype(int)
-        if "reason_for_visit" in df.columns:
+        if "appointment_id" not in df.columns:
+            df["appointment_id"] = [f"APT_{i+1:06d}" for i in range(len(df))]
+        if "appointment_date" in df.columns:
+            df["appointment_date"] = clean_date_series(df["appointment_date"])
+        else:
+            df["appointment_date"] = "2024-01-01"
+        if "status" in df.columns:
+            df["status"] = df["status"].astype(str).str.title().fillna("Completed")
+        else:
+            df["status"] = "Completed"
+        if "waiting_time_minutes" in df.columns:
+            df["waiting_time_minutes"] = pd.to_numeric(df["waiting_time_minutes"], errors="coerce").fillna(15)
+            df["waiting_time_minutes"] = df["waiting_time_minutes"].abs().clip(lower=0, upper=180).astype(int)
+        else:
+            df["waiting_time_minutes"] = 15
+        if "reason_for_visit" not in df.columns:
+            df["reason_for_visit"] = "General Consultation"
+        else:
             df["reason_for_visit"] = df["reason_for_visit"].fillna("General Consultation")
         transformations.append("Standardized appointment statuses, bounded waiting minutes")
 
     elif table_name == "billing":
-        df["bill_date"] = clean_date_series(df["bill_date"])
-        df["total_amount"] = pd.to_numeric(df["total_amount"], errors="coerce").abs().fillna(1500.0)
-        df["insurance_covered"] = pd.to_numeric(df["insurance_covered"], errors="coerce").abs().fillna(1200.0)
-        df["patient_payable"] = pd.to_numeric(df["patient_payable"], errors="coerce").abs().fillna(300.0)
-        df["payment_status"] = df["payment_status"].astype(str).str.title().fillna("Paid")
-        if "payment_method" in df.columns:
+        if "bill_id" not in df.columns:
+            df["bill_id"] = [f"BILL_{i+1:06d}" for i in range(len(df))]
+        if "bill_date" in df.columns:
+            df["bill_date"] = clean_date_series(df["bill_date"])
+        else:
+            df["bill_date"] = "2024-01-15"
+        if "total_amount" in df.columns:
+            df["total_amount"] = pd.to_numeric(df["total_amount"], errors="coerce").abs().fillna(1500.0)
+        else:
+            df["total_amount"] = 3500.0
+        if "insurance_covered" in df.columns:
+            df["insurance_covered"] = pd.to_numeric(df["insurance_covered"], errors="coerce").abs().fillna(1200.0)
+        else:
+            df["insurance_covered"] = (df["total_amount"] * 0.8).round(2)
+        if "patient_payable" in df.columns:
+            df["patient_payable"] = pd.to_numeric(df["patient_payable"], errors="coerce").abs().fillna(300.0)
+        else:
+            df["patient_payable"] = (df["total_amount"] - df["insurance_covered"]).round(2)
+        if "payment_status" in df.columns:
+            df["payment_status"] = df["payment_status"].astype(str).str.title().fillna("Paid")
+        else:
+            df["payment_status"] = "Paid"
+        if "payment_method" not in df.columns:
+            df["payment_method"] = "Insurance"
+        else:
             df["payment_method"] = df["payment_method"].fillna("Insurance")
         transformations.append("Calculated and validated financial ledger sums")
 
@@ -265,17 +619,15 @@ def transform_silver_layer(
                 ],
             )
 
-            results[table_name] = quality_meta
             quality_reports.append(quality_meta)
             logger.info(f"Silver Cleansed: {table_name} (Score: {quality_meta['quality_score']}%)")
 
         except Exception as e:
-            err_msg = str(e)
-            logger.error(f"Error during silver transformation of {table_name}: {err_msg}")
-            results[table_name] = {"error": err_msg, "status": "FAILED"}
+            logger.error(f"Failed Silver transformation for {table_name}: {e}")
+            raise e
 
-    avg_quality = (
-        sum(r["quality_score"] for r in quality_reports) / max(1, len(quality_reports))
+    avg_score = (
+        round(sum(r["quality_score"] for r in quality_reports) / len(quality_reports), 2)
         if quality_reports
         else 0.0
     )
@@ -283,12 +635,7 @@ def transform_silver_layer(
     return {
         "run_id": run_id,
         "status": "SUCCESS",
-        "reports": quality_reports,
-        "average_quality_score": round(avg_quality, 2),
         "total_rows": total_rows,
-        "transformed_at": datetime.now().isoformat(),
+        "average_quality_score": avg_score,
+        "reports": quality_reports,
     }
-
-
-if __name__ == "__main__":
-    transform_silver_layer()

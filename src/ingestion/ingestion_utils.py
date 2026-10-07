@@ -42,46 +42,51 @@ def inject_realistic_imperfections(
         duplicates = df_imperfect.iloc[duplicate_indices].copy()
         df_imperfect = pd.concat([df_imperfect, duplicates], ignore_index=True)
 
-    # 2. Inconsistent date formats
+    # 2. Inconsistent date formats (Sample up to 250 rows for high performance)
     if date_columns:
         for col in date_columns:
             if col in df_imperfect.columns:
-                mask = np.random.rand(len(df_imperfect)) < 0.05
-                for idx in df_imperfect[mask].index:
-                    val = str(df_imperfect.at[idx, col])
-                    try:
-                        # Attempt to parse and format alternate string representations
-                        dt = pd.to_datetime(val)
-                        choice = random.choice([1, 2, 3])
-                        if choice == 1:
-                            df_imperfect.at[idx, col] = dt.strftime("%m/%d/%Y")
-                        elif choice == 2:
-                            df_imperfect.at[idx, col] = dt.strftime("%d-%m-%Y")
-                        else:
-                            df_imperfect.at[idx, col] = dt.strftime("%Y/%m/%d %H:%M:%S")
-                    except Exception:
-                        pass
+                candidates = df_imperfect[col].dropna().index
+                if len(candidates) > 0:
+                    sample_size = min(250, int(len(candidates) * 0.05) + 5)
+                    sample_indices = np.random.choice(candidates, size=sample_size, replace=False)
+                    for idx in sample_indices:
+                        val = str(df_imperfect.at[idx, col])
+                        try:
+                            dt = pd.to_datetime(val)
+                            choice = random.choice([1, 2, 3])
+                            if choice == 1:
+                                df_imperfect.at[idx, col] = dt.strftime("%m/%d/%Y")
+                            elif choice == 2:
+                                df_imperfect.at[idx, col] = dt.strftime("%d-%m-%Y")
+                            else:
+                                df_imperfect.at[idx, col] = dt.strftime("%Y/%m/%d %H:%M:%S")
+                        except Exception:
+                            pass
 
     # 3. Inconsistent capitalization & dirty categorical text
     if categorical_columns:
         for col in categorical_columns:
             if col in df_imperfect.columns:
-                mask = np.random.rand(len(df_imperfect)) < 0.08
-                for idx in df_imperfect[mask].index:
-                    val = str(df_imperfect.at[idx, col])
-                    choice = random.choice([1, 2, 3])
-                    if choice == 1:
-                        df_imperfect.at[idx, col] = val.lower()
-                    elif choice == 2:
-                        df_imperfect.at[idx, col] = val.upper()
-                    else:
-                        df_imperfect.at[idx, col] = f"  {val}  "  # leading/trailing whitespace
+                candidates = df_imperfect[col].dropna().index
+                if len(candidates) > 0:
+                    sample_size = min(300, int(len(candidates) * 0.08) + 5)
+                    sample_indices = np.random.choice(candidates, size=sample_size, replace=False)
+                    for idx in sample_indices:
+                        val = str(df_imperfect.at[idx, col])
+                        choice = random.choice([1, 2, 3])
+                        if choice == 1:
+                            df_imperfect.at[idx, col] = val.lower()
+                        elif choice == 2:
+                            df_imperfect.at[idx, col] = val.upper()
+                        else:
+                            df_imperfect.at[idx, col] = f"  {val}  "
 
     # 4. Inject Missing / Null values
     if nullable_columns:
         for col in nullable_columns:
             if col in df_imperfect.columns:
-                mask = np.random.rand(len(df_imperfect)) < 0.04
+                mask = np.random.rand(len(df_imperfect)) < 0.03
                 df_imperfect.loc[mask, col] = None
 
     # 5. Invalid categorical tokens
@@ -95,11 +100,13 @@ def inject_realistic_imperfections(
     if numeric_columns:
         for col in numeric_columns:
             if col in df_imperfect.columns:
-                mask = np.random.rand(len(df_imperfect)) < 0.004
-                for idx in df_imperfect[mask].index:
-                    # e.g., negative value or outlier
-                    val = df_imperfect.at[idx, col]
-                    if pd.notna(val) and isinstance(val, (int, float, np.number)):
-                        df_imperfect.at[idx, col] = -abs(val)
+                candidates = df_imperfect[col].dropna().index
+                if len(candidates) > 0:
+                    sample_size = min(150, int(len(candidates) * 0.005) + 3)
+                    sample_indices = np.random.choice(candidates, size=sample_size, replace=False)
+                    for idx in sample_indices:
+                        val = df_imperfect.at[idx, col]
+                        if pd.notna(val) and isinstance(val, (int, float, np.number)):
+                            df_imperfect.at[idx, col] = -abs(val)
 
     return df_imperfect

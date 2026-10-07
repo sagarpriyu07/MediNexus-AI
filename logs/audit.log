@@ -285,3 +285,579 @@
 2026-10-05T19:35:26.217230 | aud_7701134a | receptionist_davis | Receptionist | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Receptionist
 2026-10-05T20:06:29.747675 | aud_81b8d416 | receptionist_davis | Receptionist | LOGOUT | SYSTEM_AUTH | SUCCESS | Signed out gracefully.
 2026-10-05T20:07:52.178243 | aud_7208f840 | admin_holloway | Hospital Administrator | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Hospital Administrator
+2026-10-06T02:52:14.884842 | aud_48a32df4 | dr_chen | Doctor | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Doctor
+2026-10-06T02:52:15.763272 | aud_619c60d9 | dr_chen | Doctor | PATIENT_360_VIEW | PATIENT_P_00001 | SUCCESS | Clinical chart access for P_00001
+2026-10-06T03:16:47.328146 | aud_6ee3ad13 | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-07T21:53:39.222816 | aud_b5cc45bb | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-07T21:57:46.400643 | aud_de3dc7a5 | system_test | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | SUCCESS | Pipeline pipe_6b2f7928 completed in 57.85s. Bronze: 483387, Silver: 478052, Gold: 546924, Quality: 99.67%
+2026-10-07T22:02:27.202717 | aud_7c129a0c | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-07T22:05:23.180675 | aud_e8466cb8 | data_engineer | Data Engineer | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Data Engineer
+2026-10-07T22:07:09.486717 | aud_cb145456 | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | SUCCESS | Pipeline pipe_a4bd1e8e completed in 84.88s. Bronze: 483387, Silver: 478052, Gold: 546924, Quality: 99.67%
+2026-10-07T22:08:09.267521 | aud_ebfc39b9 | admin_holloway | Hospital Administrator | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Hospital Administrator
+2026-10-07T22:08:47.654598 | aud_12e198e3 | admin_holloway | Hospital Administrator | LOGIN_1CLICK | SYSTEM_AUTH | SUCCESS | Demo 1-Click Login as Hospital Administrator
+2026-10-07T22:14:14.481327 | aud_bd73413b | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-07T22:19:20.855751 | aud_f3d67fbe | data_engineer | Data Engineer | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Data Engineer
+2026-10-07T22:20:34.436188 | aud_e8fedc2b | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | SUCCESS | Pipeline pipe_64317652 completed in 64.68s. Bronze: 483387, Silver: 478052, Gold: 546924, Quality: 99.67%
+2026-10-07T22:21:29.369465 | aud_5db5e5c2 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:29.629979 | aud_b0461050 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:29.868716 | aud_09f6916f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:30.128983 | aud_8bd58110 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:30.372264 | aud_45c16eb4 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:30.607923 | aud_6bf5f4ae | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:30.891606 | aud_3027fc44 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:31.129679 | aud_77fda129 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:31.362488 | aud_6db1f856 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:31.606041 | aud_e58f0225 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:31.877469 | aud_4cd7b925 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:32.134404 | aud_2f09e161 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:32.380381 | aud_36727dd7 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:32.613574 | aud_a5fd78ce | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:32.850961 | aud_369dd231 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:33.607734 | aud_c1a37da6 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:33.849438 | aud_7a9373ef | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:34.101036 | aud_c00db6be | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:34.355663 | aud_855fcf03 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:34.583751 | aud_036e453f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:35.053139 | aud_4e204a6d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:35.302482 | aud_1a17b84c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:35.529223 | aud_5692c836 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:35.767005 | aud_e5ecdb4b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:36.031496 | aud_d78398d3 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:36.267924 | aud_2bf5ed29 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:36.495439 | aud_2ce44fac | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:36.731584 | aud_7279170e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:36.986136 | aud_05c5cf06 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:37.255199 | aud_d73189b4 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:37.518648 | aud_162a872e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:37.745969 | aud_a74ded65 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:38.005021 | aud_410dda65 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:38.241424 | aud_e00c43c3 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:38.501830 | aud_e185f4f6 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:38.771822 | aud_7e02769b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:39.047466 | aud_20652c7e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:39.317288 | aud_ef8204cf | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:39.578854 | aud_ff474c2d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:39.841415 | aud_8746e6ec | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:40.102551 | aud_86eb2443 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:40.359332 | aud_fa9ea172 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:40.612569 | aud_72df22ee | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:40.865218 | aud_49589019 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:41.116958 | aud_9d86b37c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:41.373962 | aud_61493ae0 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:41.631979 | aud_8389611a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:41.890881 | aud_7c449a52 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:42.146230 | aud_e6be48fa | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:42.435501 | aud_d70c6b8b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:42.706304 | aud_be7ad34c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:42.941448 | aud_8e58292b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:43.180965 | aud_b5ea8ee9 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:43.412723 | aud_721f3377 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:43.636902 | aud_72cd194e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:43.888782 | aud_5957a6c3 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:44.133914 | aud_e1702a44 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:44.392563 | aud_6164cbdf | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:44.634190 | aud_cca8200f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:44.869356 | aud_72cf1029 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:45.132005 | aud_88065f4d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:45.374317 | aud_03dee518 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:45.647041 | aud_5b5a8d2c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:45.905623 | aud_50823634 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:46.139268 | aud_d4dd9cc6 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:46.385691 | aud_e758f0bd | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:46.668232 | aud_c7d6072b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:46.953504 | aud_3ccb4f5b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:47.231420 | aud_a9f9aa18 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:47.492416 | aud_ad551a74 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:47.763092 | aud_a7c06fdf | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:48.018430 | aud_9f679bbd | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:48.265374 | aud_32f1c83b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:48.526871 | aud_f0cc5fcc | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:48.768817 | aud_922f4b6c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:48.987970 | aud_53bc8d18 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:49.229173 | aud_ed02c7bf | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:49.478595 | aud_0e2b640b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:49.752138 | aud_2a358aaa | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:49.984654 | aud_bc0200e0 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:50.226006 | aud_35e6c969 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:50.473840 | aud_d8210159 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:50.712448 | aud_42347fd5 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:50.965403 | aud_52423f9e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:51.195530 | aud_1f8ea6aa | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:51.457143 | aud_4479ea7e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:51.695497 | aud_b2314260 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:51.921753 | aud_de1bb39e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:52.156916 | aud_d3896b43 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:52.379678 | aud_87d4588e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:52.599253 | aud_0aaa8d0d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:52.871112 | aud_ce71ef3e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:53.081580 | aud_e0ecf4cf | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:53.311898 | aud_67b217de | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:53.546736 | aud_ecf8fbd6 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:53.776288 | aud_9afaa55d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:54.015876 | aud_2f7c6bab | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:54.252006 | aud_cf35e6fe | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:54.489147 | aud_1f74aec5 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:54.709702 | aud_2942672e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:54.940350 | aud_a8a1b5fe | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:55.176744 | aud_2963e492 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:55.406994 | aud_a711e794 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:55.636956 | aud_63e2460b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:55.899473 | aud_3856714e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:56.135203 | aud_54d865b4 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:56.364444 | aud_0dfea9c4 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:56.604826 | aud_f77f156b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:56.837320 | aud_18b9d2d8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:57.081520 | aud_60bd11cc | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:57.308523 | aud_06428570 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:57.539226 | aud_57e93d5c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:57.775064 | aud_94f9c5b6 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:58.006242 | aud_4db76aa3 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:58.233290 | aud_f6cc38ce | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:58.457472 | aud_640fa286 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:58.705054 | aud_e4d1c44a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:58.984651 | aud_17ec01a4 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:59.227798 | aud_58d1a128 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:59.477121 | aud_12f1b9db | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:59.729803 | aud_d66ad909 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:21:59.982921 | aud_d496bf5c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:00.218013 | aud_6aa0e794 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:00.451996 | aud_056c2fec | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:00.684665 | aud_2cb46b74 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:00.936435 | aud_4cf2f99a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:01.160585 | aud_ece7e4b9 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:01.384018 | aud_0a2d9c6d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:01.623723 | aud_2a03dd96 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:01.846034 | aud_388d7bf0 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:02.116373 | aud_8d27c2ef | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:02.339278 | aud_ab150470 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:02.566777 | aud_977e1f01 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:02.841511 | aud_bbc55a85 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:03.104453 | aud_1f345eb5 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:03.347791 | aud_c2ba5a1f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:03.584735 | aud_7f0c3825 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:03.812371 | aud_67c4446d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:04.047745 | aud_beef6896 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:04.284380 | aud_a35d007b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:04.517402 | aud_f7bda035 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:04.764626 | aud_f6b48d0f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:05.003383 | aud_041bf20e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:05.266727 | aud_97a9369c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:05.496375 | aud_3b3f1db0 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:05.743773 | aud_c48f6382 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:06.014621 | aud_497e9c54 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:06.243290 | aud_68a867ab | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:06.473183 | aud_b6427dcb | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:06.695849 | aud_5558ce6f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:06.924635 | aud_e19a6b27 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:07.162608 | aud_42d90607 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:07.398442 | aud_f47228ad | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:07.752729 | aud_34237510 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:07.988279 | aud_344644e3 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:08.232420 | aud_ea827868 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:08.492974 | aud_cdbdb0e9 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:08.730243 | aud_66912c18 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:08.970474 | aud_f40afa70 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:09.203987 | aud_b679a6e1 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:09.444588 | aud_ff8be137 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:09.524414 | aud_bfcefc3a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:09.861304 | aud_8edcba48 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:10.107647 | aud_5180be4d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:10.360478 | aud_c38b602a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:10.596141 | aud_3a8c7e88 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:10.828817 | aud_4fe9e723 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:11.074010 | aud_702888ec | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:11.303567 | aud_b38c11be | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:11.574395 | aud_1ce5e72a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:11.815423 | aud_cc463a02 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:12.057431 | aud_cdfd55dd | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:12.296919 | aud_cb555820 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:12.545640 | aud_ee88e66e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:12.808753 | aud_c855c636 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:13.051482 | aud_63d2608a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:13.291498 | aud_82168ece | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:13.513603 | aud_39e7aac6 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:13.748892 | aud_25d0fa31 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:14.016268 | aud_47699403 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:14.262031 | aud_ef79787b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:14.512646 | aud_c8441867 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:14.743006 | aud_f4f12f72 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:15.016476 | aud_2cd1ec4c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:15.250488 | aud_6466c570 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:15.495425 | aud_6c3d2f93 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:15.730985 | aud_a8cf7c16 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:15.996175 | aud_0f13a6d3 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:16.229059 | aud_679d83fa | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:16.495397 | aud_f522af10 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:16.732141 | aud_3abe3ac9 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:16.987447 | aud_d0c58539 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:17.222523 | aud_afe36efc | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:17.480474 | aud_c9e3f5ad | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:17.724928 | aud_dd28a61e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:17.972375 | aud_ea8fd58c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:18.213237 | aud_1acbd24f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:18.444189 | aud_d75faca1 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:18.691415 | aud_57f0e331 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:18.914732 | aud_7715771d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:19.137762 | aud_cc1f224e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:19.372105 | aud_1300e16c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:19.627210 | aud_1b74c414 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:19.879695 | aud_7b90124c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:20.111982 | aud_56d3ac46 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:20.338083 | aud_2b111cbb | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:20.572531 | aud_49dd14b0 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:20.807593 | aud_4524eb52 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:21.053244 | aud_ecdffdf1 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:21.278795 | aud_69dce0b4 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:21.512011 | aud_21cb5e10 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:21.755720 | aud_ff6f5e66 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:21.987762 | aud_891014b8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:22.218859 | aud_0200e360 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:22.457655 | aud_12138d32 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:22.695413 | aud_5d9661fb | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:22.955568 | aud_988a4d0c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:23.184413 | aud_47d86739 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:23.443463 | aud_08647ae2 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:23.675521 | aud_f4c82ae1 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:23.909664 | aud_d6b6fb38 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:24.165515 | aud_831232db | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:24.392052 | aud_4dcc3040 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:24.624781 | aud_cc021d6c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:24.860142 | aud_dcc6ea12 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:25.108272 | aud_13b9b43c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:25.359007 | aud_28c9378e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:25.596505 | aud_e51823c4 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:25.851068 | aud_c4962809 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:26.105548 | aud_51254c72 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:26.345624 | aud_0c118e39 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:26.590647 | aud_0d08abf1 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:26.855719 | aud_b1c80c43 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:27.106963 | aud_32a8dd9f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:27.355093 | aud_54bf1517 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:27.594440 | aud_0b09bff0 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:27.868597 | aud_013e2b9c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:28.118209 | aud_0aea4138 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:28.380247 | aud_612f666b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:28.617816 | aud_123a1428 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:28.848433 | aud_c41689b6 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:29.087654 | aud_7d9c8b2d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:29.317410 | aud_2d0930ce | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:29.557773 | aud_5daaa5d0 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:29.797095 | aud_95445df1 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:30.049342 | aud_1f23ebed | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:30.299884 | aud_8989e3f2 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:30.546447 | aud_b120c717 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:30.797247 | aud_5635ba06 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:31.058611 | aud_7391847a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:31.295654 | aud_dbccebf3 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:31.543306 | aud_6807abd3 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:31.785437 | aud_004552b8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:32.040539 | aud_2a780c0b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:32.281950 | aud_5ba44e4d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:32.534335 | aud_2b0ba619 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:32.775076 | aud_55f76d52 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:33.025133 | aud_e58a3f81 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:33.265150 | aud_d1a49b72 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:33.504996 | aud_b6ead95c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:33.850658 | aud_9793a9bb | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:34.108879 | aud_702387b9 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:34.351871 | aud_6a645552 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:34.585305 | aud_1934293e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:34.829525 | aud_22d2c2da | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:35.079043 | aud_d27580d6 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:35.318150 | aud_55f9ab02 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:35.573814 | aud_c7c9568f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:35.803468 | aud_526fca94 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:36.053239 | aud_a8e99176 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:36.297642 | aud_7d2440ab | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:36.520047 | aud_017c3436 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:36.763282 | aud_d47051a0 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:37.006094 | aud_d1b48430 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:37.254372 | aud_055b674a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:37.500545 | aud_810df46c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:37.741471 | aud_482a6015 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:37.978811 | aud_1f4268c2 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:38.205547 | aud_e1568bc5 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:38.440811 | aud_62bacf04 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:38.889070 | aud_0250198a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:39.132070 | aud_f18f7e64 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:39.368453 | aud_24e007be | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:39.623324 | aud_c3839c81 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:39.855088 | aud_e82b3e17 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:40.107904 | aud_3fe91853 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:40.452052 | aud_432396a5 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:40.683744 | aud_5639b873 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:40.928130 | aud_c46cc401 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:41.167898 | aud_a29abe28 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:41.438328 | aud_99722d23 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:41.688196 | aud_48fd578b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:41.929215 | aud_d752496e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:42.154371 | aud_ce49e66d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:42.384493 | aud_c77e24e5 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:42.628167 | aud_9742f67e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:42.873804 | aud_630e8a83 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:43.109828 | aud_85698d89 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:43.333995 | aud_295e1c71 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:43.575238 | aud_ca849abb | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:43.820663 | aud_b64cebd6 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:44.060811 | aud_87984256 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:44.298791 | aud_1ea933cf | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:44.529132 | aud_9d34fa1d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:44.778591 | aud_c4bcff4e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:45.022802 | aud_81362364 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:45.255878 | aud_1527b340 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:45.492410 | aud_06faa8d1 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:45.742742 | aud_f3405b41 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:45.971526 | aud_ed897862 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:46.191014 | aud_73724119 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:46.420205 | aud_881f5d8b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:46.659414 | aud_8cba963b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:46.931654 | aud_9fc9f595 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:47.222118 | aud_410262a2 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:47.487676 | aud_1409e381 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:47.732166 | aud_2343900c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:47.981925 | aud_1457778b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:48.212781 | aud_56b367dd | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:48.470074 | aud_dd6b3aac | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:48.725202 | aud_c6329b0c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:48.974823 | aud_0db094aa | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:49.216042 | aud_bc7deaeb | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:49.459879 | aud_2ebc680f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:49.721116 | aud_db750742 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:49.964360 | aud_439d2802 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:50.195737 | aud_ab04ef01 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:50.455818 | aud_b5e2a3ec | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:50.691400 | aud_67f723ac | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:50.936465 | aud_55a269e3 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:51.186449 | aud_42427c6d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:51.435995 | aud_84df651e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:51.659373 | aud_b4ad73c9 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:51.899970 | aud_4a9c6905 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:52.147695 | aud_b31e3119 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:52.390499 | aud_df0a7fe8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:52.635802 | aud_18887aff | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:52.879446 | aud_adca2875 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:53.119198 | aud_ce790387 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:53.351551 | aud_63b0be89 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:53.599577 | aud_81e64a1f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:53.807706 | aud_66d472b9 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:54.122248 | aud_925170e2 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:54.351433 | aud_6cef4556 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:54.622261 | aud_546b8bab | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:54.864756 | aud_8a666a34 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:55.102202 | aud_4d3499cf | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:55.378850 | aud_edd9e21e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:55.645930 | aud_9a14bbdf | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:55.885929 | aud_27f89ffc | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:56.132371 | aud_0af090ac | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:56.380229 | aud_126cf3ce | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:56.639589 | aud_cc7ea9b2 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:56.882820 | aud_37551a5d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:57.119961 | aud_5e4588a3 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:57.352160 | aud_197e64ca | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:57.579894 | aud_df131655 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:57.800630 | aud_ea0c4e4c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:58.030753 | aud_243b3a0c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:58.251002 | aud_507d752a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:58.479678 | aud_5cade947 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:58.712177 | aud_bde6e1ed | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:58.948852 | aud_005eb1a4 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:59.184925 | aud_0e38626e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:59.426148 | aud_2b5d119a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:59.660703 | aud_bec40c96 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:22:59.882668 | aud_9ca601f5 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:00.124999 | aud_ac8c9504 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:00.365736 | aud_867ef7fd | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:00.600000 | aud_d50964bb | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:00.844423 | aud_7af656ee | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:01.098906 | aud_a86242d8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:01.360041 | aud_c9e40853 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:01.608847 | aud_d6730545 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:01.844272 | aud_3d2db42d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:02.088333 | aud_80b1f753 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:02.325626 | aud_a5711a08 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:02.571669 | aud_867ffdf6 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:02.896721 | aud_142676c7 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:03.125116 | aud_159ba572 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:03.346905 | aud_7c2e6734 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:03.584160 | aud_ef76037b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:04.045982 | aud_3057ebe7 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:04.272657 | aud_781c0ab2 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:04.518816 | aud_5b58163e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:04.755095 | aud_7a922da4 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:04.987357 | aud_b89291f2 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:05.218545 | aud_2b3ae310 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:05.461010 | aud_35929bb0 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:05.690583 | aud_e273207c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:05.923270 | aud_fec82a12 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:06.258296 | aud_6510f5ca | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:06.486283 | aud_512e064a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:06.713709 | aud_cc85ea72 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:06.954018 | aud_75b7bbb8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:07.188148 | aud_68b06d7e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:07.424093 | aud_882d6f42 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:07.656583 | aud_58a9e997 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:07.910012 | aud_a15f8415 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:08.145969 | aud_41d18867 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:08.384584 | aud_d8cf66d3 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:08.617396 | aud_272b8ad1 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:08.851546 | aud_49965c80 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:09.087035 | aud_3923a49a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:09.317008 | aud_7cdd9811 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:09.573567 | aud_66134392 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:09.809698 | aud_629e91ed | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:09.989558 | aud_3bd067e7 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:10.326273 | aud_818f707f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:10.556785 | aud_266fe1e4 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:10.777089 | aud_e6caf7e7 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:11.237129 | aud_a5bad65a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:11.472867 | aud_92dd3e64 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:11.710043 | aud_e2ab5b58 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:11.940272 | aud_3d704cdd | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:12.175042 | aud_baec2aa8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:12.404378 | aud_d60abc73 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:12.641563 | aud_41ec1004 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:12.885196 | aud_387e880e | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:13.151393 | aud_99ca5c66 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:13.371285 | aud_e34418f8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:13.604390 | aud_b537bba9 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:13.834364 | aud_dcd12085 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:14.067817 | aud_cee25641 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:14.407480 | aud_58e45fe1 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:14.640329 | aud_66791e7c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:14.865179 | aud_bd401a3d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:15.092387 | aud_1a658931 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:15.333785 | aud_fb016629 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:15.569535 | aud_1855ee1c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:15.815189 | aud_95618261 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:16.068755 | aud_411d06e0 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:16.299793 | aud_32f15d4c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:16.544445 | aud_dcdb88f4 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:16.801526 | aud_b440eb43 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:17.045427 | aud_326a77f9 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:17.272745 | aud_46f0e187 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:17.506856 | aud_110243db | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:17.740492 | aud_4793ade9 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:17.989299 | aud_f7bc3c56 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:18.233420 | aud_3851efb0 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:18.462415 | aud_52a89b68 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:18.685566 | aud_2177fb49 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:18.917989 | aud_c70ad7e8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:19.166092 | aud_27deb4bc | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:19.417631 | aud_a157aba7 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:19.638564 | aud_b4216d91 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:19.800868 | aud_dbb5987c | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:19.959471 | aud_229f04ca | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:20.115978 | aud_328e6eb7 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:20.265540 | aud_b6c524e9 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:20.422423 | aud_a0d998ad | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:20.577935 | aud_9cd4436a | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:20.732823 | aud_856be35f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:20.940182 | aud_fd29757b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:21.167984 | aud_81673583 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:21.400045 | aud_2716d5a8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:21.633323 | aud_fb9132b8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:21.861251 | aud_3e03c8f8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:22.092693 | aud_596ba0ba | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:22.337269 | aud_4090ffed | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:22.575060 | aud_11cdb803 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:22.806602 | aud_45dfd782 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:23.029433 | aud_a2f439a8 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:23.286940 | aud_20959b5d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:23.525422 | aud_2b810347 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:23.753778 | aud_a462e113 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:23.988078 | aud_99c84897 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:24.262909 | aud_4f58ddb5 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:24.339925 | aud_36fa2c30 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:24.686998 | aud_67fc6479 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:24.932992 | aud_d9b4143b | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:25.192384 | aud_f989e638 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:25.428687 | aud_7970b363 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:25.670517 | aud_ffe4d485 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:25.902657 | aud_5f1a6802 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:26.142456 | aud_722bd1fe | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:26.377954 | aud_730d5328 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:26.612249 | aud_5f52d963 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:26.854587 | aud_6cdab9f7 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:27.119857 | aud_8bbb1b69 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:27.389363 | aud_12d51bec | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:27.635671 | aud_c1c5815f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:27.880521 | aud_a956d067 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:28.283919 | aud_6f1d0068 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:28.547974 | aud_3fc9ac8d | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:28.807647 | aud_bac663cb | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:29.044698 | aud_82086e71 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:29.280991 | aud_716e735f | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:29.520252 | aud_7b4cc837 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:29.755621 | aud_31103599 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:29.996422 | aud_b90653a4 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:30.242112 | aud_17087c98 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:30.492559 | aud_922ac396 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:30.759945 | aud_ffe6babe | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:31.018280 | aud_17d0b6d7 | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:31.257541 | aud_cd887ffb | pharmacist_patel | Pharmacist | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Pharmacist
+2026-10-07T22:23:54.935001 | aud_1362c8b3 | admin_holloway | Hospital Administrator | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Hospital Administrator
+2026-10-07T22:25:14.800200 | aud_0c19d253 | data_engineer | Data Engineer | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Data Engineer
+2026-10-07T22:26:25.215972 | aud_edccdee9 | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | SUCCESS | Pipeline pipe_042d1cb4 completed in 59.86s. Bronze: 483387, Silver: 478052, Gold: 546924, Quality: 99.67%
+2026-10-07T22:31:38.176115 | aud_1c11eb0f | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | admissions.csv | SUCCESS | Uploaded admissions.csv (22388668 bytes) mapped to admissions.csv
+2026-10-07T22:31:38.274483 | aud_011ccdc7 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | billing.csv | SUCCESS | Uploaded billing.csv (11765454 bytes) mapped to billing.csv
+2026-10-07T22:31:38.412201 | aud_6b9a6645 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | diagnoses.csv | SUCCESS | Uploaded diagnoses.csv (31372134 bytes) mapped to diagnoses.csv
+2026-10-07T22:31:38.510819 | aud_d5cbc969 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | hospitals.csv | SUCCESS | Uploaded hospitals.csv (3303 bytes) mapped to hospitals.csv
+2026-10-07T22:31:38.617937 | aud_31326bf4 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | patients.csv | SUCCESS | Uploaded patients.csv (6051413 bytes) mapped to patients.csv
+2026-10-07T22:32:11.917083 | aud_b5abc23c | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | FAILED | Pipeline pipe_e8cca73c failed after 32.42s: "['hospital_name', 'location'] not in index"
+2026-10-07T22:33:11.126056 | aud_f7759a08 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | admissions.csv | SUCCESS | Uploaded admissions.csv (22388668 bytes) mapped to admissions.csv
+2026-10-07T22:33:11.266454 | aud_ac3d11ee | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | billing.csv | SUCCESS | Uploaded billing.csv (11765454 bytes) mapped to billing.csv
+2026-10-07T22:33:11.417564 | aud_0ec280c1 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | diagnoses.csv | SUCCESS | Uploaded diagnoses.csv (31372134 bytes) mapped to diagnoses.csv
+2026-10-07T22:33:11.516233 | aud_61b09a46 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | hospitals.csv | SUCCESS | Uploaded hospitals.csv (3303 bytes) mapped to hospitals.csv
+2026-10-07T22:33:11.619936 | aud_ed2c0890 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | patients.csv | SUCCESS | Uploaded patients.csv (6051413 bytes) mapped to patients.csv
+2026-10-07T22:33:44.182547 | aud_3e8bf7bc | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | FAILED | Pipeline pipe_e281b47c failed after 31.71s: "['hospital_name', 'location'] not in index"
+2026-10-07T22:35:28.616069 | aud_fb42fc48 | data_engineer | Data Engineer | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Data Engineer
+2026-10-07T22:36:08.126782 | aud_c6d0fbe6 | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | FAILED | Pipeline pipe_2ff11e40 failed after 31.52s: "['hospital_name', 'location'] not in index"
+2026-10-07T22:44:36.650473 | aud_36d5dbe0 | user_test | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | SUCCESS | Pipeline pipe_bec9a755 completed in 87.3s. Bronze: 843441, Silver: 840816, Gold: 1036108, Quality: 99.69%
+2026-10-07T22:46:26.516650 | aud_11976abf | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-07T23:00:16.945877 | aud_497c3167 | data_engineer | Data Engineer | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Data Engineer
+2026-10-07T23:01:49.123756 | aud_e29bb478 | data_engineer | Data Engineer | GENERATE_SYNTHETIC_DATA | data/raw/ | SUCCESS | Generated 483387 synthetic records (Enterprise 50k+)
+2026-10-07T23:02:56.661445 | aud_f5d3397a | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | SUCCESS | Pipeline pipe_5603aea7 completed in 58.97s. Bronze: 483387, Silver: 478052, Gold: 546924, Quality: 99.67%
+2026-10-07T23:04:00.654782 | aud_b7f04791 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | admissions.csv | SUCCESS | Uploaded admissions.csv (22388668 bytes) mapped to admissions.csv
+2026-10-07T23:04:00.757738 | aud_3cb38078 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | billing.csv | SUCCESS | Uploaded billing.csv (11765454 bytes) mapped to billing.csv
+2026-10-07T23:04:00.906829 | aud_9d39f8b0 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | diagnoses.csv | SUCCESS | Uploaded diagnoses.csv (31372134 bytes) mapped to diagnoses.csv
+2026-10-07T23:04:01.011910 | aud_92fcbb91 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | hospitals.csv | SUCCESS | Uploaded hospitals.csv (3303 bytes) mapped to hospitals.csv
+2026-10-07T23:04:01.137695 | aud_d32b1c66 | data_engineer | Data Engineer | MULTI_DATASET_INGESTION | patients.csv | SUCCESS | Uploaded patients.csv (6051413 bytes) mapped to patients.csv
+2026-10-07T23:04:33.189195 | aud_df57e826 | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | FAILED | Pipeline pipe_732de2d0 failed after 31.2s: "['hospital_name', 'location'] not in index"
+2026-10-07T23:06:02.155223 | aud_679d79f2 | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | FAILED | Pipeline pipe_0f34bc05 failed after 32.64s: "['hospital_name', 'location'] not in index"
+2026-10-07T23:07:42.605127 | aud_307ec320 | data_engineer | Data Engineer | GENERATE_SYNTHETIC_DATA | data/raw/ | SUCCESS | Generated 483387 synthetic records (Enterprise 50k+)
+2026-10-07T23:11:37.202927 | aud_a3862657 | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | SUCCESS | Pipeline pipe_4abc4e31 completed in 59.07s. Bronze: 483387, Silver: 478052, Gold: 546924, Quality: 99.67%
+2026-10-07T23:33:41.208901 | aud_948cc2a3 | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-07T23:35:52.661965 | aud_223bb95b | data_engineer | Data Engineer | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Data Engineer
+2026-10-07T23:36:54.163885 | aud_659de86a | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | SUCCESS | Pipeline pipe_31a3d51d completed in 55.02s. Bronze: 483387, Silver: 478052, Gold: 546924, Quality: 99.67%
+2026-10-07T23:42:29.383540 | aud_0408223c | data_engineer | Data Engineer | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Data Engineer
+2026-10-07T23:43:28.152963 | aud_24f6be62 | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | SUCCESS | Pipeline pipe_682df126 completed in 51.08s. Bronze: 483387, Silver: 478052, Gold: 546924, Quality: 99.67%
+2026-10-07T23:44:25.333087 | aud_d21e692f | data_engineer | Data Engineer | LOGOUT | SYSTEM_AUTH | SUCCESS | Signed out gracefully.
+2026-10-07T23:44:31.750108 | aud_6c1c1b06 | data_engineer | Data Engineer | LOGIN_1CLICK | SYSTEM_AUTH | SUCCESS | Demo 1-Click Login as Data Engineer
+2026-10-07T23:45:28.465854 | aud_a4fc7492 | data_engineer | Data Engineer | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Data Engineer
+2026-10-07T23:58:06.793517 | aud_73deee53 | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-07T23:59:32.305954 | aud_fa09b429 | dr_chen | Doctor | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Doctor
+2026-10-07T23:59:33.917003 | aud_7590023d | dr_chen | Doctor | PATIENT_360_VIEW | PATIENT_P_00001 | SUCCESS | Clinical chart access for P_00001
+2026-10-07T23:59:51.456214 | aud_ccbb447b | dr_chen | Doctor | PATIENT_360_VIEW | PATIENT_P_00001 | SUCCESS | Clinical chart access for P_00001
+2026-10-07T23:59:58.394987 | aud_c80681a8 | dr_chen | Doctor | PATIENT_360_VIEW | PATIENT_P_00001 | SUCCESS | Clinical chart access for P_00001
+2026-10-08T00:04:02.393589 | aud_0b42d002 | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-08T00:07:19.143422 | aud_16c1b9d5 | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-08T00:12:41.988499 | aud_03fb011a | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-08T00:14:10.266071 | aud_e82e2493 | data_engineer | Data Engineer | LAUNCH_WELCOME | SYSTEM_AUTH | SUCCESS | 1-Click Launch from Welcome as Data Engineer
+2026-10-08T00:14:32.154783 | aud_8017dadd | data_engineer | Data Engineer | LOGIN_1CLICK | SYSTEM_AUTH | SUCCESS | Demo 1-Click Login as Data Engineer
+2026-10-08T00:14:45.866933 | aud_d5e00dcd | data_engineer | Data Engineer | LOGOUT | SYSTEM_AUTH | SUCCESS | Signed out gracefully.
+2026-10-08T00:15:19.633469 | aud_626b3438 | data_engineer | Data Engineer | LOGIN_MANUAL | SYSTEM_AUTH | SUCCESS | Authenticated successfully via manual form.
+2026-10-08T00:17:09.171947 | aud_1cc817a6 | data_engineer | Data Engineer | PIPELINE_RUN | MEDALLION_PIPELINE | SUCCESS | Pipeline pipe_2c7d26cb completed in 64.47s. Bronze: 483387, Silver: 478052, Gold: 546924, Quality: 99.67%
+2026-10-08T00:23:48.682464 | aud_128cd133 | data_engineer | Data Engineer | LOGOUT | SYSTEM_AUTH | SUCCESS | Signed out gracefully.
+2026-10-08T00:24:12.826269 | aud_d742d611 | pharmacist_patel | Pharmacist | LOGIN_MANUAL | SYSTEM_AUTH | SUCCESS | Authenticated successfully via manual form.
+2026-10-08T00:26:53.243914 | aud_090f23c4 | pharmacist_patel | Pharmacist | LOGOUT | SYSTEM_AUTH | SUCCESS | Signed out gracefully.
+2026-10-08T00:26:57.695470 | aud_2ea85338 | lab_tech_kim | Laboratory Technician | ROLE_SWITCH | SYSTEM_AUTH | SUCCESS | Switched role to Laboratory Technician
+2026-10-08T00:27:04.223179 | aud_88960450 | lab_tech_kim | Laboratory Technician | LOGOUT | SYSTEM_AUTH | SUCCESS | Signed out gracefully.
+2026-10-08T00:27:59.472548 | aud_475b5639 | priyanka | Data Engineer | USER_SIGNUP | SYSTEM_AUTH | SUCCESS | New user registered: Priyanka Sagar as Data Engineer
+2026-10-08T00:28:17.929890 | aud_1e080346 | priyanka | Data Engineer | LOGOUT | SYSTEM_AUTH | SUCCESS | Signed out gracefully.
+2026-10-08T00:28:53.087192 | aud_c0a660ec | priyanka | Data Engineer | LOGIN_MANUAL | SYSTEM_AUTH | SUCCESS | Authenticated successfully via manual form.
+2026-10-08T00:29:13.313373 | aud_4a05132c | priyanka | Data Engineer | LOGOUT | SYSTEM_AUTH | SUCCESS | Signed out gracefully.
+2026-10-08T00:34:15.690767 | aud_7f21bdeb | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-08T00:41:06.636744 | aud_8767ebbb | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-08T00:46:29.596453 | aud_1ceb0908 | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?
+2026-10-08T00:51:20.273958 | aud_f1046b74 | data_engineer | Data Engineer | LOGIN_PERSONA_CREDENTIALS | SYSTEM_AUTH | SUCCESS | Authenticated as Data Engineer via credentials.
+2026-10-08T00:58:18.110279 | aud_7cfa834d | test_admin | Hospital Administrator | AGENT_QUERY | HealthAnalyst Agent | SUCCESS | Why did readmission increase?

@@ -44,16 +44,22 @@ def ingest_bronze_layer(
     logger.info(f"Starting Bronze Ingestion (Run ID: {run_id}) from {raw_dir}")
 
     # Discover files in raw directory
-    discovered_files = list(raw_dir.glob("*.csv")) + list(raw_dir.glob("*.json"))
+    all_files = list(raw_dir.glob("*.csv")) + list(raw_dir.glob("*.json")) + list(raw_dir.glob("*.parquet"))
 
-    if not discovered_files:
+    if not all_files:
         logger.warning(f"No raw files found in {raw_dir}!")
         return {"run_id": run_id, "status": "EMPTY", "tables": {}, "total_rows": 0}
+
+    # Deduplicate files by stem (case-insensitive), keeping the most recently updated file
+    file_map = {}
+    for f in sorted(all_files, key=lambda p: p.stat().st_mtime):
+        file_map[f.stem.lower()] = f
+    discovered_files = list(file_map.values())
 
     for file_path in discovered_files:
         table_name = file_path.stem.lower()
         file_ext = file_path.suffix.lower()
-        source_type = "CSV" if file_ext == ".csv" else ("JSON" if file_ext == ".json" else "OTHER")
+        source_type = "CSV" if file_ext == ".csv" else ("JSON" if file_ext == ".json" else ("PARQUET" if file_ext == ".parquet" else "OTHER"))
         start_time = datetime.now()
 
         try:
@@ -62,6 +68,9 @@ def ingest_bronze_layer(
                 df = pd.read_csv(file_path, dtype=str)  # read as string to preserve raw format
             elif file_ext == ".json":
                 df = pd.read_json(file_path, dtype=False)
+                df = df.astype(str)
+            elif file_ext == ".parquet":
+                df = pd.read_parquet(file_path)
                 df = df.astype(str)
             else:
                 continue

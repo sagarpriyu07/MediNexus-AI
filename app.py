@@ -15,7 +15,7 @@ BASE_PATH = Path(__file__).resolve().parent
 if str(BASE_PATH) not in sys.path:
     sys.path.insert(0, str(BASE_PATH))
 
-from config.settings import APP_NAME, APP_TAGLINE, APP_VERSION, DEMO_USERS
+from config.settings import APP_NAME, APP_TAGLINE, APP_VERSION, DEMO_USERS, ACTIVE_LLM_PROVIDER
 from config.roles import ROLE_PERMISSIONS
 from src.security.rbac import check_page_access, get_allowed_pages
 from src.security.audit import log_audit_event
@@ -300,29 +300,13 @@ with st.sidebar:
             </div>
         """, unsafe_allow_html=True)
 
-        if st.button("🔑 Sign In / Choose Role", type="primary", use_container_width=True):
+        if st.button("🔑 Sign In with Credentials", type="primary", use_container_width=True):
             st.session_state["current_page"] = "login"
             st.rerun()
 
         if st.button("🏠 Platform Welcome", use_container_width=True):
             st.session_state["current_page"] = "welcome"
             st.rerun()
-
-        # Guest Quick 1-Click Selector (Data Engineer FIRST, NO personal names)
-        st.markdown("---")
-        st.markdown("<p style='color: #38BDF8 !important; font-size: 0.78rem; font-weight: 800; margin-bottom: 4px; letter-spacing: 0.8px;'>⚡ 1-CLICK DEMO LOGIN</p>", unsafe_allow_html=True)
-        guest_roles = {
-            "⚙️ Data Engineer": "data_engineer",
-            "🩺 Doctor": "dr_chen",
-            "🏢 Hospital Administrator": "admin_holloway",
-            "💊 Pharmacist": "pharmacist_patel",
-            "🔬 Laboratory Specialist": "lab_tech_kim",
-            "📋 Receptionist": "receptionist_davis",
-            "🛡️ IT Administrator": "it_admin_torvalds",
-        }
-        guest_choice = st.selectbox("Explore As:", options=["(Choose role to enter...)"] + list(guest_roles.keys()), index=0, label_visibility="collapsed")
-        if guest_choice in guest_roles:
-            switch_user_persona(guest_roles[guest_choice])
 
     # System Status Indicator
     st.markdown("<br>", unsafe_allow_html=True)
@@ -334,6 +318,7 @@ with st.sidebar:
             <div style="font-weight: 800; color: #38BDF8 !important; margin-bottom: 6px; letter-spacing: 0.5px;">PLATFORM READINESS</div>
             <div style="color: #FFFFFF !important;">Lakehouse Gold: <b style="color: {'#4ADE80' if gold_ready else '#F87171'} !important;">{'Ready ✓' if gold_ready else 'Uninitialized'}</b></div>
             <div style="color: #FFFFFF !important;">ML Registry: <b style="color: {'#4ADE80' if ml_ready else '#F87171'} !important;">{'Active ✓' if ml_ready else 'Untrained'}</b></div>
+            <div style="color: #FFFFFF !important;">AI Engine: <b style="color: #38BDF8 !important;">{ACTIVE_LLM_PROVIDER}</b></div>
             <div style="margin-top: 5px; font-size: 0.72rem; color: #94A3B8 !important;">Version: {APP_VERSION}</div>
         </div>
     """, unsafe_allow_html=True)

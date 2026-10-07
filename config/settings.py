@@ -38,8 +38,30 @@ if ENV_PATH.exists():
                 k, v = line.split("=", 1)
                 os.environ.setdefault(k.strip(), v.strip())
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+# Check Streamlit Cloud secrets if running hosted on Streamlit Cloud
+_st_secrets = {}
+try:
+    import streamlit as st
+    if hasattr(st, "secrets"):
+        _st_secrets = dict(st.secrets)
+except Exception:
+    pass
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "") or str(_st_secrets.get("GEMINI_API_KEY", ""))
 ENABLE_GEMINI = bool(GEMINI_API_KEY and len(GEMINI_API_KEY) > 10)
+
+# xAI Grok API Configuration
+GROK_API_KEY = os.getenv("GROK_API_KEY", "") or os.getenv("XAI_API_KEY", "") or str(_st_secrets.get("GROK_API_KEY", ""))
+ENABLE_GROK = bool(GROK_API_KEY and len(GROK_API_KEY) > 10)
+GROK_MODEL = os.getenv("GROK_MODEL", "grok-beta") or str(_st_secrets.get("GROK_MODEL", "grok-beta"))
+
+# Active Provider Detection
+if ENABLE_GROK:
+    ACTIVE_LLM_PROVIDER = f"Grok ({GROK_MODEL})"
+elif ENABLE_GEMINI:
+    ACTIVE_LLM_PROVIDER = "Gemini 1.5 Flash"
+else:
+    ACTIVE_LLM_PROVIDER = "Deterministic Local Engine"
 
 # Preconfigured Demo Users
 # Note: In production, passwords are stored as secure hashes.

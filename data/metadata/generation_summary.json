@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-05T19:18:31.767085",
+  "generated_at": "2026-10-08T00:58:18.635515",
   "seed": 99,
   "counts": {
     "hospitals": 3,
-    "departments": 24,
+    "departments": 9,
     "doctors": 10,
     "patients": 101,
     "admissions": 151,
-    "diagnoses": 241,
+    "diagnoses": 202,
     "laboratory_results": 303,
     "medications": 12,
     "prescriptions": 252,
     "appointments": 151,
     "billing": 151,
-    "pharmacy_inventory": 37
+    "pharmacy_inventory": 61
   },
   "quality_defects_injected": [
     "Intentional duplicate rows (~1-1.5%)",
