@@ -19,29 +19,37 @@ from config.settings import (
 from src.rag.retriever import retrieve_context
 
 
-def generate_grounded_answer(query: str, category: Optional[str] = None) -> Dict[str, Any]:
+def generate_grounded_answer(query: str, category: Optional[str] = None, min_confidence: float = 0.12) -> Dict[str, Any]:
     """
     Retrieve relevant knowledge chunks and synthesize a grounded response with source citations.
     Supports Grok (xAI), Gemini (Google), and deterministic local fallback.
+    Enforces a clinical safety confidence threshold (min_confidence) to safely reject out-of-scope queries.
     Records high-precision latency telemetry (retrieval_ms, generation_ms, total_ms).
     """
     t_start = time.perf_counter()
     hits = retrieve_context(query, top_k=3, category=category)
     t_ret = time.perf_counter()
 
-    if not hits:
+    if not hits or hits[0]["score"] < min_confidence:
         t_end = time.perf_counter()
         return {
             "query": query,
-            "answer": "No directly matching healthcare policies or clinical guidelines were found in the institutional knowledge base.",
+            "answer": (
+                "No authoritative institutional healthcare policies or clinical guidelines were found in the "
+                "MediNexus knowledge base for this query with sufficient clinical confidence. To protect patient "
+                "safety and prevent clinical hallucinations, MediNexus AI safely refuses to answer unsupported queries."
+            ),
             "citations": [],
             "grounded": False,
+            "out_of_scope": True,
+            "safe_refusal": True,
+            "engine": "Clinical Safety Guardrail",
             "latency_metrics": {
                 "retrieval_ms": round((t_ret - t_start) * 1000, 2),
                 "generation_ms": round((t_end - t_ret) * 1000, 2),
                 "total_ms": round((t_end - t_start) * 1000, 2),
             },
-            "top_relevance_score": 0.0,
+            "top_relevance_score": hits[0]["score"] if hits else 0.0,
         }
 
     # Format context passages
