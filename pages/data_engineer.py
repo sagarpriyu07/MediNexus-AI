@@ -31,6 +31,7 @@ from src.ml.model_registry import get_model_registry_summary
 from src.utils.database import query_df, get_table_row_count, table_exists
 from src.utils.helpers import format_number, PALETTE
 from src.security.audit import log_audit_event
+from config.settings import ACTIVE_LLM_PROVIDER
 
 
 STANDARD_ENTITIES = [
