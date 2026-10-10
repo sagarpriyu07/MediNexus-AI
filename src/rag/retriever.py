@@ -22,12 +22,28 @@ def get_vector_store() -> LocalVectorStore:
     return _VECTOR_STORE
 
 
+import re
+
+
+def normalize_query(query: str) -> str:
+    """Normalize query text, separating digits from units and fixing common clinical misspellings."""
+    if not query:
+        return ""
+    # Separate numbers from words (e.g. 30days -> 30 days, 24hours -> 24 hours, 5lbs -> 5 lbs)
+    q = re.sub(r"(\d+)([a-zA-Z]+)", r"\1 \2", query)
+    # Common clinical spelling variants
+    q = re.sub(r"\breadd?miss?ions?\b", "readmission", q, flags=re.IGNORECASE)
+    q = re.sub(r"\bdischarg?es?\b", "discharge", q, flags=re.IGNORECASE)
+    return q
+
+
 def retrieve_context(query: str, top_k: int = 3, category: Optional[str] = None) -> List[Dict[str, Any]]:
     """
     Retrieve top-k relevant knowledge chunks for a query with citation metadata.
     """
     store = get_vector_store()
-    results = store.search(query, top_k=top_k * 2)
+    clean_query = normalize_query(query)
+    results = store.search(clean_query, top_k=top_k * 2)
 
     hits = []
     for chunk, score in results:
