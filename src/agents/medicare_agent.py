@@ -144,8 +144,8 @@ class MediCareAgent(BaseHealthcareAgent):
             return self.get_patient_summary(normalized_p_id)
 
         # Check for policy/guideline question or clinical inquiry via RAG
-        is_guideline_kw = any(w in user_query.lower() for w in ["guideline", "policy", "protocol", "discharge", "hypertension", "diabetes", "heart failure", "rule", "criteria", "standard", "procedure", "how", "what", "can", "should"])
-        rag_res = generate_grounded_answer(user_query, category="Clinical Guidelines")
+        is_guideline_kw = any(w in user_query.lower() for w in ["guideline", "policy", "protocol", "discharge", "hypertension", "diabetes", "heart failure", "rule", "criteria", "standard", "procedure", "how", "what", "can", "should", "readmission", "readmit", "rate"])
+        rag_res = generate_grounded_answer(user_query)
         if is_guideline_kw or (rag_res.get("grounded", False) and not rag_res.get("out_of_scope", False)):
             return self.format_structured_response(
                 facts=["Queried Institutional Clinical Practice Guidelines & Hospital Policies."],

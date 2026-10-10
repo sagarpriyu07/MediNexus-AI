@@ -164,12 +164,12 @@ class HealthAnalystAgent(BaseHealthcareAgent):
         if any(w in q_lower for w in ["why", "readmission", "readmit", "bounce back", "cause"]):
             return self.analyze_readmission_drivers()
 
-        is_policy_kw = any(w in q_lower for w in ["policy", "guideline", "privacy", "discharge rule", "hipaa", "appointment", "schedule", "rule", "protocol", "how", "what", "can", "should"])
-        rag_res = generate_grounded_answer(user_query, category="Hospital Policies")
+        is_policy_kw = any(w in q_lower for w in ["policy", "guideline", "privacy", "discharge", "hipaa", "appointment", "schedule", "rule", "protocol", "how", "what", "can", "should"])
+        rag_res = generate_grounded_answer(user_query)
         if is_policy_kw or (rag_res.get("grounded", False) and not rag_res.get("out_of_scope", False)):
             return self.format_structured_response(
-                facts=["Queried Hospital Operational Policies & Governance Knowledge Base."],
-                predictions=["Policy query does not require statistical forecasting."],
+                facts=["Queried Institutional Operational Policies & Governance Knowledge Base."],
+                predictions=["Policy inquiry grounded in institutional guidelines."],
                 recommendations=[rag_res.get("answer", "")],
                 evidence=[f"Retrieved Document: {c['title']} ({c['filename']})" for c in rag_res.get("citations", [])],
             )

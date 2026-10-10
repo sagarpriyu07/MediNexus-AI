@@ -40,14 +40,29 @@ def normalize_query(query: str) -> str:
 def retrieve_context(query: str, top_k: int = 3, category: Optional[str] = None) -> List[Dict[str, Any]]:
     """
     Retrieve top-k relevant knowledge chunks for a query with citation metadata.
+    Automatically infers department category boundaries when query exhibits clear domain focus.
     """
     store = get_vector_store()
     clean_query = normalize_query(query)
-    results = store.search(clean_query, top_k=top_k * 2)
+    q_lower = clean_query.lower()
+
+    if not category:
+        if any(w in q_lower for w in ["readmission", "readmit", "discharge", "departure", "rounds", "inpatient"]):
+            allowed_categories = {"hospital policies", "clinical guidelines"}
+        elif any(w in q_lower for w in ["storage", "refrigerat", "cold chain", "formulary", "stockout", "reorder", "shortage"]):
+            allowed_categories = {"pharmacy"}
+        elif any(w in q_lower for w in ["specimen", "biosafety", "ppe", "spill", "analyzer", "phlebotomy", "centrifuge"]):
+            allowed_categories = {"laboratory"}
+        else:
+            allowed_categories = None
+    else:
+        allowed_categories = {category.lower()}
+
+    results = store.search(clean_query, top_k=top_k * 4)
 
     hits = []
     for chunk, score in results:
-        if category and category.lower() not in chunk["category"].lower():
+        if allowed_categories and chunk["category"].lower() not in allowed_categories:
             continue
         hits.append({
             "chunk_id": chunk["chunk_id"],
