@@ -304,12 +304,14 @@ with st.sidebar:
             st.session_state["current_page"] = "login"
             st.rerun()
 
-        if st.button("🏠 Platform Welcome", use_container_width=True):
+        if st.button("🤖 Clinical RAG Navigator", key="nav_rag_quick", use_container_width=True):
             st.session_state["current_page"] = "welcome"
             st.rerun()
 
-    # System Status Indicator
+    # Dynamic LLM Engine & System Status Indicator
     st.markdown("<br>", unsafe_allow_html=True)
+    from config.settings import get_active_llm_config, save_llm_api_key, clear_llm_api_key
+    llm_cfg = get_active_llm_config()
     gold_ready = table_exists("gold_patient_360")
     ml_ready = table_exists("model_registry")
 
@@ -318,10 +320,65 @@ with st.sidebar:
             <div style="font-weight: 800; color: #38BDF8 !important; margin-bottom: 6px; letter-spacing: 0.5px;">PLATFORM READINESS</div>
             <div style="color: #FFFFFF !important;">Lakehouse Gold: <b style="color: {'#4ADE80' if gold_ready else '#F87171'} !important;">{'Ready ✓' if gold_ready else 'Uninitialized'}</b></div>
             <div style="color: #FFFFFF !important;">ML Registry: <b style="color: {'#4ADE80' if ml_ready else '#F87171'} !important;">{'Active ✓' if ml_ready else 'Untrained'}</b></div>
-            <div style="color: #FFFFFF !important;">AI Engine: <b style="color: #38BDF8 !important;">{ACTIVE_LLM_PROVIDER}</b></div>
+            <div style="color: #FFFFFF !important;">AI Engine: <b style="color: {'#38BDF8' if llm_cfg['is_cloud'] else '#4ADE80'} !important;">{llm_cfg['provider_name']}</b></div>
             <div style="margin-top: 5px; font-size: 0.72rem; color: #94A3B8 !important;">Version: {APP_VERSION}</div>
         </div>
     """, unsafe_allow_html=True)
+
+    # In-App API Key Configuration Expander
+    with st.expander("🔑 Configure AI Engine / API Key", expanded=False):
+        st.markdown("<p style='font-size: 0.78rem; color: #CBD5E1; margin: 0 0 6px 0;'>Select LLM Provider:</p>", unsafe_allow_html=True)
+        provider_choice = st.selectbox(
+            "Provider:",
+            options=["Google Gemini (Free Tier)", "OpenAI (GPT-4o Mini)", "xAI Grok", "Deterministic Local (Offline)"],
+            index=0 if llm_cfg["provider"] == "gemini" else (1 if llm_cfg["provider"] == "openai" else (2 if llm_cfg["provider"] == "grok" else 3)),
+            key="sb_llm_provider_choice",
+            label_visibility="collapsed",
+        )
+
+        if "Gemini" in provider_choice:
+            prov_code = "gemini"
+            placeholder_text = "Paste Google Gemini API Key (e.g. AIza...)"
+        elif "OpenAI" in provider_choice:
+            prov_code = "openai"
+            placeholder_text = "Paste OpenAI API Key (e.g. sk-...)"
+        elif "Grok" in provider_choice:
+            prov_code = "grok"
+            placeholder_text = "Paste xAI Grok API Key (e.g. xai-...)"
+        else:
+            prov_code = "local"
+            placeholder_text = ""
+
+        if prov_code != "local":
+            input_key = st.text_input(
+                "API Key:",
+                type="password",
+                placeholder=placeholder_text,
+                value=llm_cfg["api_key"] if llm_cfg["provider"] == prov_code else "",
+                key=f"input_key_{prov_code}",
+                help="API key is stored locally in your workspace session and .env file.",
+            )
+            c_save, c_reset = st.columns(2)
+            with c_save:
+                if st.button("💾 Connect Key", key=f"btn_save_{prov_code}", use_container_width=True, type="primary"):
+                    if len(input_key.strip()) > 8:
+                        save_llm_api_key(prov_code, input_key.strip())
+                        st.success(f"Connected to {provider_choice}!")
+                        st.rerun()
+                    else:
+                        st.error("Please enter a valid API key.")
+            with c_reset:
+                if st.button("🔄 Use Local", key=f"btn_reset_{prov_code}", use_container_width=True):
+                    clear_llm_api_key()
+                    st.info("Reverted to Deterministic Local Engine.")
+                    st.rerun()
+            st.markdown("<p style='font-size: 0.7rem; color: #94A3B8; margin-top: 6px;'>💡 Google Gemini Flash free keys are available at <a href='https://aistudio.google.com' target='_blank' style='color: #38BDF8;'>aistudio.google.com</a> without a credit card.</p>", unsafe_allow_html=True)
+        else:
+            if st.button("🔄 Activate Local Engine", key="btn_activate_local", use_container_width=True):
+                clear_llm_api_key()
+                st.info("Activated Deterministic Local Engine (Offline).")
+                st.rerun()
+            st.markdown("<p style='font-size: 0.72rem; color: #94A3B8; margin-top: 4px;'>Runs 100% offline with zero external network calls or API costs.</p>", unsafe_allow_html=True)
 
 
 # 5. Strict RBAC Enforcement & Page Dispatcher

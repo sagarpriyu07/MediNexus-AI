@@ -171,10 +171,11 @@ class PharmaLabAgent(BaseHealthcareAgent):
 
         q_lower = user_query.lower()
 
-        # Check for RAG policy queries
-        if any(w in q_lower for w in ["storage", "temperature", "cold chain", "safety", "handling", "biosafety", "spill", "tat", "policy"]):
-            category = "Pharmacy" if self.role == "Pharmacist" else "Laboratory"
-            rag_res = generate_grounded_answer(user_query, category=category)
+        # Check for RAG policy and safety inquiries
+        is_rag_kw = any(w in q_lower for w in ["storage", "temperature", "cold chain", "safety", "handling", "biosafety", "spill", "tat", "policy", "refrigerat", "reorder", "shortage", "protocol", "how", "what", "can", "should"])
+        category = "Pharmacy" if self.role == "Pharmacist" else "Laboratory"
+        rag_res = generate_grounded_answer(user_query, category=category)
+        if is_rag_kw or (rag_res.get("grounded", False) and not rag_res.get("out_of_scope", False)):
             return self.format_structured_response(
                 facts=[f"Queried Institutional {category} Protocols and Safety Standards."],
                 predictions=["Policy and procedural inquiry."],

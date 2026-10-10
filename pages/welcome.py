@@ -47,63 +47,74 @@ def render_welcome_page():
         </div>
     """, unsafe_allow_html=True)
 
-    # Role Consoles Navigation (Requires Credential Authentication)
-    st.markdown("<p style='font-size: 0.88rem; font-weight: 700; color: #0F172A; margin-bottom: 8px;'>Access Role Consoles via Secure Credential Portal:</p>", unsafe_allow_html=True)
+    from src.rag.ui_component import render_rag_navigator
 
-    def go_to_login():
-        st.session_state["current_page"] = "login"
-        st.rerun()
+    tab_rag, tab_roles = st.tabs([
+        "🤖 Live Clinical RAG Navigator",
+        "🏛️ Platform Architecture & Role Consoles",
+    ])
 
-    r1, r2, r3, r4 = st.columns(4)
-    with r1:
-        if st.button("⚙️ Data Engineer", key="w_btn_de", use_container_width=True, type="primary"):
-            go_to_login()
-    with r2:
-        if st.button("🩺 Doctor", key="w_btn_doc", use_container_width=True):
-            go_to_login()
-    with r3:
-        if st.button("🏢 Administrator", key="w_btn_adm", use_container_width=True):
-            go_to_login()
-    with r4:
-        if st.button("💊 Pharmacist", key="w_btn_phm", use_container_width=True):
-            go_to_login()
+    with tab_rag:
+        render_rag_navigator(key_prefix="welcome_rag")
 
-    r5, r6, r7, r8 = st.columns(4)
-    with r5:
-        if st.button("🔬 Laboratory", key="w_btn_lab", use_container_width=True):
-            go_to_login()
-    with r6:
-        if st.button("📋 Receptionist", key="w_btn_rec", use_container_width=True):
-            go_to_login()
-    with r7:
-        if st.button("🛡️ IT Security", key="w_btn_it", use_container_width=True):
-            go_to_login()
-    with r8:
-        if st.button("🔑 Sign In with Credentials", key="w_btn_login", use_container_width=True):
-            go_to_login()
+    with tab_roles:
+        # Role Consoles Navigation (Requires Credential Authentication)
+        st.markdown("<p style='font-size: 0.88rem; font-weight: 700; color: #0F172A; margin-bottom: 8px;'>Access Role Consoles via Secure Credential Portal:</p>", unsafe_allow_html=True)
 
-    st.markdown("---")
+        def go_to_login():
+            st.session_state["current_page"] = "login"
+            st.rerun()
 
-    # Concise Architecture Breakdown
-    c1, c2 = st.columns(2)
-    with c1:
-        st.markdown("""
-            <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px;">
-                <h4 style="margin: 0 0 6px 0; color: #0F172A; font-size: 0.95rem;">Data Engineering / Producer Layer</h4>
-                <p style="color: #64748B; font-size: 0.84rem; line-height: 1.45; margin: 0;">
-                    Orchestrates Bronze Parquet ingestion, Silver deduplication and 99.6% quality scoring, Gold Star Marts in DuckDB, and predictive ML model training.
-                </p>
-            </div>
-        """, unsafe_allow_html=True)
-    with c2:
-        st.markdown("""
-            <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px;">
-                <h4 style="margin: 0 0 6px 0; color: #0F172A; font-size: 0.95rem;">Role-Based Consumption Layer</h4>
-                <p style="color: #64748B; font-size: 0.84rem; line-height: 1.45; margin: 0;">
-                    Consumes strictly validated Gold intelligence across 7 dedicated consoles with specialized AI Copilots, prescriptive rules, and zero clinical leakage.
-                </p>
-            </div>
-        """, unsafe_allow_html=True)
+        r1, r2, r3, r4 = st.columns(4)
+        with r1:
+            if st.button("⚙️ Data Engineer", key="w_btn_de", use_container_width=True, type="primary"):
+                go_to_login()
+        with r2:
+            if st.button("🩺 Doctor", key="w_btn_doc", use_container_width=True):
+                go_to_login()
+        with r3:
+            if st.button("🏢 Administrator", key="w_btn_adm", use_container_width=True):
+                go_to_login()
+        with r4:
+            if st.button("💊 Pharmacist", key="w_btn_phm", use_container_width=True):
+                go_to_login()
+
+        r5, r6, r7, r8 = st.columns(4)
+        with r5:
+            if st.button("🔬 Laboratory", key="w_btn_lab", use_container_width=True):
+                go_to_login()
+        with r6:
+            if st.button("📋 Receptionist", key="w_btn_rec", use_container_width=True):
+                go_to_login()
+        with r7:
+            if st.button("🛡️ IT Security", key="w_btn_it", use_container_width=True):
+                go_to_login()
+        with r8:
+            if st.button("🔑 Sign In with Credentials", key="w_btn_login", use_container_width=True):
+                go_to_login()
+
+        st.markdown("---")
+
+        # Concise Architecture Breakdown
+        c1, c2 = st.columns(2)
+        with c1:
+            st.markdown("""
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0F172A; font-size: 0.95rem;">Data Engineering / Producer Layer</h4>
+                    <p style="color: #64748B; font-size: 0.84rem; line-height: 1.45; margin: 0;">
+                        Orchestrates Bronze Parquet ingestion, Silver deduplication and 99.6% quality scoring, Gold Star Marts in DuckDB, and predictive ML model training.
+                    </p>
+                </div>
+            """, unsafe_allow_html=True)
+        with c2:
+            st.markdown("""
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px;">
+                    <h4 style="margin: 0 0 6px 0; color: #0F172A; font-size: 0.95rem;">Role-Based Consumption Layer</h4>
+                    <p style="color: #64748B; font-size: 0.84rem; line-height: 1.45; margin: 0;">
+                        Consumes strictly validated Gold intelligence across 7 dedicated consoles with specialized AI Copilots, prescriptive rules, and zero clinical leakage.
+                    </p>
+                </div>
+            """, unsafe_allow_html=True)
 
 
 if __name__ == "__main__":

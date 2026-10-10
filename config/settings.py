@@ -50,18 +50,160 @@ except Exception:
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "") or str(_st_secrets.get("GEMINI_API_KEY", ""))
 ENABLE_GEMINI = bool(GEMINI_API_KEY and len(GEMINI_API_KEY) > 10)
 
+# OpenAI API Configuration
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "") or str(_st_secrets.get("OPENAI_API_KEY", ""))
+ENABLE_OPENAI = bool(OPENAI_API_KEY and len(OPENAI_API_KEY) > 10)
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini") or str(_st_secrets.get("OPENAI_MODEL", "gpt-4o-mini"))
+
 # xAI Grok API Configuration
 GROK_API_KEY = os.getenv("GROK_API_KEY", "") or os.getenv("XAI_API_KEY", "") or str(_st_secrets.get("GROK_API_KEY", ""))
 ENABLE_GROK = bool(GROK_API_KEY and len(GROK_API_KEY) > 10)
 GROK_MODEL = os.getenv("GROK_MODEL", "grok-beta") or str(_st_secrets.get("GROK_MODEL", "grok-beta"))
 
-# Active Provider Detection
-if ENABLE_GROK:
-    ACTIVE_LLM_PROVIDER = f"Grok ({GROK_MODEL})"
-elif ENABLE_GEMINI:
-    ACTIVE_LLM_PROVIDER = "Gemini 1.5 Flash"
-else:
-    ACTIVE_LLM_PROVIDER = "Deterministic Local Engine"
+# Dynamic Active Provider Detection and Session Management
+def get_active_llm_config() -> Dict[str, Any]:
+    """
+    Dynamically retrieve active LLM provider configuration from Streamlit session state,
+    environment variables, or persistent .env settings.
+    """
+    try:
+        import streamlit as st
+        if hasattr(st, "session_state"):
+            override_provider = st.session_state.get("llm_provider_override")
+            custom_key = st.session_state.get("llm_api_key_override", "").strip()
+            if override_provider == "gemini" and custom_key:
+                return {
+                    "provider": "gemini",
+                    "provider_name": "Gemini 1.5 Flash",
+                    "api_key": custom_key,
+                    "model": "gemini-1.5-flash",
+                    "is_cloud": True,
+                }
+            elif override_provider == "openai" and custom_key:
+                model_name = st.session_state.get("llm_model_override", "gpt-4o-mini")
+                return {
+                    "provider": "openai",
+                    "provider_name": f"OpenAI ({model_name})",
+                    "api_key": custom_key,
+                    "model": model_name,
+                    "is_cloud": True,
+                }
+            elif override_provider == "grok" and custom_key:
+                return {
+                    "provider": "grok",
+                    "provider_name": f"Grok ({GROK_MODEL})",
+                    "api_key": custom_key,
+                    "model": GROK_MODEL,
+                    "is_cloud": True,
+                }
+            elif override_provider == "local":
+                return {
+                    "provider": "local",
+                    "provider_name": "Deterministic Local Engine",
+                    "api_key": "",
+                    "model": "local",
+                    "is_cloud": False,
+                }
+    except Exception:
+        pass
+
+    grok_k = os.getenv("GROK_API_KEY", "") or GROK_API_KEY
+    if grok_k and len(grok_k) > 10:
+        return {
+            "provider": "grok",
+            "provider_name": f"Grok ({GROK_MODEL})",
+            "api_key": grok_k,
+            "model": GROK_MODEL,
+            "is_cloud": True,
+        }
+
+    gemini_k = os.getenv("GEMINI_API_KEY", "") or GEMINI_API_KEY
+    if gemini_k and len(gemini_k) > 10:
+        return {
+            "provider": "gemini",
+            "provider_name": "Gemini 1.5 Flash",
+            "api_key": gemini_k,
+            "model": "gemini-1.5-flash",
+            "is_cloud": True,
+        }
+
+    openai_k = os.getenv("OPENAI_API_KEY", "") or OPENAI_API_KEY
+    if openai_k and len(openai_k) > 10:
+        return {
+            "provider": "openai",
+            "provider_name": f"OpenAI ({OPENAI_MODEL})",
+            "api_key": openai_k,
+            "model": OPENAI_MODEL,
+            "is_cloud": True,
+        }
+
+    return {
+        "provider": "local",
+        "provider_name": "Deterministic Local Engine",
+        "api_key": "",
+        "model": "local",
+        "is_cloud": False,
+    }
+
+
+def save_llm_api_key(provider: str, api_key: str, model: str = "") -> None:
+    """Save an API key to session state, os.environ, and write to .env file for persistence."""
+    api_key = api_key.strip()
+    try:
+        import streamlit as st
+        st.session_state["llm_provider_override"] = provider
+        st.session_state["llm_api_key_override"] = api_key
+        if model:
+            st.session_state["llm_model_override"] = model
+    except Exception:
+        pass
+
+    env_key = "GEMINI_API_KEY" if provider == "gemini" else ("OPENAI_API_KEY" if provider == "openai" else "GROK_API_KEY")
+    os.environ[env_key] = api_key
+    if model:
+        if provider == "openai":
+            os.environ["OPENAI_MODEL"] = model
+        elif provider == "grok":
+            os.environ["GROK_MODEL"] = model
+
+    # Persist to .env file safely
+    try:
+        lines = []
+        if ENV_PATH.exists():
+            with open(ENV_PATH, "r", encoding="utf-8") as f:
+                lines = f.readlines()
+
+        updated = False
+        new_lines = []
+        for line in lines:
+            if line.strip().startswith(f"{env_key}="):
+                new_lines.append(f"{env_key}={api_key}\n")
+                updated = True
+            else:
+                new_lines.append(line)
+        if not updated:
+            new_lines.append(f"{env_key}={api_key}\n")
+
+        with open(ENV_PATH, "w", encoding="utf-8") as f:
+            f.writelines(new_lines)
+    except Exception:
+        pass
+
+
+def clear_llm_api_key() -> None:
+    """Revert to Deterministic Local Engine and clear overrides."""
+    try:
+        import streamlit as st
+        st.session_state["llm_provider_override"] = "local"
+        st.session_state["llm_api_key_override"] = ""
+    except Exception:
+        pass
+    for k in ["GEMINI_API_KEY", "OPENAI_API_KEY", "GROK_API_KEY"]:
+        if k in os.environ:
+            del os.environ[k]
+
+
+ACTIVE_LLM_PROVIDER = get_active_llm_config()["provider_name"]
 
 # Preconfigured Demo Users
 # Note: In production, passwords are stored as secure hashes.
