@@ -15,7 +15,16 @@ BASE_PATH = Path(__file__).resolve().parent
 if str(BASE_PATH) not in sys.path:
     sys.path.insert(0, str(BASE_PATH))
 
-from config.settings import APP_NAME, APP_TAGLINE, APP_VERSION, DEMO_USERS, ACTIVE_LLM_PROVIDER
+from config.settings import (
+    APP_NAME,
+    APP_TAGLINE,
+    APP_VERSION,
+    DEMO_USERS,
+    ACTIVE_LLM_PROVIDER,
+    get_active_llm_config,
+    save_llm_api_key,
+    clear_llm_api_key,
+)
 from config.roles import ROLE_PERMISSIONS
 from src.security.rbac import check_page_access, get_allowed_pages
 from src.security.audit import log_audit_event
@@ -310,7 +319,6 @@ with st.sidebar:
 
     # Dynamic LLM Engine & System Status Indicator
     st.markdown("<br>", unsafe_allow_html=True)
-    from config.settings import get_active_llm_config, save_llm_api_key, clear_llm_api_key
     llm_cfg = get_active_llm_config()
     gold_ready = table_exists("gold_patient_360")
     ml_ready = table_exists("model_registry")
