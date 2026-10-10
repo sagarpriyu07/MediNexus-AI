@@ -55,6 +55,11 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "") or str(_st_secrets.get("OPENAI_
 ENABLE_OPENAI = bool(OPENAI_API_KEY and len(OPENAI_API_KEY) > 10)
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini") or str(_st_secrets.get("OPENAI_MODEL", "gpt-4o-mini"))
 
+# Groq API Configuration (GroqCloud - Ultra Fast Inference)
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "") or str(_st_secrets.get("GROQ_API_KEY", ""))
+GROQ_MODEL = os.getenv("GROQ_MODEL", "qwen/qwen3.8-27b") or str(_st_secrets.get("GROQ_MODEL", "qwen/qwen3.8-27b"))
+ENABLE_GROQCLOUD = bool(GROQ_API_KEY and len(GROQ_API_KEY) > 10)
+
 # xAI Grok API Configuration
 GROK_API_KEY = os.getenv("GROK_API_KEY", "") or os.getenv("XAI_API_KEY", "") or str(_st_secrets.get("GROK_API_KEY", ""))
 ENABLE_GROK = bool(GROK_API_KEY and len(GROK_API_KEY) > 10)
@@ -65,37 +70,49 @@ def get_active_llm_config() -> Dict[str, Any]:
     """
     Dynamically retrieve active LLM provider configuration from Streamlit session state,
     environment variables, or persistent .env settings.
+    Automatically detects provider by key prefix (gsk_ -> GroqCloud, AIza -> Gemini, sk- -> OpenAI).
     """
     try:
         import streamlit as st
         if hasattr(st, "session_state"):
             override_provider = st.session_state.get("llm_provider_override")
             custom_key = st.session_state.get("llm_api_key_override", "").strip()
-            if override_provider == "gemini" and custom_key:
-                return {
-                    "provider": "gemini",
-                    "provider_name": "Gemini 1.5 Flash",
-                    "api_key": custom_key,
-                    "model": "gemini-1.5-flash",
-                    "is_cloud": True,
-                }
-            elif override_provider == "openai" and custom_key:
-                model_name = st.session_state.get("llm_model_override", "gpt-4o-mini")
-                return {
-                    "provider": "openai",
-                    "provider_name": f"OpenAI ({model_name})",
-                    "api_key": custom_key,
-                    "model": model_name,
-                    "is_cloud": True,
-                }
-            elif override_provider == "grok" and custom_key:
-                return {
-                    "provider": "grok",
-                    "provider_name": f"Grok ({GROK_MODEL})",
-                    "api_key": custom_key,
-                    "model": GROK_MODEL,
-                    "is_cloud": True,
-                }
+
+            if custom_key:
+                # Intelligent key prefix auto-detection
+                if custom_key.startswith("gsk_") or override_provider == "groq":
+                    return {
+                        "provider": "groq",
+                        "provider_name": "Groq (qwen/qwen3.8-27b)",
+                        "api_key": custom_key,
+                        "model": "qwen/qwen3.8-27b",
+                        "is_cloud": True,
+                    }
+                elif override_provider == "gemini" or custom_key.startswith("AIza"):
+                    return {
+                        "provider": "gemini",
+                        "provider_name": "Gemini 1.5 Flash",
+                        "api_key": custom_key,
+                        "model": "gemini-1.5-flash",
+                        "is_cloud": True,
+                    }
+                elif override_provider == "openai" or (custom_key.startswith("sk-") and not custom_key.startswith("sk-proj")):
+                    model_name = st.session_state.get("llm_model_override", "gpt-4o-mini")
+                    return {
+                        "provider": "openai",
+                        "provider_name": f"OpenAI ({model_name})",
+                        "api_key": custom_key,
+                        "model": model_name,
+                        "is_cloud": True,
+                    }
+                elif override_provider == "grok" or custom_key.startswith("xai-"):
+                    return {
+                        "provider": "grok",
+                        "provider_name": f"Grok ({GROK_MODEL})",
+                        "api_key": custom_key,
+                        "model": GROK_MODEL,
+                        "is_cloud": True,
+                    }
             elif override_provider == "local":
                 return {
                     "provider": "local",
@@ -107,8 +124,17 @@ def get_active_llm_config() -> Dict[str, Any]:
     except Exception:
         pass
 
-    grok_k = os.getenv("GROK_API_KEY", "") or GROK_API_KEY
+    # Check environment keys with prefix detection
+    grok_k = (os.getenv("GROK_API_KEY", "") or GROK_API_KEY).strip()
     if grok_k and len(grok_k) > 10:
+        if grok_k.startswith("gsk_"):
+            return {
+                "provider": "groq",
+                "provider_name": "Groq (qwen/qwen3.8-27b)",
+                "api_key": grok_k,
+                "model": "qwen/qwen3.8-27b",
+                "is_cloud": True,
+            }
         return {
             "provider": "grok",
             "provider_name": f"Grok ({GROK_MODEL})",
@@ -117,7 +143,17 @@ def get_active_llm_config() -> Dict[str, Any]:
             "is_cloud": True,
         }
 
-    gemini_k = os.getenv("GEMINI_API_KEY", "") or GEMINI_API_KEY
+    groq_k = (os.getenv("GROQ_API_KEY", "") or GROQ_API_KEY).strip()
+    if groq_k and len(groq_k) > 10:
+        return {
+            "provider": "groq",
+            "provider_name": "Groq (qwen/qwen3.8-27b)",
+            "api_key": groq_k,
+            "model": "qwen/qwen3.8-27b",
+            "is_cloud": True,
+        }
+
+    gemini_k = (os.getenv("GEMINI_API_KEY", "") or GEMINI_API_KEY).strip()
     if gemini_k and len(gemini_k) > 10:
         return {
             "provider": "gemini",
@@ -127,7 +163,7 @@ def get_active_llm_config() -> Dict[str, Any]:
             "is_cloud": True,
         }
 
-    openai_k = os.getenv("OPENAI_API_KEY", "") or OPENAI_API_KEY
+    openai_k = (os.getenv("OPENAI_API_KEY", "") or OPENAI_API_KEY).strip()
     if openai_k and len(openai_k) > 10:
         return {
             "provider": "openai",
@@ -158,11 +194,21 @@ def save_llm_api_key(provider: str, api_key: str, model: str = "") -> None:
     except Exception:
         pass
 
-    env_key = "GEMINI_API_KEY" if provider == "gemini" else ("OPENAI_API_KEY" if provider == "openai" else "GROK_API_KEY")
+    if api_key.startswith("gsk_") or provider == "groq":
+        env_key = "GROQ_API_KEY"
+    elif provider == "gemini":
+        env_key = "GEMINI_API_KEY"
+    elif provider == "openai":
+        env_key = "OPENAI_API_KEY"
+    else:
+        env_key = "GROK_API_KEY"
+
     os.environ[env_key] = api_key
     if model:
         if provider == "openai":
             os.environ["OPENAI_MODEL"] = model
+        elif provider == "groq":
+            os.environ["GROQ_MODEL"] = model
         elif provider == "grok":
             os.environ["GROK_MODEL"] = model
 
@@ -198,7 +244,7 @@ def clear_llm_api_key() -> None:
         st.session_state["llm_api_key_override"] = ""
     except Exception:
         pass
-    for k in ["GEMINI_API_KEY", "OPENAI_API_KEY", "GROK_API_KEY"]:
+    for k in ["GEMINI_API_KEY", "OPENAI_API_KEY", "GROK_API_KEY", "GROQ_API_KEY"]:
         if k in os.environ:
             del os.environ[k]
 

@@ -95,11 +95,19 @@ class PharmaLabAgent(BaseHealthcareAgent):
             "Policy: POL-PHARM-002 (Pharmacy Inventory Replenishment Protocol)",
         ]
 
+        text_summary = self.synthesize_clinical_narrative(
+            "Clinical Pharmacy Inventory & Supply Chain Review",
+            facts,
+            predictions,
+            recommendations,
+        )
+
         return self.format_structured_response(
             facts=facts,
             predictions=predictions,
             recommendations=recommendations,
             evidence=evidence,
+            text_answer=text_summary,
         )
 
     def analyze_laboratory_workload(self) -> Dict[str, Any]:
@@ -151,11 +159,19 @@ class PharmaLabAgent(BaseHealthcareAgent):
             "Policy: POL-LAB-002 (Biosafety & Analyzer Maintenance Standards)",
         ]
 
+        text_summary = self.synthesize_clinical_narrative(
+            f"Laboratory Operations and {top_cat} Workload Analysis",
+            facts,
+            predictions,
+            recommendations,
+        )
+
         return self.format_structured_response(
             facts=facts,
             predictions=predictions,
             recommendations=recommendations,
             evidence=evidence,
+            text_answer=text_summary,
         )
 
     def process_query(self, user_query: str, username: str = "pharmacist_patel") -> Dict[str, Any]:
@@ -181,6 +197,7 @@ class PharmaLabAgent(BaseHealthcareAgent):
                 predictions=["Policy and procedural inquiry."],
                 recommendations=[rag_res.get("answer", "")],
                 evidence=[f"Retrieved Document: {c['title']} ({c['filename']})" for c in rag_res.get("citations", [])],
+                text_answer=rag_res.get("answer", ""),
             )
 
         if self.role == "Laboratory Technician" or any(w in q_lower for w in ["lab", "test", "workload", "critical", "analyzer", "biochemistry"]):

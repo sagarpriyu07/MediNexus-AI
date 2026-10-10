@@ -338,13 +338,16 @@ with st.sidebar:
         st.markdown("<p style='font-size: 0.78rem; color: #CBD5E1; margin: 0 0 6px 0;'>Select LLM Provider:</p>", unsafe_allow_html=True)
         provider_choice = st.selectbox(
             "Provider:",
-            options=["Google Gemini (Free Tier)", "OpenAI (GPT-4o Mini)", "xAI Grok", "Deterministic Local (Offline)"],
-            index=0 if llm_cfg["provider"] == "gemini" else (1 if llm_cfg["provider"] == "openai" else (2 if llm_cfg["provider"] == "grok" else 3)),
+            options=["Groq (GroqCloud - Ultra Fast)", "Google Gemini (Free Tier)", "OpenAI (GPT-4o Mini)", "xAI Grok", "Deterministic Local (Offline)"],
+            index=0 if llm_cfg["provider"] == "groq" else (1 if llm_cfg["provider"] == "gemini" else (2 if llm_cfg["provider"] == "openai" else (3 if llm_cfg["provider"] == "grok" else 4))),
             key="sb_llm_provider_choice",
             label_visibility="collapsed",
         )
 
-        if "Gemini" in provider_choice:
+        if "Groq" in provider_choice:
+            prov_code = "groq"
+            placeholder_text = "Paste GroqCloud API Key (e.g. gsk_...)"
+        elif "Gemini" in provider_choice:
             prov_code = "gemini"
             placeholder_text = "Paste Google Gemini API Key (e.g. AIza...)"
         elif "OpenAI" in provider_choice:
@@ -369,9 +372,11 @@ with st.sidebar:
             c_save, c_reset = st.columns(2)
             with c_save:
                 if st.button("💾 Connect Key", key=f"btn_save_{prov_code}", use_container_width=True, type="primary"):
-                    if len(input_key.strip()) > 8:
-                        save_llm_api_key(prov_code, input_key.strip())
-                        st.success(f"Connected to {provider_choice}!")
+                    k = input_key.strip()
+                    if len(k) > 8:
+                        actual_prov = "groq" if k.startswith("gsk_") else prov_code
+                        save_llm_api_key(actual_prov, k)
+                        st.success(f"Connected to {actual_prov.title()} Engine!")
                         st.rerun()
                     else:
                         st.error("Please enter a valid API key.")
@@ -380,7 +385,7 @@ with st.sidebar:
                     clear_llm_api_key()
                     st.info("Reverted to Deterministic Local Engine.")
                     st.rerun()
-            st.markdown("<p style='font-size: 0.7rem; color: #94A3B8; margin-top: 6px;'>💡 Google Gemini Flash free keys are available at <a href='https://aistudio.google.com' target='_blank' style='color: #38BDF8;'>aistudio.google.com</a> without a credit card.</p>", unsafe_allow_html=True)
+            st.markdown("<p style='font-size: 0.7rem; color: #94A3B8; margin-top: 6px;'>💡 Free keys: <b>GroqCloud</b> at <a href='https://console.groq.com' target='_blank' style='color: #38BDF8;'>console.groq.com</a> (starts with <code>gsk_</code>) | <b>Gemini</b> at <a href='https://aistudio.google.com' target='_blank' style='color: #38BDF8;'>aistudio.google.com</a>.</p>", unsafe_allow_html=True)
         else:
             if st.button("🔄 Activate Local Engine", key="btn_activate_local", use_container_width=True):
                 clear_llm_api_key()

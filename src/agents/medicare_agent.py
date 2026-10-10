@@ -112,6 +112,13 @@ class MediCareAgent(BaseHealthcareAgent):
             "Clinical Guideline: CPG-CLIN-001 (Transitional Care Protocol)",
         ]
 
+        text_summary = self.synthesize_clinical_narrative(
+            f"Clinical Evaluation for Patient {p.get('name')} (ID: {patient_id})",
+            facts,
+            predictions,
+            recommendations,
+        )
+
         return self.format_structured_response(
             facts=facts,
             predictions=predictions,
@@ -119,6 +126,7 @@ class MediCareAgent(BaseHealthcareAgent):
             evidence=evidence,
             raw_context={"patient": p, "readmission": readm_pred, "los": los_pred},
             notes=readm_pred.get("disclaimer", ""),
+            text_answer=text_summary,
         )
 
     def process_query(self, user_query: str, username: str = "dr_chen") -> Dict[str, Any]:
@@ -153,6 +161,7 @@ class MediCareAgent(BaseHealthcareAgent):
                 recommendations=[rag_res.get("answer", "")],
                 evidence=[f"Retrieved Document: {c['title']} ({c['filename']})" for c in rag_res.get("citations", [])],
                 notes="Decision support reference from institutional policy repository.",
+                text_answer=rag_res.get("answer", ""),
             )
 
         # Default: high risk patient cohort summary
@@ -174,9 +183,17 @@ class MediCareAgent(BaseHealthcareAgent):
         ]
         evidence = ["Source Table: gold_patient_360 (Filtered: clinical_risk_tier='High')"]
 
+        text_summary = self.synthesize_clinical_narrative(
+            user_query,
+            facts,
+            predictions,
+            recommendations,
+        )
+
         return self.format_structured_response(
             facts=facts,
             predictions=predictions,
             recommendations=recommendations,
             evidence=evidence,
+            text_answer=text_summary,
         )

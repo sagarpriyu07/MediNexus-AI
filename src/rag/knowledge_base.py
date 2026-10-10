@@ -174,6 +174,45 @@ def generate_grounded_answer(query: str, category: Optional[str] = None, min_con
 
     llm_config = get_active_llm_config()
 
+    # 0. Groq API (GroqCloud - Ultra Fast Inference)
+    if (llm_config["provider"] == "groq" or (llm_config.get("api_key") and llm_config["api_key"].startswith("gsk_"))) and llm_config.get("api_key"):
+        try:
+            api_key = llm_config["api_key"]
+            model_name = llm_config.get("model", "qwen/qwen3.8-27b")
+            headers = {
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            }
+            payload = {
+                "model": model_name if "/" in model_name else "qwen/qwen3.8-27b",
+                "messages": [
+                    {"role": "system", "content": "You are a clinical decision-support knowledge assistant for MediNexus AI."},
+                    {"role": "user", "content": rag_prompt},
+                ],
+                "temperature": 0.2,
+                "max_tokens": 800,
+            }
+            resp = requests.post("https://api.groq.com/openai/v1/chat/completions", json=payload, headers=headers, timeout=12)
+            if resp.status_code == 200:
+                data = resp.json()
+                text = data["choices"][0]["message"]["content"]
+                t_end = time.perf_counter()
+                return {
+                    "query": query,
+                    "answer": text,
+                    "citations": citations,
+                    "grounded": True,
+                    "engine": f"Groq ({model_name}) Grounded RAG",
+                    "latency_metrics": {
+                        "retrieval_ms": round((t_ret - t_start) * 1000, 2),
+                        "generation_ms": round((t_end - t_ret) * 1000, 2),
+                        "total_ms": round((t_end - t_start) * 1000, 2),
+                    },
+                    "top_relevance_score": hits[0]["score"] if hits else 0.0,
+                }
+        except Exception:
+            pass  # Fall through to other providers or local fallback
+
     # 1. Google Gemini API
     if llm_config["provider"] == "gemini" and llm_config["api_key"]:
         try:

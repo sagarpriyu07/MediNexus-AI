@@ -98,11 +98,19 @@ class HealthAnalystAgent(BaseHealthcareAgent):
             "Policy: POL-HOSP-001 (Inpatient Discharge Planning Policy)",
         ]
 
+        text_summary = self.synthesize_clinical_narrative(
+            "Diagnostic Analysis of 30-Day Readmission Drivers",
+            facts,
+            predictions,
+            recommendations,
+        )
+
         return self.format_structured_response(
             facts=facts,
             predictions=predictions,
             recommendations=recommendations,
             evidence=evidence,
+            text_answer=text_summary,
         )
 
     def get_executive_kpi_summary(self) -> Dict[str, Any]:
@@ -142,11 +150,19 @@ class HealthAnalystAgent(BaseHealthcareAgent):
             "Rule Engine: Hospital Surge Capacity Protocol v3.0",
         ]
 
+        text_summary = self.synthesize_clinical_narrative(
+            "Executive Hospital Performance & Bed Capacity Review",
+            facts,
+            predictions,
+            recommendations,
+        )
+
         return self.format_structured_response(
             facts=facts,
             predictions=predictions,
             recommendations=recommendations,
             evidence=evidence,
+            text_answer=text_summary,
         )
 
     def process_query(self, user_query: str, username: str = "admin_holloway") -> Dict[str, Any]:
@@ -172,6 +188,7 @@ class HealthAnalystAgent(BaseHealthcareAgent):
                 predictions=["Policy inquiry grounded in institutional guidelines."],
                 recommendations=[rag_res.get("answer", "")],
                 evidence=[f"Retrieved Document: {c['title']} ({c['filename']})" for c in rag_res.get("citations", [])],
+                text_answer=rag_res.get("answer", ""),
             )
 
         return self.get_executive_kpi_summary()
